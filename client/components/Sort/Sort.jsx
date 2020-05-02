@@ -2,7 +2,7 @@ import React from 'react';
 
 function Sort(props) {
     return (
-        <div style={{ visibility: props.isModalVisible }}>Sort</div>
+        <div id='SortModal' style={{ visibility: props.isModalVisible }}>Sort</div>
     )
 };
 

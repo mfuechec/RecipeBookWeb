@@ -1,0 +1,29 @@
+#LandingPageOptionsContainer {
+    width: 98vw;
+    height: 95vh;
+    display: flex;
+    flex-direction: row;
+}
+
+#LandingPageNewFoodOption {
+    width: 48vw;
+    height: 50vh;
+    flex: .5;
+    justify-content: center;
+    background-color: red;
+}
+
+#LandingPageNewDrinksOption {
+    width: 48vw;
+    height: 50vh;
+    flex: .5;
+    justify-content: center;
+    background-color: blue;
+}
+
+#SortModal {
+    margin-top: 15%;
+    margin-left: 50%;
+    background-color: red;
+    position: absolute;
+}

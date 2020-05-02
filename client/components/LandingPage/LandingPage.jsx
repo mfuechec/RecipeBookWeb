@@ -3,9 +3,13 @@ import { Link } from 'react-router-dom';
 
 let LandingPage = (props) => {
     return (
-        <div>
-            <Link to='/NewFood'>New Food</Link>
-            <Link to='/NewDrinks'>New Drinks</Link>
+        <div id='LandingPageOptionsContainer'>
+            <Link to='/NewFood'>
+                <div id='LandingPageNewFoodOption' />
+            </Link>
+            <Link to='/NewDrinks'>
+                <div id='LandingPageNewDrinksOption' />
+            </Link>
         </div>
     )
 };
