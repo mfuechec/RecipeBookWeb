@@ -1,9 +1,12 @@
 import React from 'react';
+import DrinksList from './DrinksList.jsx';
 
-let NewDrinks = (props) => {
+let NewDrink = (props) => {
     return (
-        <div>New Drinks</div>
+        <div id='NewDrinkRecipesContainer'>
+            <DrinksList manageAPICalls={props.manageAPICalls} setDrink={props.setDrink} drinks={props.drinks} />
+        </div>
     )
 };
 
-export default NewDrinks;
+export default NewDrink;
