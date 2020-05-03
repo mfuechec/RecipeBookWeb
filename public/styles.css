@@ -113,11 +113,20 @@ body {
     flex-direction: column;
     width: 30%;
     align-items: center;
+    margin-left: 2%;
 }
 
 #FoodListingNameText {
     text-align: center;
     color: white;
+    height: auto;
+    margin-bottom: 12%;
+    margin-top: 7%;
+}
+
+#FoodListingIngredientsList {
+    height: 85%;
+    overflow: hidden;
 }
 
 #FoodListingFavContainer {
@@ -133,6 +142,11 @@ body {
     font-size: 25;
     color: black;
     align-self: center;
+}
+
+#Ingredient {
+    color: white;
+    font-size: 10px;
 }
 
 #SortModal {

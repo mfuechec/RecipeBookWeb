@@ -12,8 +12,10 @@ let FoodListing = (props) => {
                         <img id='FoodListingImage' src={food.image}/>
                     </div>
                     <div id='FoodListingNameContainer'>
-                        <p id='FoodListingNameText'>{food.name}</p>
-                        <IngredientsList ingredients={food.ingredients}/>
+                        <div id='FoodListingNameText'>{food.name}</div>
+                        <div id='FoodListingIngredientsList'>
+                            <IngredientsList ingredients={food.ingredients}/>
+                        </div>
                     </div>
                     <div id='FoodListingFavContainer'>
                         <p id='FoodListingFavText'>Favorite</p>
