@@ -4,19 +4,16 @@ import { Link } from 'react-router-dom';
 function NavBar(props) {
     return (
         <div id='NavBarContainer'>
-            <div id='NavBarUpperBorder'></div>
-            <div id='NavBarButtonContainer'>
-                <Link id='NavBarHomeButton' to='/'>
-                    Home
+            <div id='NavBarHomeButton'>
+                <Link to='/' >
+                    <p style={{color: 'white'}}>Home</p>
                 </Link>
             </div>
-            <div onClick={() => { props.findRandomRecipes() }} id='NavBarRandomButton'>
-                <div id='NavBarText'>
-                    New Recipes
-                </div>
+            <div id='NavBarNewRecipesButton' onClick={() => { props.findRandomRecipes() }}>
+                <p style={{color: 'white'}}>New Recipes</p>
             </div>
-            <div onClick={() => { props.openModal() }} id='NavBarSortList'>
-                Sort
+            <div id='NavBarSortButton' onClick={() => { props.openModal() }}>
+                <p style={{color: 'white'}}>Sort</p>
             </div>
         </div>
     )
