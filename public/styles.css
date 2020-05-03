@@ -119,9 +119,10 @@ body {
 #FoodListingNameText {
     text-align: center;
     color: white;
-    height: auto;
+    height: 25%;
     margin-bottom: 12%;
     margin-top: 7%;
+    overflow: hidden;
 }
 
 #FoodListingIngredientsList {
@@ -139,8 +140,8 @@ body {
 }
 
 #FoodListingFavText {
-    font-size: 25;
-    color: black;
+    font-size: 50;
+    color: white;
     align-self: center;
 }
 
