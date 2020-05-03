@@ -1,3 +1,7 @@
+body {
+    align-items: center;
+}
+
 #LandingPageOptionsContainer {
     width: 98vw;
     height: 95vh;
@@ -6,14 +10,14 @@
 }
 
 #LandingPageNewFoodOption {
-    width: 100%;
+    width: 97.5%;
     height: 50vh;
     flex: .5;
     justify-content: center;
 }
 
 #LandingPageNewDrinksOption {
-    width: 100%;
+    width: 97.5%;
     height: 50vh;
     flex: .5;
     justify-content: center;
@@ -33,9 +37,11 @@
     margin-top: auto;
     margin-bottom: auto;
     width: 15vw;
-    border: 1px red solid;
-    border-radius: 25px;
     text-align: center;
+    opacity: 40%;
+    background-color: black;
+    border: none 1px solid;
+    border-radius: 25px;
 }
 
 #NavBarHomeButtonText {
@@ -48,9 +54,11 @@
     margin-top: auto;
     margin-bottom: auto;
     width: 15vw;
-    border: 1px red solid;
-    border-radius: 25px;
     text-align: center;
+    opacity: 40%;
+    background-color: black;
+    border: none 1px solid;
+    border-radius: 25px;
 }
 
 #NavBarSortButton {
@@ -59,9 +67,24 @@
     margin-top: auto;
     margin-bottom: auto;
     width: 15vw;
-    border: 1px red solid;
-    border-radius: 25px;
     text-align: center;
+    opacity: 40%;
+    background-color: black;
+    border: none 1px solid;
+    border-radius: 25px;
+}
+
+#NewFoodRecipesContainer {
+    width: 95.75vw;
+    height: 88vh;
+    background-image: url('https://recipe-book-images.s3.us-east-2.amazonaws.com/images/woodBackground.jpg');
+    background-position: center;
+    margin-right: auto;
+}
+
+#NewFoodBackground {
+    width: auto;
+    height: auto;
 }
 
 #SortModal {
