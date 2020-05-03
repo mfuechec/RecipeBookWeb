@@ -2,23 +2,21 @@
     width: 98vw;
     height: 95vh;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
 
 #LandingPageNewFoodOption {
-    width: 48vw;
+    width: 100%;
     height: 50vh;
     flex: .5;
     justify-content: center;
-    background-color: red;
 }
 
 #LandingPageNewDrinksOption {
-    width: 48vw;
+    width: 100%;
     height: 50vh;
     flex: .5;
     justify-content: center;
-    background-color: blue;
 }
 
 #SortModal {
