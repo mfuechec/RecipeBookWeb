@@ -6,22 +6,20 @@ let FoodListing = (props) => {
     let food = props.food;
     return (
         <div id='FoodListingContainer'>
-            <Link to='/Food' onClick={() => props.setFood(food)}>
                 <div id='FoodListingContainerView'>
-                    <div id='FoodListingImageContainer'>
+                    <Link id='FoodListingImageContainer' to='/Food' onClick={() => props.setFood(food)}>
                         <img id='FoodListingImage' src={food.image}/>
-                    </div>
-                    <div id='FoodListingNameContainer'>
+                    </Link>
+                    <Link id='FoodListingNameContainer' to='/Food' onClick={() => props.setFood(food)}>
                         <div id='FoodListingNameText'>{food.name}</div>
                         <div id='FoodListingIngredientsList'>
                             <IngredientsList ingredients={food.ingredients}/>
                         </div>
-                    </div>
+                    </Link>
                     <div id='FoodListingFavContainer'>
                         <p id='FoodListingFavText'>Favorite</p>
                     </div>
                 </div>
-            </Link>
         </div>
     )
 }
