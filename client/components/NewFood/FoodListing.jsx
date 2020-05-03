@@ -16,7 +16,7 @@ let FoodListing = (props) => {
                             <IngredientsList ingredients={food.ingredients}/>
                         </div>
                     </Link>
-                    <div id='FoodListingFavContainer'>
+                    <div id='FoodListingFavContainer' onPress={() => { props.manageAPICalls.editFavorites(food, 'POST') }}>
                         <p id='FoodListingFavText'>Favorite</p>
                     </div>
                 </div>
