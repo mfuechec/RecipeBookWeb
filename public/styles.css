@@ -1,3 +1,5 @@
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: portrait) {
+    
 body {
     align-items: center;
 }
@@ -11,14 +13,14 @@ body {
 
 #LandingPageNewFoodOption {
     width: 97.5%;
-    height: 50vh;
+    height: 48.5vh;
     flex: .5;
     justify-content: center;
 }
 
 #LandingPageNewDrinksOption {
     width: 97.5%;
-    height: 50vh;
+    height: 48.5vh;
     flex: .5;
     justify-content: center;
 }
@@ -303,4 +305,4 @@ body {
     margin-left: 50%;
     background-color: red;
     position: absolute;
-}
+}}
