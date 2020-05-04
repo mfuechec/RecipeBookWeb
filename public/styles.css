@@ -217,41 +217,41 @@ body {
     font-size: 10px;
 }
 
-#DrinkContainer {
+#RecipeDetailsContainer {
     height: 87vh;
     width: 96.2vw;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #FF8966;
+    background-color: #EEEEEE;
 }
 
-#DrinkImageContainer {
+#RecipeDetailsImageContainer {
     height: 50%;
     width: 80%;
     margin-top: 2.5%;
 }
 
-#DrinkImage {
+#RecipeDetailsImage {
     height: 100%;
 }
 
-#DrinkRecipeInfo {
+#RecipeDetailsRecipeInfo {
     height: 15%;
     width: 80%;
     margin-top: 5%;
     align-items: center;
 }
 
-#DrinkNameText {
+#RecipeDetailsNameText {
     font-size: 35px;
-    color: white;
+    color: #333333;
     text-align: center;
     height: 48%;
     overflow: hidden;
 }
 
-#DrinkIngredientsContainer {
+#RecipeDetailsIngredientsContainer {
     display: flex;
     flex-direction: row;
     margin-top: 2.5%;
@@ -259,41 +259,41 @@ body {
     overflow: hidden;
 }
 
-#DrinkMeasurementsLeft {
+#RecipeDetailsMeasurementsLeft {
     margin-right: 1%;
 }
 
-#DrinkMeasurementsText {
+#RecipeDetailsMeasurementsText {
     font-size: 20px;
-    color: white;
+    color: #333333;
 }
 
-#DrinkIngredientsLeft {
+#RecipeDetailsIngredientsLeft {
     margin-right: 2.5%;
 }
 
-#DrinkIngredientsText {
+#RecipeDetailsIngredientsText {
     font-size: 20px;
-    color: white;
+    color: #333333;
 }
 
-#DrinkInstructionsContainer {
+#RecipeDetailsInstructionsContainer {
     width: 50%;
     align-items: center;
     height: 10%;
 }
 
-#DrinkInstructionsText {
-    color: white;
+#RecipeDetailsInstructionsText {
+    color: #333333;
     margin-bottom: 5%;
     margin-top: 20%;
     height: 115%;
     overflow: hidden;
 }
 
-#DrinkBackButtonText {
+#RecipeDetailsBackButtonText {
     text-align: center;
-    border: 1px white solid;
+    border: 1px #333333 solid;
     border-radius: 25px;
     margin-top: 15%;
 }
