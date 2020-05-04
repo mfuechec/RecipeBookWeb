@@ -1,308 +1,637 @@
-@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: portrait) {
-    
-body {
-    align-items: center;
+@media (orientation: portrait) {
+
+    body {
+        align-items: center;
+    }
+
+    #LandingPageOptionsContainer {
+        width: 98vw;
+        height: 95vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #LandingPageNewFoodOption {
+        width: 97.5%;
+        height: 48.5vh;
+        flex: .5;
+        justify-content: center;
+    }
+
+    #LandingPageNewDrinksOption {
+        width: 97.5%;
+        height: 48.5vh;
+        flex: .5;
+        justify-content: center;
+    }
+
+    #NavBarContainer {
+        height: 10vh;
+        width: 100%;
+        background-color: #2a2b2a;
+        display: flex;
+        flex-direction: row;
+    }
+
+    #NavBarHomeButton {
+        margin-left: 8.5vw;
+        margin-right: 8.5vw;
+        margin-top: auto;
+        margin-bottom: auto;
+        width: 15vw;
+        text-align: center;
+        opacity: 40%;
+        background-color: black;
+        border: none 1px solid;
+        border-radius: 25px;
+    }
+
+    #NavBarHomeButtonText {
+        color: white;
+    }
+
+    #NavBarNewRecipesButton {
+        margin-left: 8.5vw;
+        margin-right: 8.5vw;
+        margin-top: auto;
+        margin-bottom: auto;
+        width: 15vw;
+        text-align: center;
+        opacity: 40%;
+        background-color: black;
+        border: none 1px solid;
+        border-radius: 25px;
+    }
+
+    #NavBarNewRecipesButton :hover {
+        cursor: pointer;
+    }
+
+    #NavBarSortButton {
+        margin-left: 8.5vw;
+        margin-right: 8.5vw;
+        margin-top: auto;
+        margin-bottom: auto;
+        width: 15vw;
+        text-align: center;
+        opacity: 40%;
+        background-color: black;
+        border: none 1px solid;
+        border-radius: 25px;
+    }
+
+    #NavBarSortButton :hover {
+        cursor: pointer;
+    }
+
+    #NewFoodRecipesContainer {
+        width: 95.75vw;
+        background-image: url('https://recipe-book-images.s3.us-east-2.amazonaws.com/images/woodBackground.jpg');
+        margin-right: auto;
+    }
+
+    #NewDrinkRecipesContainer {
+        width: 95.75vw;
+        background-image: url('https://recipe-book-images.s3.us-east-2.amazonaws.com/images/woodBackground.jpg');
+        margin-right: auto;
+    }
+
+    #FoodListingContainer {
+        height: 25vh;
+    }
+
+    #FoodListingContainerView {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        overflow: hidden;
+    }
+
+    #FoodListingImageContainer {
+        max-width: 30%;
+        max-height: 100%;
+        margin-left: 2.5%;
+        margin-right: 5%;
+        align-self: center;
+    }
+
+    #FoodListingImage {
+        width: 33vw;
+    }
+
+    #FoodListingNameContainer {
+        height: 100%;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        width: 30%;
+        align-items: center;
+        margin-left: 2%;
+    }
+
+    #FoodListingNameText {
+        text-align: center;
+        color: white;
+        height: 25%;
+        margin-bottom: 12%;
+        margin-top: 7%;
+        overflow: hidden;
+    }
+
+    #FoodListingIngredientsList {
+        height: 85%;
+        overflow: hidden;
+    }
+
+    #FoodListingFavContainer {
+        height: 100%;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        width: 30%;
+        align-items: center;
+    }
+
+    #FoodListingFavText {
+        font-size: 50;
+        color: white;
+        align-self: center;
+    }
+
+    #DrinkListingContainer {
+        height: 25vh;
+    }
+
+    #DrinkListingContainerView {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        overflow: hidden;
+    }
+
+    #DrinkListingImageContainer {
+        max-width: 30%;
+        max-height: 100%;
+        margin-left: 2.5%;
+        margin-right: 5%;
+        align-self: center;
+    }
+
+    #DrinkListingImage {
+        width: 33vw;
+    }
+
+    #DrinkListingNameContainer {
+        height: 100%;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        width: 30%;
+        align-items: center;
+        margin-left: 2%;
+    }
+
+    #DrinkListingNameText {
+        text-align: center;
+        color: white;
+        height: 25%;
+        margin-bottom: 12%;
+        margin-top: 7%;
+        overflow: hidden;
+    }
+
+    #DrinkListingIngredientsList {
+        height: 85%;
+        overflow: hidden;
+    }
+
+    #DrinkListingFavContainer {
+        height: 100%;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        width: 30%;
+        align-items: center;
+    }
+
+    #DrinkListingFavText {
+        font-size: 50;
+        color: white;
+        align-self: center;
+    }
+
+    #Ingredient {
+        color: white;
+        font-size: 10px;
+    }
+
+    #RecipeDetailsContainer {
+        height: 87vh;
+        width: 96.2vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #EEEEEE;
+    }
+
+    #RecipeDetailsImageContainer {
+        height: 50%;
+        width: 80%;
+        margin-top: 2.5%;
+    }
+
+    #RecipeDetailsImage {
+        height: 100%;
+    }
+
+    #RecipeDetailsRecipeInfo {
+        height: 15%;
+        width: 80%;
+        margin-top: 5%;
+        align-items: center;
+    }
+
+    #RecipeDetailsNameText {
+        font-size: 35px;
+        color: #333333;
+        text-align: center;
+        height: 48%;
+        overflow: hidden;
+    }
+
+    #RecipeDetailsIngredientsContainer {
+        display: flex;
+        flex-direction: row;
+        margin-top: 2.5%;
+        height: 72%;
+        overflow: hidden;
+    }
+
+    #RecipeDetailsMeasurementsLeft {
+        margin-right: 1%;
+    }
+
+    #RecipeDetailsMeasurementsText {
+        font-size: 20px;
+        color: #333333;
+    }
+
+    #RecipeDetailsIngredientsLeft {
+        margin-right: 2.5%;
+    }
+
+    #RecipeDetailsIngredientsText {
+        font-size: 20px;
+        color: #333333;
+    }
+
+    #RecipeDetailsInstructionsContainer {
+        width: 50%;
+        align-items: center;
+        height: 10%;
+    }
+
+    #RecipeDetailsInstructionsText {
+        color: #333333;
+        margin-bottom: 5%;
+        margin-top: 20%;
+        height: 115%;
+        overflow: hidden;
+    }
+
+    #RecipeDetailsBackButtonText {
+        text-align: center;
+        border: 1px #333333 solid;
+        border-radius: 25px;
+        margin-top: 15%;
+    }
+
+    #SortModal {
+        margin-top: 15%;
+        margin-left: 50%;
+        background-color: red;
+        position: absolute;
+    }
+
 }
 
-#LandingPageOptionsContainer {
-    width: 98vw;
-    height: 95vh;
-    display: flex;
-    flex-direction: column;
-}
+@media (orientation: landscape) {
 
-#LandingPageNewFoodOption {
-    width: 97.5%;
-    height: 48.5vh;
-    flex: .5;
-    justify-content: center;
-}
+    body {
+        align-items: center;
+    }
 
-#LandingPageNewDrinksOption {
-    width: 97.5%;
-    height: 48.5vh;
-    flex: .5;
-    justify-content: center;
-}
+    #LandingPageOptionsContainer {
+        width: 98vw;
+        height: 95vh;
+        display: flex;
+        flex-direction: column;
+    }
 
-#NavBarContainer {
-    height: 10vh;
-    width: 100%;
-    background-color: #2a2b2a;
-    display: flex;
-    flex-direction: row;
-}
+    #LandingPageNewFoodOption {
+        width: 97.5%;
+        height: 48.5vh;
+        flex: .5;
+        justify-content: center;
+    }
 
-#NavBarHomeButton {
-    margin-left: 8.5vw;
-    margin-right: 8.5vw;
-    margin-top: auto;
-    margin-bottom: auto;
-    width: 15vw;
-    text-align: center;
-    opacity: 40%;
-    background-color: black;
-    border: none 1px solid;
-    border-radius: 25px;
-}
+    #LandingPageNewDrinksOption {
+        width: 97.5%;
+        height: 48.5vh;
+        flex: .5;
+        justify-content: center;
+    }
 
-#NavBarHomeButtonText {
-    color: white;
-}
+    #NavBarContainer {
+        height: 10vh;
+        width: 100%;
+        background-color: #2a2b2a;
+        display: flex;
+        flex-direction: row;
+    }
 
-#NavBarNewRecipesButton {
-    margin-left: 8.5vw;
-    margin-right: 8.5vw;
-    margin-top: auto;
-    margin-bottom: auto;
-    width: 15vw;
-    text-align: center;
-    opacity: 40%;
-    background-color: black;
-    border: none 1px solid;
-    border-radius: 25px;
-}
+    #NavBarHomeButton {
+        margin-left: 8.5vw;
+        margin-right: 8.5vw;
+        margin-top: auto;
+        margin-bottom: auto;
+        width: 15vw;
+        text-align: center;
+        opacity: 40%;
+        background-color: black;
+        border: none 1px solid;
+        border-radius: 25px;
+    }
 
-#NavBarSortButton {
-    margin-left: 8.5vw;
-    margin-right: 8.5vw;
-    margin-top: auto;
-    margin-bottom: auto;
-    width: 15vw;
-    text-align: center;
-    opacity: 40%;
-    background-color: black;
-    border: none 1px solid;
-    border-radius: 25px;
-}
+    #NavBarHomeButtonText {
+        color: white;
+    }
 
-#NewFoodRecipesContainer {
-    width: 95.75vw;
-    background-image: url('https://recipe-book-images.s3.us-east-2.amazonaws.com/images/woodBackground.jpg');
-    margin-right: auto;
-}
+    #NavBarNewRecipesButton {
+        margin-left: 8.5vw;
+        margin-right: 8.5vw;
+        margin-top: auto;
+        margin-bottom: auto;
+        width: 15vw;
+        text-align: center;
+        opacity: 40%;
+        background-color: black;
+        border: none 1px solid;
+        border-radius: 25px;
+    }
 
-#NewDrinkRecipesContainer {
-    width: 95.75vw;
-    background-image: url('https://recipe-book-images.s3.us-east-2.amazonaws.com/images/woodBackground.jpg');
-    margin-right: auto;
-}
+    #NavBarNewRecipesButton :hover {
+        cursor: pointer;
+    }
 
-#FoodListingContainer {
-    height: 25vh;
-}
+    #NavBarSortButton {
+        margin-left: 8.5vw;
+        margin-right: 8.5vw;
+        margin-top: auto;
+        margin-bottom: auto;
+        width: 15vw;
+        text-align: center;
+        opacity: 40%;
+        background-color: black;
+        border: none 1px solid;
+        border-radius: 25px;
+    }
 
-#FoodListingContainerView {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    overflow: hidden;
-}
+    #NavBarSortButton :hover {
+        cursor: pointer;
+    }
 
-#FoodListingImageContainer {
-    max-width: 30%;
-    max-height: 100%;
-    margin-left: 2.5%;
-    margin-right: 5%;
-    align-self: center;
-}
+    #NewFoodRecipesContainer {
+        width: 95.75vw;
+        background-image: url('https://recipe-book-images.s3.us-east-2.amazonaws.com/images/woodBackground.jpg');
+        margin-right: auto;
+    }
 
-#FoodListingImage {
-    width: 33vw;
-}
+    #NewDrinkRecipesContainer {
+        width: 95.75vw;
+        background-image: url('https://recipe-book-images.s3.us-east-2.amazonaws.com/images/woodBackground.jpg');
+        margin-right: auto;
+    }
 
-#FoodListingNameContainer {
-    height: 100%;
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
-    width: 30%;
-    align-items: center;
-    margin-left: 2%;
-}
+    #FoodListingContainer {
+        height: 25vh;
+    }
 
-#FoodListingNameText {
-    text-align: center;
-    color: white;
-    height: 25%;
-    margin-bottom: 12%;
-    margin-top: 7%;
-    overflow: hidden;
-}
+    #FoodListingContainerView {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        overflow: hidden;
+    }
 
-#FoodListingIngredientsList {
-    height: 85%;
-    overflow: hidden;
-}
+    #FoodListingImageContainer {
+        max-width: 30%;
+        max-height: 100%;
+        margin-left: 2.5%;
+        margin-right: 5%;
+        align-self: center;
+    }
 
-#FoodListingFavContainer {
-    height: 100%;
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
-    width: 30%;
-    align-items: center;
-}
+    #FoodListingImage {
+        width: 33vw;
+    }
 
-#FoodListingFavText {
-    font-size: 50;
-    color: white;
-    align-self: center;
-}
+    #FoodListingNameContainer {
+        height: 100%;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        width: 30%;
+        align-items: center;
+        margin-left: 2%;
+    }
 
-#DrinkListingContainer {
-    height: 25vh;
-}
+    #FoodListingNameText {
+        text-align: center;
+        color: white;
+        height: 25%;
+        margin-bottom: 12%;
+        margin-top: 7%;
+        overflow: hidden;
+    }
 
-#DrinkListingContainerView {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    overflow: hidden;
-}
+    #FoodListingIngredientsList {
+        height: 85%;
+        overflow: hidden;
+    }
 
-#DrinkListingImageContainer {
-    max-width: 30%;
-    max-height: 100%;
-    margin-left: 2.5%;
-    margin-right: 5%;
-    align-self: center;
-}
+    #FoodListingFavContainer {
+        height: 100%;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        width: 30%;
+        align-items: center;
+    }
 
-#DrinkListingImage {
-    width: 33vw;
-}
+    #FoodListingFavText {
+        font-size: 50;
+        color: white;
+        align-self: center;
+    }
 
-#DrinkListingNameContainer {
-    height: 100%;
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
-    width: 30%;
-    align-items: center;
-    margin-left: 2%;
-}
+    #DrinkListingContainer {
+        height: 25vh;
+    }
 
-#DrinkListingNameText {
-    text-align: center;
-    color: white;
-    height: 25%;
-    margin-bottom: 12%;
-    margin-top: 7%;
-    overflow: hidden;
-}
+    #DrinkListingContainerView {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        overflow: hidden;
+    }
 
-#DrinkListingIngredientsList {
-    height: 85%;
-    overflow: hidden;
-}
+    #DrinkListingImageContainer {
+        max-width: 30%;
+        max-height: 100%;
+        margin-left: 2.5%;
+        margin-right: 5%;
+        align-self: center;
+    }
 
-#DrinkListingFavContainer {
-    height: 100%;
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
-    width: 30%;
-    align-items: center;
-}
+    #DrinkListingImage {
+        width: 33vw;
+    }
 
-#DrinkListingFavText {
-    font-size: 50;
-    color: white;
-    align-self: center;
-}
+    #DrinkListingNameContainer {
+        height: 100%;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        width: 30%;
+        align-items: center;
+        margin-left: 2%;
+    }
 
-#Ingredient {
-    color: white;
-    font-size: 10px;
-}
+    #DrinkListingNameText {
+        text-align: center;
+        color: white;
+        height: 25%;
+        margin-bottom: 12%;
+        margin-top: 7%;
+        overflow: hidden;
+    }
 
-#RecipeDetailsContainer {
-    height: 87vh;
-    width: 96.2vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #EEEEEE;
-}
+    #DrinkListingIngredientsList {
+        height: 85%;
+        overflow: hidden;
+    }
 
-#RecipeDetailsImageContainer {
-    height: 50%;
-    width: 80%;
-    margin-top: 2.5%;
-}
+    #DrinkListingFavContainer {
+        height: 100%;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        width: 30%;
+        align-items: center;
+    }
 
-#RecipeDetailsImage {
-    height: 100%;
-}
+    #DrinkListingFavText {
+        font-size: 50;
+        color: white;
+        align-self: center;
+    }
 
-#RecipeDetailsRecipeInfo {
-    height: 15%;
-    width: 80%;
-    margin-top: 5%;
-    align-items: center;
-}
+    #Ingredient {
+        color: white;
+        font-size: 10px;
+    }
 
-#RecipeDetailsNameText {
-    font-size: 35px;
-    color: #333333;
-    text-align: center;
-    height: 48%;
-    overflow: hidden;
-}
+    #RecipeDetailsContainer {
+        height: 87vh;
+        width: 96.2vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #EEEEEE;
+    }
 
-#RecipeDetailsIngredientsContainer {
-    display: flex;
-    flex-direction: row;
-    margin-top: 2.5%;
-    height: 72%;
-    overflow: hidden;
-}
+    #RecipeDetailsImageContainer {
+        height: 50%;
+        width: 80%;
+        margin-top: 2.5%;
+    }
 
-#RecipeDetailsMeasurementsLeft {
-    margin-right: 1%;
-}
+    #RecipeDetailsImage {
+        height: 100%;
+    }
 
-#RecipeDetailsMeasurementsText {
-    font-size: 20px;
-    color: #333333;
-}
+    #RecipeDetailsRecipeInfo {
+        height: 15%;
+        width: 80%;
+        margin-top: 5%;
+        align-items: center;
+    }
 
-#RecipeDetailsIngredientsLeft {
-    margin-right: 2.5%;
-}
+    #RecipeDetailsNameText {
+        font-size: 35px;
+        color: #333333;
+        text-align: center;
+        height: 48%;
+        overflow: hidden;
+    }
 
-#RecipeDetailsIngredientsText {
-    font-size: 20px;
-    color: #333333;
-}
+    #RecipeDetailsIngredientsContainer {
+        display: flex;
+        flex-direction: row;
+        margin-top: 2.5%;
+        height: 72%;
+        overflow: hidden;
+    }
 
-#RecipeDetailsInstructionsContainer {
-    width: 50%;
-    align-items: center;
-    height: 10%;
-}
+    #RecipeDetailsMeasurementsLeft {
+        margin-right: 1%;
+    }
 
-#RecipeDetailsInstructionsText {
-    color: #333333;
-    margin-bottom: 5%;
-    margin-top: 20%;
-    height: 115%;
-    overflow: hidden;
-}
+    #RecipeDetailsMeasurementsText {
+        font-size: 20px;
+        color: #333333;
+    }
 
-#RecipeDetailsBackButtonText {
-    text-align: center;
-    border: 1px #333333 solid;
-    border-radius: 25px;
-    margin-top: 15%;
-}
+    #RecipeDetailsIngredientsLeft {
+        margin-right: 2.5%;
+    }
 
-#SortModal {
-    margin-top: 15%;
-    margin-left: 50%;
-    background-color: red;
-    position: absolute;
-}}
+    #RecipeDetailsIngredientsText {
+        font-size: 20px;
+        color: #333333;
+    }
+
+    #RecipeDetailsInstructionsContainer {
+        width: 50%;
+        align-items: center;
+        height: 10%;
+    }
+
+    #RecipeDetailsInstructionsText {
+        color: #333333;
+        margin-bottom: 5%;
+        margin-top: 20%;
+        height: 115%;
+        overflow: hidden;
+    }
+
+    #RecipeDetailsBackButtonText {
+        text-align: center;
+        border: 1px #333333 solid;
+        border-radius: 25px;
+        margin-top: 15%;
+    }
+
+    #SortModal {
+        margin-top: 15%;
+        margin-left: 50%;
+        background-color: red;
+        position: absolute;
+    }
+
+}
