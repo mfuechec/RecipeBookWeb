@@ -217,6 +217,87 @@ body {
     font-size: 10px;
 }
 
+#DrinkContainer {
+    height: 87vh;
+    width: 96.2vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #FF8966;
+}
+
+#DrinkImageContainer {
+    height: 50%;
+    width: 80%;
+    margin-top: 2.5%;
+}
+
+#DrinkImage {
+    height: 100%;
+}
+
+#DrinkRecipeInfo {
+    height: 15%;
+    width: 80%;
+    margin-top: 5%;
+    align-items: center;
+}
+
+#DrinkNameText {
+    font-size: 35px;
+    color: white;
+    text-align: center;
+    height: 48%;
+    overflow: hidden;
+}
+
+#DrinkIngredientsContainer {
+    display: flex;
+    flex-direction: row;
+    margin-top: 2.5%;
+    height: 72%;
+    overflow: hidden;
+}
+
+#DrinkMeasurementsLeft {
+    margin-right: 1%;
+}
+
+#DrinkMeasurementsText {
+    font-size: 20px;
+    color: white;
+}
+
+#DrinkIngredientsLeft {
+    margin-right: 2.5%;
+}
+
+#DrinkIngredientsText {
+    font-size: 20px;
+    color: white;
+}
+
+#DrinkInstructionsContainer {
+    width: 50%;
+    align-items: center;
+    height: 10%;
+}
+
+#DrinkInstructionsText {
+    color: white;
+    margin-bottom: 5%;
+    margin-top: 20%;
+    height: 115%;
+    overflow: hidden;
+}
+
+#DrinkBackButtonText {
+    text-align: center;
+    border: 1px white solid;
+    border-radius: 25px;
+    margin-top: 15%;
+}
+
 #SortModal {
     margin-top: 15%;
     margin-left: 50%;
