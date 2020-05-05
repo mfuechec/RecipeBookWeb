@@ -442,7 +442,7 @@
     }
 
     #FoodListingImage {
-        width: 33vw;
+        height: 25vh;
     }
 
     #FoodListingNameContainer {
@@ -505,7 +505,7 @@
     }
 
     #DrinkListingImage {
-        width: 33vw;
+        height: 25vh;
     }
 
     #DrinkListingNameContainer {
