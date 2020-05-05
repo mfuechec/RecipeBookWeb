@@ -91,66 +91,60 @@
     }
 
     #NewDrinkRecipesContainer {
-        width: 95.75vw;
         background-image: url('https://recipe-book-images.s3.us-east-2.amazonaws.com/images/woodBackground.jpg');
         margin-right: auto;
     }
 
     #ListingContainer {
-        height: 25vh;
+        height: 20vh;
     }
 
     #ListingContainerView {
-        height: 100%;
-        width: 100%;
         display: flex;
         flex-direction: row;
         overflow: hidden;
     }
 
     #ListingImageContainer {
-        max-width: 30%;
-        max-height: 100%;
+        width: 30%;
         margin-left: 2.5%;
         margin-right: 5%;
-        align-self: center;
     }
 
     #ListingImage {
         width: 33vw;
     }
 
-    #ListingNameContainer {
-        height: 100%;
-        justify-content: center;
+    #ListingDetailsContainer {
+        width: 70%;
         display: flex;
         flex-direction: column;
-        width: 30%;
-        align-items: center;
-        margin-left: 2%;
+    }
+
+    #ListingNameContainer {
+        margin-bottom: 5%;
     }
 
     #ListingNameText {
         text-align: center;
         color: white;
-        height: 25%;
-        margin-bottom: 12%;
-        margin-top: 7%;
         overflow: hidden;
+    }
+
+    #ListingIngredientsAndFavContainer {
+        display: flex;
+        padding-left: 10%;
     }
 
     #ListingIngredientsList {
-        height: 85%;
         overflow: hidden;
+        width: 75%;
     }
 
     #ListingFavContainer {
-        height: 100%;
-        justify-content: center;
-        display: flex;
-        flex-direction: column;
-        width: 30%;
-        align-items: center;
+        width: 25%;
+        padding-top: 10%;
+        color: lightblue;
     }
 
     #ListingFavText {
