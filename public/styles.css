@@ -388,10 +388,11 @@
     #ListingNameText {
         color: white;
         font-size: x-large;
+        text-align: center;
     }
 
     #ListingIngredientsAndFavContainer {
-        margin-top: 5%;
+        margin-top: 10%;
         align-self: baseline;
         display: flex;
     }
