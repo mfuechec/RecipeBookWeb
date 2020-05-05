@@ -334,7 +334,7 @@
 
     #LandingPageNewFoodOption {
         width: 100%;
-        height: fit-content;
+        height: 100vh;
         border: 1px;
         border-radius: 100px;
     }
