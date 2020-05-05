@@ -10,30 +10,28 @@ const Sort = (props) => {
     return (
         <div
             id='SortModal'
-            style={{ opacity: props.isModalVisible}}
+            style={{ zIndex: props.isModalVisible[0], display: props.isModalVisible[1] }}
         // onBackdropPress={props.manageModal.closeModal}
         // animationIn='slideInRight'
         // animationOut='slideOutRight'
         >
-            <div id='SortContainer'>
-                <div id='SortNav'>
-                    <SortNav manageAPICalls={props.manageAPICalls} manageModal={props.manageModal} />
-                </div>
-                <div id='SearchByName'>
-                    <SearchByName manageAPICalls={props.manageAPICalls} whatIsSelected={props.whatIsSelected} />
-                </div>
-                <div id='SearchByCategory'>
-                    <SearchByCategory whatIsSelected={props.whatIsSelected} manageAPICalls={props.manageAPICalls} />
-                </div>
-                <div id='SearchByArea'>
-                    <SearchByArea whatIsSelected={props.whatIsSelected} manageAPICalls={props.manageAPICalls} />
-                </div>
-                <div id='SearchByIngredients'>
-                    <SearchByIngredients manageAPICalls={props.manageAPICalls} whatIsSelected={props.whatIsSelected} />
-                </div>
-                <div id='LatestMeals'>
-                    <LatestMeals manageAPICalls={props.manageAPICalls} whatIsSelected={props.whatIsSelected} />
-                </div>
+            <div id='SortNav'>
+                <SortNav manageAPICalls={props.manageAPICalls} manageModal={props.manageModal} />
+            </div>
+            <div id='SearchByName'>
+                <SearchByName manageAPICalls={props.manageAPICalls} whatIsSelected={props.whatIsSelected} />
+            </div>
+            <div id='SearchByCategory'>
+                <SearchByCategory whatIsSelected={props.whatIsSelected} manageAPICalls={props.manageAPICalls} />
+            </div>
+            <div id='SearchByArea'>
+                <SearchByArea whatIsSelected={props.whatIsSelected} manageAPICalls={props.manageAPICalls} />
+            </div>
+            <div id='SearchByIngredients'>
+                <SearchByIngredients manageAPICalls={props.manageAPICalls} whatIsSelected={props.whatIsSelected} />
+            </div>
+            <div id='LatestMeals'>
+                <LatestMeals manageAPICalls={props.manageAPICalls} whatIsSelected={props.whatIsSelected} />
             </div>
         </div>
     )

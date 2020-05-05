@@ -275,6 +275,7 @@
     #LandingPageOptionsContainer {
         display: flex;
         flex-direction: row;
+        z-index: 1;
     }
 
     #LandingPageNewFoodLinkContainer {
@@ -334,6 +335,7 @@
         background-color: black;
         border: none 1px solid;
         border-radius: 25px;
+        text-decoration: none;
     }
 
     #NavBarHomeButtonText {
@@ -378,6 +380,7 @@
         width: 98.75%;
         background-color: #EEEEEE;
         position: absolute;
+        min-height: 88.5vh;
     }
 
     #NewDrinkRecipesContainer {
@@ -528,14 +531,105 @@
     }
 
     #SortModal {
-        margin-top: 15%;
-        margin-left: 50%;
-        background-color: #333333;
-        position: absolute;
+        margin-top: 8%;
+        margin-left: 55%;
+        background-color: lightblue;
+        position: fixed;
         z-index: 1;
         border: 1px;
-        border-radius: 25px;
-        width: 35%;
+        border-radius: 5%;
+        width: 40%;
+        height: 70%;
+        text-align: center;
+    }
+
+    #SortNav {
+        height: 15%;
+    }
+
+    #SortNavContainer {
+        display: flex;
+        justify-content: center;
+        padding: 5%;
+    }
+
+    #SortNavCloseButton {
+        cursor: pointer;
+        width: 20%;
+    }
+
+    #SortNavSearchFoodsButton {
+        padding-left: 15%;
+        padding-right: 15%;
+        text-decoration: none;
+        color: black;
+        cursor: pointer;
+        width: 20%;
+    }
+
+    #SortNavSearchDrinksButton {
+        text-decoration: none;
+        color: black;
+        cursor: pointer;
+        width: 20%;
+    }
+
+    #SearchByNameContainer {
+        display: flex;
+        justify-content: center;
+        padding: 2.5%;
+    }
+
+    #SearchByNameInput {
+        margin-right: 2.5%
+    }
+
+    #SearchByNameSubmitButton {
+        opacity: 40%;
+        border: 1px solid black;
+        border-radius: 100px;
+        padding: 1%;
+    }
+
+    #SearchByNameSubmitButton:hover {
+        opacity: 100%;
+    }
+
+    #SearchByCategoryContainer {
+        padding: 2.5%;
+        display: none;
+    }
+
+    #SearchByCategoryText {
+        opacity: 40%;
+    }
+
+    #SearchByIngredientsContainer {
+        padding: 2.5%;
+        display: none;
+    }
+
+    #SearchByIngredientsText {
+        opacity: 40%;
+    }
+
+    #SearchByAreaContainer {
+        padding: 2.5%;
+        display: none;
+    }
+
+    #SearchByAreaText {
+        opacity: 40%;
+    }
+
+    #LatestRecipes {
+        opacity: 40%;
+        border: 1px solid #333333;
+        border-radius: 100px;
+    }
+
+    #LatestRecipes:hover {
+        opacity: 100%;
     }
 
 }

@@ -23,7 +23,7 @@ const App = () => {
     const [drinks, setDrinks] = useState([]);
     const [food, setFood] = useState({});
     const [drink, setDrink] = useState({});
-    const [isModalVisible, setIsModalVisible] = useState('100%');
+    const [isModalVisible, setIsModalVisible] = useState([-1, 'none']);
     const [whatIsSelected, setWhatIsSelected] = useState('');
 
     // Call the function that will find 10 random recipes from both APIs
@@ -37,14 +37,29 @@ const App = () => {
         findRandomRecipes: () => {
             axios.get(APIKeys.food + 'randomselection.php')
                 .then((response) => {
-                    sortAPIResponse.sortFoodRecipes(response.data.meals)
+                    let first = response.data.meals;
+                    axios.get(APIKeys.food + 'randomselection.php')
+                        .then((response) => {
+                            let second = response.data.meals;
+                            let combined = first.concat(second);
+                            sortAPIResponse.sortFoodRecipes(combined)
+                        })
+                        .catch((error) => {
+                            console.log(error)
+                        })
                 })
                 .catch((error) => {
                     console.log(error)
                 })
             axios.get(APIKeys.drink + 'randomselection.php')
                 .then((response) => {
-                    sortAPIResponse.sortDrinkRecipes(response.data.drinks)
+                    let first = response.data.drinks;
+                    axios.get(APIKeys.drink + 'randomselection.php')
+                        .then((response) => {
+                            let second = response.data.drinks;
+                            let combined = first.concat(second);
+                            sortAPIResponse.sortDrinkRecipes(combined);
+                        })
                 })
                 .catch((error) => {
                     console.log(error)
@@ -353,8 +368,8 @@ const App = () => {
 
     // This object contains functions for interacting with the sort form modal
     const manageModal = {
-        openModal: () => { setIsModalVisible('100%') },
-        closeModal: () => { setIsModalVisible('0%') },
+        openModal: () => { setIsModalVisible([1, 'block']) },
+        closeModal: () => { setIsModalVisible([-1, 'none']) },
         searchFoods: () => { setWhatIsSelected('food') },
         searchDrinks: () => { setWhatIsSelected('drinks') }
     }

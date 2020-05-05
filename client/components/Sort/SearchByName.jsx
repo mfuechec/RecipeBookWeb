@@ -5,11 +5,10 @@ const SearchByName = (props) => {
 
     return (
         <div id='SearchByNameContainer'>
-            <div id='SearchByNameText'>Search by name.</div>
             <input
                 id='SearchByNameInput'
                 placeholder='Search by name'
-                onChange={text => setSearchText(text)}
+                onChange={(e) => setSearchText(e.target.value)}
             />
             <div id='SearchByNameSubmitButton' onClick={() => props.manageAPICalls.searchByName(searchText)}>Submit</div>
         </div>
