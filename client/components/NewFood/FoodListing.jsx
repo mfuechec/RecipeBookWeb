@@ -11,16 +11,18 @@ let FoodListing = (props) => {
                     <img id='ListingImage' src={food.image} />
                 </Link>
                 <div id='ListingDetailsContainer'>
-                    <Link id='ListingNameContainer' to='/Food' onClick={() => props.setFood(food)}>
-                        <div id='ListingNameText'>{food.name}</div>
-                    </Link>
-                    <div id='ListingIngredientsAndFavContainer'>
-                        <Link id='ListingIngredientsList' to='/Food' onClick={() => props.setFood(food)}>
-                            <IngredientsList ingredients={food.ingredients} />
+                    <div id='ListingNameContainer'>
+                        <Link to='/Food' onClick={() => props.setFood(food)}>
+                            <div id='ListingNameText'>{food.name}</div>
                         </Link>
+                    </div>
+                    <div id='ListingIngredientsAndFavContainer'>
                         <div id='ListingFavContainer' onClick={() => { props.manageAPICalls.editFavorites(food, 'POST') }}>
                             <i className="fas fa-star"></i>
                         </div>
+                        <Link id='ListingIngredientsList' to='/Food' onClick={() => props.setFood(food)}>
+                            <IngredientsList ingredients={food.ingredients} />
+                        </Link>
                     </div>
                 </div>
             </div>

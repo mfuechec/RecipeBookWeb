@@ -281,10 +281,8 @@
 
     #NavBarContainer {
         height: 10vh;
-        width: 100%;
         background-color: #2a2b2a;
         display: flex;
-        flex-direction: row;
     }
 
     #NavBarHomeButton {
@@ -339,20 +337,21 @@
     }
 
     #NewFoodRecipesContainer {
-        width: 95.75vw;
+        width: 98.75%;
+        position: absolute;
         background-image: url('https://recipe-book-images.s3.us-east-2.amazonaws.com/images/woodBackground.jpg');
-        margin-right: auto;
     }
 
     #NewDrinkRecipesContainer {
-        width: 95.75vw;
+        width: 98.75%;
+        position: absolute;
         background-image: url('https://recipe-book-images.s3.us-east-2.amazonaws.com/images/woodBackground.jpg');
-        margin-right: auto;
     }
 
     #ListingContainer {
         height: 25vh;
         width: 50%;
+        float: right;
     }
 
     #ListingContainerView {
@@ -368,15 +367,18 @@
     }
 
     #ListingImage {
-        height: 24.5vh;
+        width: 11vw;
+        min-height: 20vh;
     }
 
     #ListingDetailsContainer {
         display: flex;
         flex-direction: column;
+        width: 100%;
     }
 
     #ListingNameContainer {
+        height: 35%;
     }
 
     #ListingNameText {
@@ -386,18 +388,19 @@
     }
 
     #ListingIngredientsAndFavContainer {
-        margin-top: 10%;
+        margin-top: 1vh;
         align-self: baseline;
         display: flex;
+        width: 88%;
+        padding-left: 5%;
     }
 
     #ListingIngredientsList {
         overflow: hidden;
-        width: 10vw;
+        width: 100%;
     }
 
     #ListingFavContainer {
-        padding-top: 15%;
         color: lightblue;
     }
 
@@ -411,6 +414,7 @@
         color: white;
         font-size: x-small;
         text-align: center;
+        padding-right: 5%;
     }
 
     #RecipeDetailsContainer {
