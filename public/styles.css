@@ -559,10 +559,11 @@
 
     #RecipeDetailsImageContainer {
         margin-top: 2.5%;
+        text-align: center;
     }
 
     #RecipeDetailsImage {
-        height: 100%;
+        width: 50%;
     }
 
     #RecipeDetailsRecipeInfo {
