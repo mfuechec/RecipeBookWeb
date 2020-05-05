@@ -5,19 +5,19 @@ import IngredientsList from './IngredientsList.jsx';
 let FoodListing = (props) => {
     let food = props.food;
     return (
-        <div id='FoodListingContainer'>
-            <div id='FoodListingContainerView'>
-                <Link id='FoodListingImageContainer' to='/Food' onClick={() => props.setFood(food)}>
-                    <img id='FoodListingImage' src={food.image} />
+        <div id='ListingContainer'>
+            <div id='ListingContainerView'>
+                <Link id='ListingImageContainer' to='/Food' onClick={() => props.setFood(food)}>
+                    <img id='ListingImage' src={food.image} />
                 </Link>
-                <Link id='FoodListingNameContainer' to='/Food' onClick={() => props.setFood(food)}>
-                    <div id='FoodListingNameText'>{food.name}</div>
-                    <div id='FoodListingIngredientsList'>
+                <Link id='ListingNameContainer' to='/Food' onClick={() => props.setFood(food)}>
+                    <div id='ListingNameText'>{food.name}</div>
+                    <div id='ListingIngredientsList'>
                         <IngredientsList ingredients={food.ingredients} />
                     </div>
                 </Link>
-                <div id='FoodListingFavContainer' onClick={() => { props.manageAPICalls.editFavorites(food, 'POST') }}>
-                    <p id='FoodListingFavText'>Favorite</p>
+                <div id='ListingFavContainer' onClick={() => { props.manageAPICalls.editFavorites(food, 'POST') }}>
+                    <p id='ListingFavText'>Favorite</p>
                 </div>
             </div>
         </div>

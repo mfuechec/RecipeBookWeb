@@ -5,19 +5,19 @@ import IngredientsList from './IngredientsList.jsx';
 let DrinkListing = (props) => {
     let drink = props.drink;
     return (
-        <div id='DrinkListingContainer'>
-            <div id='DrinkListingContainerView'>
-                <Link id='DrinkListingImageContainer' to='/Drink' onClick={() => props.setDrink(drink)}>
-                    <img id='DrinkListingImage' src={drink.image} />
+        <div id='ListingContainer'>
+            <div id='ListingContainerView'>
+                <Link id='ListingImageContainer' to='/Drink' onClick={() => props.setDrink(drink)}>
+                    <img id='ListingImage' src={drink.image} />
                 </Link>
-                <Link id='DrinkListingNameContainer' to='/Drink' onClick={() => props.setDrink(drink)}>
-                    <div id='DrinkListingNameText'>{drink.name}</div>
-                    <div id='DrinkListingIngredientsList'>
+                <Link id='ListingNameContainer' to='/Drink' onClick={() => props.setDrink(drink)}>
+                    <div id='ListingNameText'>{drink.name}</div>
+                    <div id='ListingIngredientsList'>
                         <IngredientsList ingredients={drink.ingredients} />
                     </div>
                 </Link>
-                <div id='DrinkListingFavContainer' onClick={() => { props.manageAPICalls.editFavorites(drink, 'POST') }}>
-                    <p id='DrinkListingFavText'>Favorite</p>
+                <div id='ListingFavContainer' onClick={() => { props.manageAPICalls.editFavorites(drink, 'POST') }}>
+                    <p id='ListingFavText'>Favorite</p>
                 </div>
             </div>
         </div>

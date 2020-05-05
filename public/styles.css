@@ -96,11 +96,11 @@
         margin-right: auto;
     }
 
-    #FoodListingContainer {
+    #ListingContainer {
         height: 25vh;
     }
 
-    #FoodListingContainerView {
+    #ListingContainerView {
         height: 100%;
         width: 100%;
         display: flex;
@@ -108,7 +108,7 @@
         overflow: hidden;
     }
 
-    #FoodListingImageContainer {
+    #ListingImageContainer {
         max-width: 30%;
         max-height: 100%;
         margin-left: 2.5%;
@@ -116,11 +116,11 @@
         align-self: center;
     }
 
-    #FoodListingImage {
+    #ListingImage {
         width: 33vw;
     }
 
-    #FoodListingNameContainer {
+    #ListingNameContainer {
         height: 100%;
         justify-content: center;
         display: flex;
@@ -130,7 +130,7 @@
         margin-left: 2%;
     }
 
-    #FoodListingNameText {
+    #ListingNameText {
         text-align: center;
         color: white;
         height: 25%;
@@ -139,12 +139,12 @@
         overflow: hidden;
     }
 
-    #FoodListingIngredientsList {
+    #ListingIngredientsList {
         height: 85%;
         overflow: hidden;
     }
 
-    #FoodListingFavContainer {
+    #ListingFavContainer {
         height: 100%;
         justify-content: center;
         display: flex;
@@ -153,70 +153,7 @@
         align-items: center;
     }
 
-    #FoodListingFavText {
-        font-size: 50;
-        color: white;
-        align-self: center;
-    }
-
-    #DrinkListingContainer {
-        height: 25vh;
-    }
-
-    #DrinkListingContainerView {
-        height: 100%;
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        overflow: hidden;
-    }
-
-    #DrinkListingImageContainer {
-        max-width: 30%;
-        max-height: 100%;
-        margin-left: 2.5%;
-        margin-right: 5%;
-        align-self: center;
-    }
-
-    #DrinkListingImage {
-        width: 33vw;
-    }
-
-    #DrinkListingNameContainer {
-        height: 100%;
-        justify-content: center;
-        display: flex;
-        flex-direction: column;
-        width: 30%;
-        align-items: center;
-        margin-left: 2%;
-    }
-
-    #DrinkListingNameText {
-        text-align: center;
-        color: white;
-        height: 25%;
-        margin-bottom: 12%;
-        margin-top: 7%;
-        overflow: hidden;
-    }
-
-    #DrinkListingIngredientsList {
-        height: 85%;
-        overflow: hidden;
-    }
-
-    #DrinkListingFavContainer {
-        height: 100%;
-        justify-content: center;
-        display: flex;
-        flex-direction: column;
-        width: 30%;
-        align-items: center;
-    }
-
-    #DrinkListingFavText {
+    #ListingFavText {
         font-size: 50;
         color: white;
         align-self: center;
@@ -419,11 +356,11 @@
         margin-right: auto;
     }
 
-    #FoodListingContainer {
+    #ListingContainer {
         height: 25vh;
     }
 
-    #FoodListingContainerView {
+    #ListingContainerView {
         height: 100%;
         width: 100%;
         display: flex;
@@ -431,7 +368,7 @@
         overflow: hidden;
     }
 
-    #FoodListingImageContainer {
+    #ListingImageContainer {
         max-width: 30%;
         max-height: 100%;
         margin-left: 2.5%;
@@ -439,11 +376,11 @@
         align-self: center;
     }
 
-    #FoodListingImage {
-        height: 25vh;
+    #ListingImage {
+        height: 24.5vh;
     }
 
-    #FoodListingNameContainer {
+    #ListingNameContainer {
         height: 100%;
         justify-content: center;
         display: flex;
@@ -453,21 +390,20 @@
         margin-left: 2%;
     }
 
-    #FoodListingNameText {
+    #ListingNameText {
         text-align: center;
         color: white;
         height: 25%;
-        margin-bottom: 12%;
         margin-top: 7%;
         overflow: hidden;
     }
 
-    #FoodListingIngredientsList {
+    #ListingIngredientsList {
         height: 85%;
         overflow: hidden;
     }
 
-    #FoodListingFavContainer {
+    #ListingFavContainer {
         height: 100%;
         justify-content: center;
         display: flex;
@@ -476,70 +412,7 @@
         align-items: center;
     }
 
-    #FoodListingFavText {
-        font-size: 50;
-        color: white;
-        align-self: center;
-    }
-
-    #DrinkListingContainer {
-        height: 25vh;
-    }
-
-    #DrinkListingContainerView {
-        height: 100%;
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        overflow: hidden;
-    }
-
-    #DrinkListingImageContainer {
-        max-width: 30%;
-        max-height: 100%;
-        margin-left: 2.5%;
-        margin-right: 5%;
-        align-self: center;
-    }
-
-    #DrinkListingImage {
-        height: 25vh;
-    }
-
-    #DrinkListingNameContainer {
-        height: 100%;
-        justify-content: center;
-        display: flex;
-        flex-direction: column;
-        width: 30%;
-        align-items: center;
-        margin-left: 2%;
-    }
-
-    #DrinkListingNameText {
-        text-align: center;
-        color: white;
-        height: 25%;
-        margin-bottom: 12%;
-        margin-top: 7%;
-        overflow: hidden;
-    }
-
-    #DrinkListingIngredientsList {
-        height: 85%;
-        overflow: hidden;
-    }
-
-    #DrinkListingFavContainer {
-        height: 100%;
-        justify-content: center;
-        display: flex;
-        flex-direction: column;
-        width: 30%;
-        align-items: center;
-    }
-
-    #DrinkListingFavText {
+    #ListingFavText {
         font-size: 50;
         color: white;
         align-self: center;
