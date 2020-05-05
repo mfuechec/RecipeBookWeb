@@ -324,24 +324,30 @@
     }
 
     #LandingPageOptionsContainer {
-        width: 98vw;
-        height: 95vh;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+    }
+
+    #LandingPageNewFoodLinkContainer {
+        width: 50%;
     }
 
     #LandingPageNewFoodOption {
-        width: 97.5%;
-        height: 48.5vh;
-        flex: .5;
-        justify-content: center;
+        width: 100%;
+        height: fit-content;
+        border: 1px;
+        border-radius: 100px;
+    }
+
+    #LandingPageNewDrinksLinkContainer {
+        width: 50%;
     }
 
     #LandingPageNewDrinksOption {
-        width: 97.5%;
-        height: 48.5vh;
-        flex: .5;
-        justify-content: center;
+        width: 100%;
+        min-height: 100%;
+        border: 1px;
+        border-radius: 100px;
     }
 
     #NavBarContainer {
