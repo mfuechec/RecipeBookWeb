@@ -4,6 +4,18 @@ import { Link } from 'react-router-dom';
 const Drink = (props) => {
     let drink = props.drink;
     let image = drink.image;
+    let ingredientList = [];
+    for (let i = 0; i < 10; i++) {
+        if (drink.ingredients[i] !== "" && drink.ingredients[i] !== null) {
+            if (drink.measurements[i] !== null) {
+                ingredientList.push(`${drink.ingredients[i]} (${drink.measurements[i]})`);
+            } else {
+                ingredientList.push(`${drink.ingredients[i]}`)
+            }
+        } else {
+            ingredientList.push(``);
+        }
+    }
     return (
         <div id='RecipeDetailsContainer'>
             <div id='RecipeDetailsImageContainer'>
@@ -12,19 +24,19 @@ const Drink = (props) => {
             <div id='RecipeDetailsRecipeInfo'>
                 <div id='RecipeDetailsNameText'>{drink.name}</div>
                 <div id='RecipeDetailsIngredientsContainer'>
-                    <div id='RecipeDetailsMeasurementsLeft'>
-                        <div id='RecipeDetailsMeasurementsText'>{drink.measurements[0]}</div>
-                        <div id='RecipeDetailsMeasurementsText'>{drink.measurements[1]}</div>
-                        <div id='RecipeDetailsMeasurementsText'>{drink.measurements[2]}</div>
-                        <div id='RecipeDetailsMeasurementsText'>{drink.measurements[3]}</div>
-                        <div id='RecipeDetailsMeasurementsText'>{drink.measurements[4]}</div>
+                    <div id='RecipeDetailsLeft'>
+                        <div id='RecipeDetailsText'>{ingredientList[0]}</div>
+                        <div id='RecipeDetailsText'>{ingredientList[1]}</div>
+                        <div id='RecipeDetailsText'>{ingredientList[2]}</div>
+                        <div id='RecipeDetailsText'>{ingredientList[3]}</div>
+                        <div id='RecipeDetailsText'>{ingredientList[4]}</div>
                     </div>
-                    <div id='RecipeDetailsIngredientsLeft'>
-                        <div id='RecipeDetailsIngredientsText'>{drink.ingredients[0]}</div>
-                        <div id='RecipeDetailsIngredientsText'>{drink.ingredients[1]}</div>
-                        <div id='RecipeDetailsIngredientsText'>{drink.ingredients[2]}</div>
-                        <div id='RecipeDetailsIngredientsText'>{drink.ingredients[3]}</div>
-                        <div id='RecipeDetailsIngredientsText'>{drink.ingredients[4]}</div>
+                    <div id='RecipeDetailsRight'>
+                        <div id='RecipeDetailsText'>{ingredientList[5]}</div>
+                        <div id='RecipeDetailsText'>{ingredientList[6]}</div>
+                        <div id='RecipeDetailsText'>{ingredientList[7]}</div>
+                        <div id='RecipeDetailsText'>{ingredientList[8]}</div>
+                        <div id='RecipeDetailsText'>{ingredientList[9]}</div>
                     </div>
                 </div>
             </div>

@@ -4,6 +4,14 @@ import { Link } from 'react-router-dom';
 const Food = (props) => {
     let food = props.food;
     let image = food.image;
+    let ingredientList = [];
+    for (let i = 0; i < 10; i++) {
+        if (food.ingredients[i] !== "") {
+            ingredientList.push(`${food.ingredients[i]} (${food.measurements[i]})`);
+        } else {
+            ingredientList.push(``);
+        }
+    }
     return (
         <div id='RecipeDetailsContainer'>
             <div id='RecipeDetailsImageContainer'>
@@ -12,19 +20,19 @@ const Food = (props) => {
             <div id='RecipeDetailsRecipeInfo'>
                 <div id='RecipeDetailsNameText'>{food.name}</div>
                 <div id='RecipeDetailsIngredientsContainer'>
-                    <div id='RecipeDetailsMeasurementsLeft'>
-                        <div id='RecipeDetailsMeasurementsText'>{food.measurements[0]}</div>
-                        <div id='RecipeDetailsMeasurementsText'>{food.measurements[1]}</div>
-                        <div id='RecipeDetailsMeasurementsText'>{food.measurements[2]}</div>
-                        <div id='RecipeDetailsMeasurementsText'>{food.measurements[3]}</div>
-                        <div id='RecipeDetailsMeasurementsText'>{food.measurements[4]}</div>
+                    <div id='RecipeDetailsLeft'>
+                        <div id='RecipeDetailsText'>{ingredientList[0]}</div>
+                        <div id='RecipeDetailsText'>{ingredientList[1]}</div>
+                        <div id='RecipeDetailsText'>{ingredientList[2]}</div>
+                        <div id='RecipeDetailsText'>{ingredientList[3]}</div>
+                        <div id='RecipeDetailsText'>{ingredientList[4]}</div>
                     </div>
-                    <div id='RecipeDetailsIngredientsLeft'>
-                        <div id='RecipeDetailsIngredientsText'>{food.ingredients[0]}</div>
-                        <div id='RecipeDetailsIngredientsText'>{food.ingredients[1]}</div>
-                        <div id='RecipeDetailsIngredientsText'>{food.ingredients[2]}</div>
-                        <div id='RecipeDetailsIngredientsText'>{food.ingredients[3]}</div>
-                        <div id='RecipeDetailsIngredientsText'>{food.ingredients[4]}</div>
+                    <div id='RecipeDetailsRight'>
+                        <div id='RecipeDetailsText'>{ingredientList[5]}</div>
+                        <div id='RecipeDetailsText'>{ingredientList[6]}</div>
+                        <div id='RecipeDetailsText'>{ingredientList[7]}</div>
+                        <div id='RecipeDetailsText'>{ingredientList[8]}</div>
+                        <div id='RecipeDetailsText'>{ingredientList[9]}</div>
                     </div>
                 </div>
             </div>
