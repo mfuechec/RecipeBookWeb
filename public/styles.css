@@ -358,58 +358,52 @@
 
     #ListingContainer {
         height: 25vh;
+        width: 50%;
     }
 
     #ListingContainerView {
         height: 100%;
-        width: 100%;
         display: flex;
         flex-direction: row;
         overflow: hidden;
     }
 
     #ListingImageContainer {
-        max-width: 30%;
-        max-height: 100%;
         margin-left: 2.5%;
-        margin-right: 5%;
-        align-self: center;
+        width: 30%;
     }
 
     #ListingImage {
         height: 24.5vh;
     }
 
-    #ListingNameContainer {
-        height: 100%;
-        justify-content: center;
+    #ListingDetailsContainer {
         display: flex;
         flex-direction: column;
-        width: 30%;
-        align-items: center;
-        margin-left: 2%;
+    }
+
+    #ListingNameContainer {
     }
 
     #ListingNameText {
-        text-align: center;
         color: white;
-        height: 25%;
-        margin-top: 7%;
-        overflow: hidden;
+        font-size: x-large;
+    }
+
+    #ListingIngredientsAndFavContainer {
+        margin-top: 5%;
+        align-self: baseline;
+        display: flex;
     }
 
     #ListingIngredientsList {
-        height: 85%;
         overflow: hidden;
+        width: 10vw;
     }
 
     #ListingFavContainer {
-        height: 100%;
-        justify-content: center;
-        display: flex;
-        flex-direction: column;
-        width: 30%;
-        align-items: center;
+        padding-top: 15%;
+        color: lightblue;
     }
 
     #ListingFavText {
@@ -420,7 +414,8 @@
 
     #Ingredient {
         color: white;
-        font-size: 10px;
+        font-size: x-small;
+        text-align: center;
     }
 
     #RecipeDetailsContainer {
@@ -482,10 +477,8 @@
 
     #RecipeDetailsInstructionsText {
         color: #333333;
-        margin-bottom: 5%;
         margin-top: 10%;
-        height: 115%;
-        overflow: hidden;
+        text-align: center;
     }
 
     #RecipeDetailsBackButtonText {
