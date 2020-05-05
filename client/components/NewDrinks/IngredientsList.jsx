@@ -3,7 +3,7 @@ import Ingredient from './Ingredient.jsx';
 
 let IngredientsList = (props) => {
     var ingredients = [];
-    for (var i = 0; i < 10; i++) {
+    for (var i = 0; i < 6; i++) {
         if (props.ingredients[i] !== null || props.ingredients[i] !== undefined) {
             ingredients.push(props.ingredients[i])
         }
