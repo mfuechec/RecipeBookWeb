@@ -23,7 +23,7 @@ const App = () => {
     const [drinks, setDrinks] = useState([]);
     const [food, setFood] = useState({});
     const [drink, setDrink] = useState({});
-    const [isModalVisible, setIsModalVisible] = useState('hidden');
+    const [isModalVisible, setIsModalVisible] = useState('100%');
     const [whatIsSelected, setWhatIsSelected] = useState('');
 
     // Call the function that will find 10 random recipes from both APIs
@@ -353,8 +353,8 @@ const App = () => {
 
     // This object contains functions for interacting with the sort form modal
     const manageModal = {
-        openModal: () => { setIsModalVisible('visible') },
-        closeModal: () => { setIsModalVisible('hidden') },
+        openModal: () => { setIsModalVisible('100%') },
+        closeModal: () => { setIsModalVisible('0%') },
         searchFoods: () => { setWhatIsSelected('food') },
         searchDrinks: () => { setWhatIsSelected('drinks') }
     }
@@ -368,7 +368,7 @@ const App = () => {
                 <Switch>
                     <Route
                         exact path='/'
-                        render={() => <LandingPage manageModal={manageModal} />} />
+                        render={() => <LandingPage setWhatIsSelected={setWhatIsSelected} manageModal={manageModal} />} />
 
                     <Route
                         path='/NewFood'

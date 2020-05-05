@@ -11,11 +11,28 @@
         flex-direction: column;
     }
 
+    #LandingPageFoodText {
+        position: absolute;
+        top: 24%;
+        left: 40%;
+        color: #333333;
+        font-size: xx-large;
+    }
+
+    #LandingPageDrinkText {
+        position: absolute;
+        top: 74.5%;
+        right: 37%;
+        color: #333333;
+        font-size: xx-large;
+    }
+
     #LandingPageNewFoodOption {
         width: 97.5%;
         height: 48.5vh;
         flex: .5;
         justify-content: center;
+        opacity: 50%;
     }
 
     #LandingPageNewDrinksOption {
@@ -23,10 +40,11 @@
         height: 48.5vh;
         flex: .5;
         justify-content: center;
+        opacity: 50%;
     }
 
     #NavBarContainer {
-        height: 10vh;
+        height: 11vh;
         width: 100%;
         background-color: #2a2b2a;
         display: flex;
@@ -268,6 +286,23 @@
         height: 100vh;
         border: 1px;
         border-radius: 100px;
+        opacity: 50%;
+    }
+
+    #LandingPageFoodText {
+        position: absolute;
+        top: 48%;
+        left: 21.5%;
+        color: #333333;
+        font-size: xxx-large;
+    }
+
+    #LandingPageDrinkText {
+        position: absolute;
+        top: 48%;
+        right: 20%;
+        color: #333333;
+        font-size: xxx-large;
     }
 
     #LandingPageNewDrinksLinkContainer {
@@ -279,6 +314,7 @@
         min-height: 100%;
         border: 1px;
         border-radius: 100px;
+        opacity: 50%;
     }
 
     #NavBarContainer {
@@ -494,8 +530,12 @@
     #SortModal {
         margin-top: 15%;
         margin-left: 50%;
-        background-color: red;
+        background-color: #333333;
         position: absolute;
+        z-index: 1;
+        border: 1px;
+        border-radius: 25px;
+        width: 35%;
     }
 
 }
