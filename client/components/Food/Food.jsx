@@ -27,6 +27,7 @@ const Food = (props) => {
                         <div id='RecipeDetailsText'>{ingredientList[3]}</div>
                         <div id='RecipeDetailsText'>{ingredientList[4]}</div>
                     </div>
+                    <div id='RecipeDetailsPadding'></div>
                     <div id='RecipeDetailsRight'>
                         <div id='RecipeDetailsText'>{ingredientList[5]}</div>
                         <div id='RecipeDetailsText'>{ingredientList[6]}</div>

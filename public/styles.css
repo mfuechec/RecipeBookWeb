@@ -228,29 +228,27 @@
     }
 
     #RecipeDetailsContainer {
-        height: 87vh;
-        width: 96.2vw;
         display: flex;
         flex-direction: column;
         align-items: center;
         background-color: #EEEEEE;
+        min-height: 88.5vh;
     }
 
     #RecipeDetailsImageContainer {
-        height: 50%;
-        width: 80%;
+        text-align: center;
         margin-top: 2.5%;
     }
 
     #RecipeDetailsImage {
-        height: 100%;
+        width: 60%;
     }
 
     #RecipeDetailsRecipeInfo {
         height: 15%;
-        width: 80%;
         margin-top: 5%;
         align-items: center;
+        width: 75%;
     }
 
     #RecipeDetailsNameText {
@@ -265,26 +263,26 @@
         display: flex;
         flex-direction: row;
         margin-top: 2.5%;
-        height: 72%;
         overflow: hidden;
+        justify-content: center;
     }
 
-    #RecipeDetailsMeasurementsLeft {
-        margin-right: 1%;
+    #RecipeDetailsLeft {
+        display: flex;
+        flex-direction: column;
     }
 
-    #RecipeDetailsMeasurementsText {
-        font-size: 20px;
-        color: #333333;
+    #RecipeDetailsPadding {
+        width: 5%;
     }
 
-    #RecipeDetailsIngredientsLeft {
-        margin-right: 2.5%;
+    #RecipeDetailsRight {
+        display: flex;
+        flex-direction: column;
     }
 
-    #RecipeDetailsIngredientsText {
-        font-size: 20px;
-        color: #333333;
+    #RecipeDetailsText {
+        font-size: 10px;
     }
 
     #RecipeDetailsInstructionsContainer {
