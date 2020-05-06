@@ -13,18 +13,20 @@
 
     #LandingPageFoodText {
         position: absolute;
-        top: 24%;
+        top: 23%;
         left: 40%;
-        color: #333333;
+        color: white;
         font-size: xx-large;
+        font-family: cursive;
     }
 
     #LandingPageDrinkText {
         position: absolute;
-        top: 74.5%;
+        top: 72.5%;
         right: 37%;
-        color: #333333;
+        color: white;
         font-size: xx-large;
+        font-family: cursive;
     }
 
     #LandingPageNewFoodOption {
@@ -297,18 +299,20 @@
 
     #LandingPageFoodText {
         position: absolute;
-        top: 48%;
+        top: 47%;
         left: 21.5%;
-        color: #333333;
+        color: white;
         font-size: xxx-large;
+        font-family: cursive;
     }
 
     #LandingPageDrinkText {
         position: absolute;
-        top: 48%;
+        top: 47%;
         right: 20%;
-        color: #333333;
+        color: white;
         font-size: xxx-large;
+        font-family: cursive;
     }
 
     #LandingPageNewDrinksLinkContainer {
