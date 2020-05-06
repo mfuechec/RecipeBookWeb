@@ -412,10 +412,7 @@
     }
 
     #ListingImageContainer {
-        margin-top: 2%;
         align-self: center;
-        z-index: 1;
-        opacity: 100%;
     }
 
     #ListingImageContainer:hover {
@@ -427,14 +424,9 @@
         width: 18vw;
     }
 
-    #ListingImage:hover {
-        width: 20vw;
-    }
-
     #ListingDetailsContainer {
         position: relative;
-        top: 118px;
-        flex-direction: column;
+        top: 50%;
         pointer-events: none;
     }
 
