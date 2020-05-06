@@ -368,7 +368,7 @@ const App = () => {
 
     // This object contains functions for interacting with the sort form modal
     const manageModal = {
-        openModal: () => { setIsModalVisible([1, 'block']) },
+        openModal: () => { setIsModalVisible([2, 'block']) },
         closeModal: () => { setIsModalVisible([-1, 'none']) },
         searchFoods: () => { setWhatIsSelected('food') },
         searchDrinks: () => { setWhatIsSelected('drinks') }
