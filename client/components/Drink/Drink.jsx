@@ -8,9 +8,11 @@ const Drink = (props) => {
     for (let i = 0; i < 10; i++) {
         if (drink.ingredients[i] !== "" && drink.ingredients[i] !== null) {
             if (drink.measurements[i] !== null) {
-                ingredientList.push(`${drink.ingredients[i]} (${drink.measurements[i]})`);
+                ingredientList.push(`${drink.ingredients[i].charAt(0).toUpperCase() +
+                    drink.ingredients[i].slice(1)} (${drink.measurements[i]})`);
             } else {
-                ingredientList.push(`${drink.ingredients[i]}`)
+                ingredientList.push(`${drink.ingredients[i].charAt(0).toUpperCase() +
+                    drink.ingredients[i].slice(1)}`)
             }
         } else {
             ingredientList.push(``);
@@ -42,7 +44,7 @@ const Drink = (props) => {
             </div>
             <div id='RecipeDetailsInstructionsContainer'>
                 <div id='RecipeDetailsInstructionsText'>{drink.instructions}</div>
-                <Link to='/NewDrinks'>
+                <Link id='RecipeDetailsBackButtonLink' to='/NewDrinks'>
                     <div id='RecipeDetailsBackButtonText'>Back</div>
                 </Link>
             </div>

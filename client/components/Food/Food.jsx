@@ -7,7 +7,8 @@ const Food = (props) => {
     let ingredientList = [];
     for (let i = 0; i < 10; i++) {
         if (food.ingredients[i] !== "") {
-            ingredientList.push(`${food.ingredients[i]} (${food.measurements[i]})`);
+            ingredientList.push(`${food.ingredients[i].charAt(0).toUpperCase() +
+                food.ingredients[i].slice(1)} (${food.measurements[i]})`);
         } else {
             ingredientList.push(``);
         }
@@ -39,93 +40,12 @@ const Food = (props) => {
             </div>
             <div id='RecipeDetailsInstructionsContainer'>
                 <div id='RecipeDetailsInstructionsText'>{food.instructions}</div>
-                <Link to='/NewFood'>
+                <Link id='RecipeDetailsBackButtonLink' to='/NewFood'>
                     <div id='RecipeDetailsBackButtonText'>Back</div>
                 </Link>
             </div>
         </div>
     )
 }
-
-// const styles = StyleSheet.create({
-//     container: {
-//         height: '100%',
-//         width: '100%',
-//         display: 'flex',
-//         flexDirection: 'column',
-//         alignItems: 'center'
-//     },
-//     imageContainer: {
-//         height: '30%',
-//         width: '50%',
-//         marginTop: '2.5%'
-//     },
-//     image: {
-//         height: '100%',
-//         borderRadius: 300
-//     },
-//     recipeContainer: {
-//         width: '100%',
-//         height: '100%',
-//         alignItems: 'center',
-
-//     },
-//     recipeInfo: {
-//         height: '15%',
-//         width: '80%',
-//         marginTop: '1%',
-//         alignItems: 'center'
-//     },
-//     name: {
-//         fontSize: 35,
-//         marginTop: '25%',
-//         color: 'white',
-//         width: '50%',
-//         textAlign: 'center'
-//     },
-//     ingredientsContainer: {
-//         display: 'flex',
-//         flexDirection: 'row',
-//         marginTop: '2.5%'
-//     },
-//     ingredientsLeft: {
-//         marginRight: '2.5%'
-//     },
-//     ingredientsRight: {
-//     },
-//     measurementsLeft: {
-//         marginRight: '1%'
-//     },
-//     measurementsRight: {
-//         marginRight: '1%',
-//         marginLeft: '2.5%'
-//     },
-//     directionsButton: {
-//         backgroundColor: '#eeeeee',
-//         width: '25%',
-//         height: '100%',
-//         borderRadius: 30,
-//         justifyContent: 'center',
-//         borderColor: 'red',
-//         borderWidth: 1,
-//         marginLeft: '1%',
-//         marginRight: '1%'
-//     },
-//     buttonText: {
-//         textAlign: 'center'
-//     },
-//     buttonContainer: {
-//         width: '80%',
-//         alignItems: 'center',
-//         height: '10%',
-//         display: 'flex',
-//         flexDirection: 'row-reverse',
-//         justifyContent: 'center'
-//     },
-//     text: {
-//         color: 'white',
-//         fontSize: 20
-//     }
-// })
 
 export default Food;

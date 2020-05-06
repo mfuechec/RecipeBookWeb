@@ -250,6 +250,11 @@
         overflow: hidden;
     }
 
+    #RecipeDetailsBackButtonLink {
+        text-decoration: none;
+        color: black;
+    }
+
     #RecipeDetailsBackButtonText {
         text-align: center;
         border: 1px #333333 solid;
@@ -521,6 +526,11 @@
         color: #333333;
         margin-top: 10%;
         text-align: center;
+    }
+
+    #RecipeDetailsBackButtonLink {
+        text-decoration: none;
+        color: black;
     }
 
     #RecipeDetailsBackButtonText {
