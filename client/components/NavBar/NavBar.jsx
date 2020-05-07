@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 function NavBar(props) {
     return (
         <div id='NavBarContainer'>
-            <Link id='NavBarHomeButton' to='/' >
+            <Link id='NavBarHomeButton' onClick={() => { props.closeModal() }} to='/' >
                 <p style={{ color: 'white' }}>Home</p>
             </Link>
             <div id='NavBarNewRecipesButton' onClick={() => { props.findRandomRecipes() }}>
