@@ -512,16 +512,12 @@
         display: flex;
         flex-direction: column-reverse;
         overflow: hidden;
+        text-decoration: none;
     }
 
     #ListingImageContainer {
         align-self: center;
-        z-index: 1;
-    }
-
-    #ListingImageContainer:hover {
         z-index: 0;
-        opacity: 75%;
     }
 
     #ListingImage {
@@ -529,23 +525,27 @@
     }
 
     #ListingDetailsContainer {
+        width: 73.7%;
         position: relative;
-        top: 50%;
-        max-height: 50%;
-        pointer-events: none;
+        top: 96.5%;
+        min-height: 96.5%;
+        left: 13.35%;
+        background: rgba(100, 100, 100, 0.5);
+        opacity: 0%;
+    }
+
+    #ListingDetailsContainer:hover {
+        opacity: 100%;
     }
     
     #ListingNameContainer {
-        height: 35%;
-        text-decoration: none;
+        height: 80%;
     }
 
     #ListingNameText {
         font-size: x-large;
         text-align: center;
         color: black;
-        width: 73%;
-        margin: auto;
     }
 
     #ListingIngredientsList {
@@ -558,9 +558,12 @@
     #ListingFavContainer {
         color: lightblue;
         position: absolute;
-        left: 42.5%;
-        bottom: -17vh;
-        pointer-events: none;
+        left: 38.5%;
+        bottom: 2vh;
+    }
+
+    #ListingFavContainer:hover {
+        color: lightgoldenrodyellow;
     }
 
     #ListingFavText {
@@ -571,7 +574,7 @@
 
     #ListingFavStar {
         font-size: xxx-large;
-        pointer-events: none;
+        cursor: pointer;
     }
 
     #Ingredient {

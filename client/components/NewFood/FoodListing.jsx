@@ -6,24 +6,24 @@ let FoodListing = (props) => {
     let food = props.food;
     return (
         <div id='ListingContainer'>
-            <div id='ListingContainerView'>
-                <Link id='ListingImageContainer' to='/Food' onClick={() => props.setFood(food)}>
+            <Link id='ListingContainerView' to='/Food' onClick={() => props.setFood(food)}>
+                <div id='ListingImageContainer'>
                     <img id='ListingImage' src={food.image} />
-                </Link>
+                </div>
                 <div id='ListingDetailsContainer'>
-                    <Link id='ListingNameContainer' to='/Food' onClick={() => props.setFood(food)}>
+                    <div id='ListingNameContainer'>
                         <div id='ListingNameText'>{food.name}</div>
-                    </Link>
+                    </div>
                     <div id='ListingIngredientsAndFavContainer'>
-                        <div id='ListingFavContainer' onClick={() => { props.manageAPICalls.editFavorites(food, 'POST') }}>
+                        <Link id='ListingFavContainer' to='/NewFood' onClick={(e) => { props.manageAPICalls.editFavorites(food, 'POST'); e.stopPropagation() }}>
                             <i id='ListingFavStar' className="fas fa-star"></i>
-                        </div>
-                        <Link id='ListingIngredientsList' to='/Food' onClick={() => props.setFood(food)}>
-                            <IngredientsList ingredients={food.ingredients} />
                         </Link>
+                        <div id='ListingIngredientsList'>
+                            <IngredientsList ingredients={food.ingredients} />
+                        </div>
                     </div>
                 </div>
-            </div>
+            </Link>
         </div>
     )
 }
