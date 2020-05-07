@@ -20,33 +20,33 @@ const Drink = (props) => {
     }
     return (
         <div id='RecipeDetailsContainer'>
-            <div id='RecipeDetailsImageContainer'>
+            <div id='RecipeDetailsNameText'>{drink.name}</div>
+            <div id='RecipeDetailsRecipeContainer'>
                 <img id='RecipeDetailsImage' src={image} />
-            </div>
-            <div id='RecipeDetailsRecipeInfo'>
-                <div id='RecipeDetailsNameText'>{drink.name}</div>
-                <div id='RecipeDetailsIngredientsContainer'>
-                    <div id='RecipeDetailsLeft'>
-                        <div id='RecipeDetailsText'>{ingredientList[0]}</div>
-                        <div id='RecipeDetailsText'>{ingredientList[1]}</div>
-                        <div id='RecipeDetailsText'>{ingredientList[2]}</div>
-                        <div id='RecipeDetailsText'>{ingredientList[3]}</div>
-                        <div id='RecipeDetailsText'>{ingredientList[4]}</div>
+                <div id='RecipeDetailsIngredientsAndBackButton'>
+                    <div id='RecipeDetailsIngredientsContainer'>
+                        <div id='RecipeDetailsLeft'>
+                            <div id='RecipeDetailsText'>{ingredientList[0]}</div>
+                            <div id='RecipeDetailsText'>{ingredientList[1]}</div>
+                            <div id='RecipeDetailsText'>{ingredientList[2]}</div>
+                            <div id='RecipeDetailsText'>{ingredientList[3]}</div>
+                            <div id='RecipeDetailsText'>{ingredientList[4]}</div>
+                        </div>
+                        <div id='RecipeDetailsRight'>
+                            <div id='RecipeDetailsText'>{ingredientList[5]}</div>
+                            <div id='RecipeDetailsText'>{ingredientList[6]}</div>
+                            <div id='RecipeDetailsText'>{ingredientList[7]}</div>
+                            <div id='RecipeDetailsText'>{ingredientList[8]}</div>
+                            <div id='RecipeDetailsText'>{ingredientList[9]}</div>
+                        </div>
                     </div>
-                    <div id='RecipeDetailsRight'>
-                        <div id='RecipeDetailsText'>{ingredientList[5]}</div>
-                        <div id='RecipeDetailsText'>{ingredientList[6]}</div>
-                        <div id='RecipeDetailsText'>{ingredientList[7]}</div>
-                        <div id='RecipeDetailsText'>{ingredientList[8]}</div>
-                        <div id='RecipeDetailsText'>{ingredientList[9]}</div>
+                    <div id='RecipeDetailsInstructionsContainer'>
+                        <div id='RecipeDetailsInstructionsText'>{drink.instructions}</div>
                     </div>
+                    <Link id='RecipeDetailsBackButtonLink' to='/NewDrinks'>
+                        <div id='RecipeDetailsBackButtonText'>Back</div>
+                    </Link>
                 </div>
-            </div>
-            <div id='RecipeDetailsInstructionsContainer'>
-                <div id='RecipeDetailsInstructionsText'>{drink.instructions}</div>
-                <Link id='RecipeDetailsBackButtonLink' to='/NewDrinks'>
-                    <div id='RecipeDetailsBackButtonText'>Back</div>
-                </Link>
             </div>
         </div>
     )
