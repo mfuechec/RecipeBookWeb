@@ -527,8 +527,8 @@
     #ListingDetailsContainer {
         width: 73.7%;
         position: relative;
-        top: 96.5%;
-        min-height: 96.5%;
+        top: 105%;
+        min-height: 100%;
         left: 13.35%;
         background: rgba(100, 100, 100, 0.5);
         opacity: 0%;

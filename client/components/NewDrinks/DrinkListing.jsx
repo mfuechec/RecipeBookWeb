@@ -6,24 +6,24 @@ let DrinkListing = (props) => {
     let drink = props.drink;
     return (
         <div id='ListingContainer'>
-            <div id='ListingContainerView'>
-                <Link id='ListingImageContainer' to='/Drink' onClick={() => props.setDrink(drink)}>
+            <Link id='ListingContainerView' to='/Drink' onClick={() => props.setDrink(drink)}>
+                <div id='ListingImageContainer'>
                     <img id='ListingImage' src={drink.image} />
-                </Link>
+                </div>
                 <div id='ListingDetailsContainer'>
-                    <Link id='ListingNameContainer' to='/Drink' onClick={() => props.setDrink(drink)}>
+                    <div id='ListingNameContainer'>
                         <div id='ListingNameText'>{drink.name}</div>
-                    </Link>
+                    </div>
                     <div id='ListingIngredientsAndFavContainer'>
-                        <div id='ListingFavContainer' onClick={() => { props.manageAPICalls.editFavorites(drink, 'POST') }}>
+                        <Link id='ListingFavContainer' to='/NewDrinks' onClick={() => { props.manageAPICalls.editFavorites(drink, 'POST') }}>
                             <i id='ListingFavStar' className="fas fa-star"></i>
-                        </div>
-                        <Link id='ListingIngredientsList' to='/Drink' onClick={() => props.setDrink(drink)}>
-                            <IngredientsList ingredients={drink.ingredients} />
                         </Link>
+                        <div id='ListingIngredientsList'>
+                            <IngredientsList ingredients={drink.ingredients} />
+                        </div>
                     </div>
                 </div>
-            </div>
+            </Link>
         </div>
     )
 }
