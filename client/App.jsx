@@ -186,6 +186,7 @@ const App = () => {
                 .then(response => {
                     if (response.data.body === 'Successful') {
                         setLoggedIn = true;
+                        alert("Sign Up successful! Welcome to the party!!!")
                     }
                     if (response.data.body === 'Failed') {
                         alert("Username already exists");
@@ -196,7 +197,29 @@ const App = () => {
                 })
         },
         logIn: () => {
-
+            let credentials = {
+                username: logInUsername,
+                password: logInPassword
+            }
+            return fetch('http://recipebookserver-env.eba-peu3pu5p.us-east-2.elasticbeanstalk.com/logIn', {
+                method: 'POST',
+                headers: {
+                    Accept: 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(credentials)
+            })
+                .then(response => {
+                    if (response.data.body === 'Successful') {
+                        setLoggedIn = true;
+                    }
+                    if (response.data.body === 'Failed') {
+                        alert("Login failed :(");
+                    }
+                })
+                .catch((error) => {
+                    console.log(error);
+                })
         }
     }
 
@@ -415,10 +438,10 @@ const App = () => {
         signUpSelect: () => { setSignUpSelected(true) },
         closeLogInSelect: () => { setLogInSelected(false) },
         closeSignUpSelect: () => { setSignUpSelected(false) },
-        logInUsername: (e) => { setLogInUsername(e) },
-        logInPassword: (e) => { setLogInPassword(e) },
-        signUpUsername: (e) => { setSignUpUsername(e) },
-        signUpPassword: (e) => { setSignUpPassword(e) }
+        logInUsername: (e) => { setLogInUsername(e.target.value) },
+        logInPassword: (e) => { setLogInPassword(e.target.value) },
+        signUpUsername: (e) => { setSignUpUsername(e.target.value) },
+        signUpPassword: (e) => { setSignUpPassword(e.target.value) }
     }
 
     return (
@@ -426,7 +449,7 @@ const App = () => {
 
             <div id='MainContainer'>
                 <Sort whatIsSelected={whatIsSelected} isModalVisible={isModalVisible} manageAPICalls={manageAPICalls} manageModal={manageModal} />
-                <LogIn manageAPICalls={manageAPICalls} signUpSelected={signUpSelected} logInSelected={logInSelected} loggedIn={loggedIn} manageLogIn={manageLogIn} />
+                <LogIn signUpUsername={signUpUsername} signUpPassword={signUpPassword} logInUsername={logInUsername} logInPassword={logInPassword} manageAPICalls={manageAPICalls} signUpSelected={signUpSelected} logInSelected={logInSelected} loggedIn={loggedIn} manageLogIn={manageLogIn} />
 
                 <Switch>
                     <Route
