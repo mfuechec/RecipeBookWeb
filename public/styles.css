@@ -419,7 +419,7 @@
     }
 
     #LandingPageNewFoodOption:hover {
-        opacity: 100%;
+        opacity: 90%;
     }
 
     #LandingPageFoodText {
@@ -455,7 +455,7 @@
     }
 
     #LandingPageNewDrinksOption:hover {
-        opacity: 100%;
+        opacity: 90%;
     }
 
     #NavBarContainer {
@@ -788,7 +788,7 @@
 
     #LogInModal {
         position: fixed;
-        bottom: 5%;
+        bottom: 3%;
         right: 2%;
         width: 20%;
         border: 2px solid lightblue;
@@ -797,7 +797,6 @@
         height: 13%;
         font-size: x-large;
         background-color: white;
-        display: none;
     }
 
     #LogInModalUserName {
