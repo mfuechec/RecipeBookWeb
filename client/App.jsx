@@ -15,6 +15,7 @@ import NavBar from './components/NavBar/NavBar.jsx';
 import NewDrinks from './components/NewDrinks/NewDrinks.jsx';
 import NewFood from './components/NewFood/NewFood.jsx';
 import Sort from './components/Sort/Sort.jsx';
+import LogIn from './components/LogIn/LogIn.jsx';
 
 const App = () => {
 
@@ -25,6 +26,13 @@ const App = () => {
     const [drink, setDrink] = useState({});
     const [isModalVisible, setIsModalVisible] = useState([-1, 'none']);
     const [whatIsSelected, setWhatIsSelected] = useState('');
+    const [loggedIn, setLoggedIn] = useState(false);
+    const [logInSelected, setLogInSelected] = useState(false);
+    const [signUpSelected, setSignUpSelected] = useState(false);
+    const [signUpUsername, setSignUpUsername] = useState('');
+    const [signUpPassword, setSignUpPassword] = useState('');
+    const [logInUsername, setLogInUsername] = useState('');
+    const [logInPassword, setLogInPassword] = useState('');
 
     // Call the function that will find 10 random recipes from both APIs
     // This function runs only once on component mount
@@ -161,6 +169,34 @@ const App = () => {
                 .catch((error) => {
                     console.error(error);
                 })
+        },
+        signUp: () => {
+            let credentials = {
+                username: signUpUsername,
+                password: signUpPassword
+            }
+            return fetch('http://recipebookserver-env.eba-peu3pu5p.us-east-2.elasticbeanstalk.com/signUp', {
+                method: 'POST',
+                headers: {
+                    Accept: 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(credentials)
+            })
+                .then(response => {
+                    if (response.data.body === 'Successful') {
+                        setLoggedIn = true;
+                    }
+                    if (response.data.body === 'Failed') {
+                        alert("Username already exists");
+                    }
+                })
+                .catch((error) => {
+                    console.log(error);
+                })
+        },
+        logIn: () => {
+
         }
     }
 
@@ -374,11 +410,23 @@ const App = () => {
         searchDrinks: () => { setWhatIsSelected('drinks') }
     }
 
+    const manageLogIn = {
+        logInSelect: () => { setLogInSelected(true) },
+        signUpSelect: () => { setSignUpSelected(true) },
+        closeLogInSelect: () => { setLogInSelected(false) },
+        closeSignUpSelect: () => { setSignUpSelected(false) },
+        logInUsername: (e) => { setLogInUsername(e) },
+        logInPassword: (e) => { setLogInPassword(e) },
+        signUpUsername: (e) => { setSignUpUsername(e) },
+        signUpPassword: (e) => { setSignUpPassword(e) }
+    }
+
     return (
         <Router>
 
             <div id='MainContainer'>
                 <Sort whatIsSelected={whatIsSelected} isModalVisible={isModalVisible} manageAPICalls={manageAPICalls} manageModal={manageModal} />
+                <LogIn manageAPICalls={manageAPICalls} signUpSelected={signUpSelected} logInSelected={logInSelected} loggedIn={loggedIn} manageLogIn={manageLogIn} />
 
                 <Switch>
                     <Route
