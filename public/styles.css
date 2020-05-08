@@ -556,6 +556,10 @@
         display: none;
     }
 
+    #ListingFavLinkContainer {
+        text-align: center;
+    }
+
     #ListingFavContainer {
         color: lightblue;
     }

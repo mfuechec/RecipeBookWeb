@@ -15,9 +15,11 @@ let DrinkListing = (props) => {
                         <div id='ListingNameText'>{drink.name}</div>
                     </div>
                     <div id='ListingIngredientsAndFavContainer'>
-                        <Link id='ListingFavContainer' to='/NewDrinks' onClick={() => { props.manageAPICalls.editFavorites(drink, 'POST') }}>
-                            <i id='ListingFavStar' className="fas fa-star"></i>
-                        </Link>
+                        <div id='ListingFavLinkContainer'>
+                            <Link id='ListingFavContainer' to='/NewDrinks' onClick={() => { props.manageAPICalls.editFavorites(drink, 'POST') }}>
+                                <i id='ListingFavStar' className="fas fa-star"></i>
+                            </Link>
+                        </div>
                         <div id='ListingIngredientsList'>
                             <IngredientsList ingredients={drink.ingredients} />
                         </div>
