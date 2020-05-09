@@ -190,7 +190,7 @@ const App = () => {
             } else if (format.test(signUpUsername)) {
                 alert('Username may not contain special characters.');
             } else if (format.test(signUpPassword)) {
-                alert('Password may not contain special characters');
+                alert('Password may not contain special characters.');
             } else {
                 let credentials = {
                     username: signUpUsername,
