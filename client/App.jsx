@@ -674,7 +674,13 @@ const App = () => {
                 setDrinks(previousDrinks);
             }
         },
-        switchToFavorites: () => { setLookingAtFavorites(true) }
+        switchToFavorites: () => {
+            if (loggedIn === false) {
+                alert('Log in to access favorites');
+            } else {
+                setLookingAtFavorites(true)
+            }
+        }
     }
 
     const manageLogIn = {
