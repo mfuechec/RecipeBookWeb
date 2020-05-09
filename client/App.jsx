@@ -1,11 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import APIKeys from '../passwords';
-import {
-    BrowserRouter as Router,
-    Route,
-    Switch
-} from 'react-router-dom';
 import Drink from './components/Drink/Drink.jsx';
 import DrinkDirections from './components/DrinkDirections/DrinkDirections.jsx';
 import Food from './components/Food/Food.jsx';
@@ -16,6 +11,11 @@ import NewDrinks from './components/NewDrinks/NewDrinks.jsx';
 import NewFood from './components/NewFood/NewFood.jsx';
 import Sort from './components/Sort/Sort.jsx';
 import LogIn from './components/LogIn/LogIn.jsx';
+import {
+    BrowserRouter as Router,
+    Route,
+    Switch
+} from 'react-router-dom';
 
 const App = () => {
 
@@ -181,27 +181,6 @@ const App = () => {
                     })
             }
         },
-        editFavorites: (data, method) => {
-            let url = 'http://recipebookserver-env.eba-peu3pu5p.us-east-2.elasticbeanstalk.com/';
-            if (whatIsSelected === 'food') {
-                url += `editFavoriteMeals`;
-            } else {
-                url += `editFavoriteDrinks`;
-            }
-
-            return fetch(url, {
-                method: method,
-                headers: {
-                    Accept: 'application/json',
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(data)
-            })
-                .then(response => console.log(response.json()))
-                .catch((error) => {
-                    console.error(error);
-                })
-        },
         signUp: () => {
             let credentials = {
                 username: signUpUsername,
@@ -232,7 +211,7 @@ const App = () => {
                 username: logInUsername,
                 password: logInPassword
             }
-            return fetch('http://recipebookserver-env.eba-peu3pu5p.us-east-2.elasticbeanstalk.com/logIn', {
+            return fetch('http://recipebookserver-env.eba-peu3pu5p.us-east-2.elasticbeanstalk.com/login', {
                 method: 'POST',
                 headers: {
                     Accept: 'application/json',
@@ -252,6 +231,27 @@ const App = () => {
                 })
                 .catch((error) => {
                     console.log(error);
+                })
+        },
+        editFavorites: (data, method) => {
+            let url = 'http://recipebookserver-env.eba-peu3pu5p.us-east-2.elasticbeanstalk.com/';
+            if (whatIsSelected === 'food') {
+                url += `editFavoriteMeals`;
+            } else {
+                url += `editFavoriteDrinks`;
+            }
+
+            return fetch(url, {
+                method: method,
+                headers: {
+                    Accept: 'application/json',
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
+            })
+                .then(response => console.log(response.json()))
+                .catch((error) => {
+                    console.error(error);
                 })
         }
     }
