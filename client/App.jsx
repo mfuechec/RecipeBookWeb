@@ -492,7 +492,8 @@ const App = () => {
             } else {
                 setDrinks(previousDrinks);
             }
-        }
+        },
+        switchToFavorites: () => { setLookingAtFavorites(true) }
     }
 
     const manageLogIn = {
@@ -522,23 +523,23 @@ const App = () => {
                         path='/NewFood'
                         render={() =>
                             <div>
-                                <NavBar findRandomRecipes={manageAPICalls.findRandomRecipes} openModal={manageModal.openModal} closeModal={manageModal.closeModal} />
-                                <NewFood manageAPICalls={manageAPICalls} foods={foods} setFood={setFood} />
+                                <NavBar findRandomRecipes={manageAPICalls.findRandomRecipes} manageModal={manageModal} />
+                                <NewFood manageAPICalls={manageAPICalls} foods={foods} favFoods={favFoods} lookingAtFavorites={lookingAtFavorites} setFood={setFood} />
                             </div>} />
 
                     <Route
                         path='/NewDrinks'
                         render={() =>
                             <div>
-                                <NavBar findRandomRecipes={manageAPICalls.findRandomRecipes} openModal={manageModal.openModal} closeModal={manageModal.closeModal} />
-                                <NewDrinks manageAPICalls={manageAPICalls} drinks={drinks} setDrink={setDrink} />
+                                <NavBar findRandomRecipes={manageAPICalls.findRandomRecipes} manageModal={manageModal} />
+                                <NewDrinks manageAPICalls={manageAPICalls} drinks={drinks} favDrinks={favDrinks} lookingAtFavorites={lookingAtFavorites} setDrink={setDrink} />
                             </div>} />
 
                     <Route
                         path='/Food'
                         render={() =>
                             <div>
-                                <NavBar findRandomRecipes={manageAPICalls.findRandomRecipes} openModal={manageModal.openModal} closeModal={manageModal.closeModal} />
+                                <NavBar findRandomRecipes={manageAPICalls.findRandomRecipes} manageModal={manageModal} />
                                 <Food food={food} />
                             </div>} />
 
@@ -546,7 +547,7 @@ const App = () => {
                         path='/Drink'
                         render={() =>
                             <div>
-                                <NavBar findRandomRecipes={manageAPICalls.findRandomRecipes} openModal={manageModal.openModal} closeModal={manageModal.closeModal} />
+                                <NavBar findRandomRecipes={manageAPICalls.findRandomRecipes} manageModal={manageModal} />
                                 <Drink drink={drink} />
                             </div>} />
 
@@ -554,7 +555,7 @@ const App = () => {
                         path='/DrinkDirections'
                         render={() =>
                             <div>
-                                <NavBar findRandomRecipes={manageAPICalls.findRandomRecipes} openModal={manageModal.openModal} closeModal={manageModal.closeModal} />
+                                <NavBar findRandomRecipes={manageAPICalls.findRandomRecipes} manageModal={manageModal} />
                                 <DrinkDirections drink={drink} />
                             </div>} />
 
@@ -562,7 +563,7 @@ const App = () => {
                         path='/FoodDirections'
                         render={() =>
                             <div>
-                                <NavBar findRandomRecipes={manageAPICalls.findRandomRecipes} openModal={manageModal.openModal} closeModal={manageModal.closeModal} />
+                                <NavBar findRandomRecipes={manageAPICalls.findRandomRecipes} manageModal={manageModal} />
                                 <FoodDirections food={food} />
                             </div>} />
                 </Switch>
