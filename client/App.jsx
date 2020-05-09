@@ -21,7 +21,9 @@ const App = () => {
 
     // Instantiates empty state objects for food and drink recipes
     const [foods, setFoods] = useState([]);
+    const [previousFoods, setPreviousFoods] = useState([]);
     const [drinks, setDrinks] = useState([]);
+    const [previousDrinks, setPreviousDrinks] = useState([]);
     const [food, setFood] = useState({});
     const [drink, setDrink] = useState({});
     const [isModalVisible, setIsModalVisible] = useState([-1, 'none']);
@@ -78,8 +80,13 @@ const App = () => {
             if (whatIsSelected === 'food') {
                 axios.get(APIKeys.food + 'search.php?s=' + searchText)
                     .then((response) => {
-                        sortAPIResponse.sortFoodRecipes(response.data.meals);
-                        manageModal.closeModal();
+                        if (response.data.meals === null) {
+                            alert('No results found')
+                        } else {
+                            setPreviousFoods(foods);
+                            sortAPIResponse.sortFoodRecipes(response.data.meals);
+                            manageModal.closeModal();
+                        }
                     })
                     .catch((error) => {
                         console.log(error)
@@ -88,8 +95,13 @@ const App = () => {
             if (whatIsSelected === 'drinks') {
                 axios.get(APIKeys.drink + 'search.php?s=' + searchText)
                     .then((response) => {
-                        sortAPIResponse.sortDrinkRecipes(response.data.drinks);
-                        manageModal.closeModal();
+                        if (response.data.drinks === null) {
+                            alert('No results found');
+                        } else {
+                            setPreviousDrinks(drinks);
+                            sortAPIResponse.sortDrinkRecipes(response.data.drinks);
+                            manageModal.closeModal();
+                        }
                     })
                     .catch((error) => {
                         console.log(error)
