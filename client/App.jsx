@@ -212,7 +212,8 @@ const App = () => {
                         if (status === 'Sign up successful') {
                             setLoggedIn(true);
                             setUser(signUpUsername);
-                            getUserFavorites(signUpUsername);
+                            manageAPICalls.getUserFavoriteFoods(signUpUsername);
+                            manageAPICalls.getUserFavoriteDrinks(signUpUsername);
                         }
                         alert(response.statusText);
                     })
@@ -239,7 +240,8 @@ const App = () => {
                     if (status === 'Login successful') {
                         setLoggedIn(true);
                         setUser(logInUsername);
-                        getUserFavorites(logInUsername);
+                        manageAPICalls.getUserFavoriteFoods(logInUsername);
+                        manageAPICalls.getUserFavoriteDrinks(logInUsername);
                     } else {
                         // Empty both inputs
                     }
@@ -278,9 +280,47 @@ const App = () => {
                 alert('Please log in before adding recipes to favorites')
             }
         },
-        getUserFavorites: (name) => {
-            console.log(name)
-            // Will populate favFoods after database calls
+        getUserFavoriteFoods: (name) => {
+            let user = {
+                name: name
+            }
+
+            return fetch('http://localhost:3000/findFavoriteMeals', {
+                method: 'POST',
+                headers: {
+                    Accept: 'application/json',
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(user)
+            })
+                .then(response => {
+                    sortFavMeals(JSON.parse(response.statusText));
+                })
+                .catch((error) => {
+                    console.error(error);
+                })
+
+        },
+        getUserFavoriteDrinks: (name) => {
+            let user = {
+                name: name
+            }
+
+            return fetch('http://localhost:3000/findFavoriteDrinks', {
+                method: 'POST',
+                headers: {
+                    Accept: 'application/json',
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(user)
+            })
+                .then(response => {
+                    sortFavDrinks(JSON.parse(response.statusText));
+                })
+                .catch((error) => {
+                    console.error(error);
+                })
+
         },
         findNewRecipes: () => {
             if (lookingAtFavorites === true) {
