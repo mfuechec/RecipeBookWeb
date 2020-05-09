@@ -7,7 +7,7 @@ function NavBar(props) {
             <Link id='NavBarHomeButton' onClick={() => { props.manageModal.closeModal() }} to='/' >
                 <p id='NavBarText'>Home</p>
             </Link>
-            <div id='NavBarNewRecipesButton' onClick={() => { props.findRandomRecipes() }}>
+            <div id='NavBarNewRecipesButton' onClick={() => { props.findNewRecipes() }}>
                 <p id='NavBarText'>New Recipes</p>
             </div>
             <div id='NavBarSwitchRecipesButton' onClick={() => { props.manageModal.switchToFavorites() }}>
