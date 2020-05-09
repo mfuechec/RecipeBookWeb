@@ -85,9 +85,9 @@ const App = () => {
                                     let secondCombined = combined.concat(third);
                                     axios.get(APIKeys.drink + 'randomselection.php')
                                         .then((response) => {
-                                            let fourth = response.data.meals;
+                                            let fourth = response.data.drinks;
                                             let thirdCombined = secondCombined.concat(fourth);
-                                            sortAPIResponse.sortFoodRecipes(thirdCombined)
+                                            sortAPIResponse.sortDrinkRecipes(thirdCombined)
                                         })
                                 })
                         })
@@ -234,25 +234,33 @@ const App = () => {
                 })
         },
         editFavorites: (data, method) => {
-            let url = 'http://recipebookserver-env.eba-peu3pu5p.us-east-2.elasticbeanstalk.com/';
-            if (whatIsSelected === 'food') {
-                url += `editFavoriteMeals`;
-            } else {
-                url += `editFavoriteDrinks`;
-            }
+            if (user !== '') {
+                data.username = user;
+                let url = 'http://localhost:3000/';
+                if (whatIsSelected === 'food') {
+                    url += `editFavoriteMeals`;
+                } else {
+                    url += `editFavoriteDrinks`;
+                }
 
-            return fetch(url, {
-                method: method,
-                headers: {
-                    Accept: 'application/json',
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(data)
-            })
-                .then(response => console.log(response.json()))
-                .catch((error) => {
-                    console.error(error);
+                return fetch(url, {
+                    method: method,
+                    headers: {
+                        Accept: 'application/json',
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
                 })
+                    .then(response => {
+                        let status = response.statusText;
+                        alert(status);
+                    })
+                    .catch((error) => {
+                        console.error(error);
+                    })
+            } else {
+                alert('Please log in before adding recipes to favorites')
+            }
         }
     }
 
