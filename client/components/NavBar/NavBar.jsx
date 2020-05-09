@@ -11,7 +11,7 @@ function NavBar(props) {
                 <p style={{ color: 'white' }}>New Recipes</p>
             </div>
             <div id='NavBarSortButton' onClick={() => { props.openModal() }}>
-                <p style={{ color: 'white' }}>Sort</p>
+                <p style={{ color: 'white' }}>Search</p>
             </div>
         </div>
     )
