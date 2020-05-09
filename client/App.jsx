@@ -36,6 +36,9 @@ const App = () => {
     const [logInUsername, setLogInUsername] = useState('');
     const [logInPassword, setLogInPassword] = useState('');
     const [user, setUser] = useState('');
+    const [lookingAtFavorites, setLookingAtFavorites] = useState(false);
+    const [favFoods, setFavFoods] = useState([]);
+    const [favDrinks, setFavDrinks] = useState([]);
 
     // Call the function that will find 10 random recipes from both APIs
     // This function runs only once on component mount
