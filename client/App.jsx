@@ -53,7 +53,17 @@ const App = () => {
                         .then((response) => {
                             let second = response.data.meals;
                             let combined = first.concat(second);
-                            sortAPIResponse.sortFoodRecipes(combined)
+                            axios.get(APIKeys.food + 'randomselection.php')
+                                .then((response) => {
+                                    let third = response.data.meals;
+                                    let secondCombined = combined.concat(third);
+                                    axios.get(APIKeys.food + 'randomselection.php')
+                                        .then((response) => {
+                                            let fourth = response.data.meals;
+                                            let thirdCombined = secondCombined.concat(fourth);
+                                            sortAPIResponse.sortFoodRecipes(thirdCombined)
+                                        })
+                                })
                         })
                         .catch((error) => {
                             console.log(error)
@@ -69,7 +79,17 @@ const App = () => {
                         .then((response) => {
                             let second = response.data.drinks;
                             let combined = first.concat(second);
-                            sortAPIResponse.sortDrinkRecipes(combined);
+                            axios.get(APIKeys.drink + 'randomselection.php')
+                                .then((response) => {
+                                    let third = response.data.drinks;
+                                    let secondCombined = combined.concat(third);
+                                    axios.get(APIKeys.drink + 'randomselection.php')
+                                        .then((response) => {
+                                            let fourth = response.data.meals;
+                                            let thirdCombined = secondCombined.concat(fourth);
+                                            sortAPIResponse.sortFoodRecipes(thirdCombined)
+                                        })
+                                })
                         })
                 })
                 .catch((error) => {
