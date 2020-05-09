@@ -33,6 +33,7 @@ const App = () => {
     const [signUpPassword, setSignUpPassword] = useState('');
     const [logInUsername, setLogInUsername] = useState('');
     const [logInPassword, setLogInPassword] = useState('');
+    const [user, setUser] = useState('');
 
     // Call the function that will find 10 random recipes from both APIs
     // This function runs only once on component mount
@@ -184,13 +185,12 @@ const App = () => {
                 body: JSON.stringify(credentials)
             })
                 .then(response => {
-                    if (response.data.body === 'Successful') {
-                        setLoggedIn = true;
-                        alert("Sign Up successful! Welcome to the party!!!")
+                    let status = response.statusText;
+                    if (status === 'Sign up successful') {
+                        setLoggedIn(true);
+                        setUser(signUpUsername);
                     }
-                    if (response.data.body === 'Failed') {
-                        alert("Username already exists");
-                    }
+                    alert(response.statusText);
                 })
                 .catch((error) => {
                     console.log(error);
@@ -210,12 +210,14 @@ const App = () => {
                 body: JSON.stringify(credentials)
             })
                 .then(response => {
-                    if (response.data.body === 'Successful') {
-                        setLoggedIn = true;
+                    let status = response.statusText;
+                    if (status === 'Login successful') {
+                        setLoggedIn(true);
+                        setUser(logInUsername);
+                    } else {
+                        // Empty both inputs
                     }
-                    if (response.data.body === 'Failed') {
-                        alert("Login failed :(");
-                    }
+                    alert(status);
                 })
                 .catch((error) => {
                     console.log(error);
