@@ -377,16 +377,59 @@
 
     #LogInModal {
         position: fixed;
-        bottom: 5%;
-        right: 2%;
-        width: 30%;
+        bottom: 1%;
+        right: 2.75%;
         border: 2px solid lightblue;
         color: lightblue;
         z-index: 5;
-        height: 13%;
+        height: 6%;
         font-size: xx-large;
         background-color: white;
-        display: none;
+        display: flex;
+        width: 94%;
+    }
+
+    #LogInModalUserName {
+        width: 30%;
+        border: 1px solid black;
+        height: 85%;
+        margin-top: .5%;
+        margin-right: 1%;
+    }
+
+    #LogInModalPassword {
+        width: 30%;
+        border: 1px solid black;
+        height: 85%;
+        margin-top: .5%;
+    }
+
+    #LogInModalSubmitButton {
+        position: absolute;
+        right: 6px;
+        height: 100%;
+        border: 1px solid black;
+        border-radius: 25px;
+        background-color: white;
+    }
+
+    #LogInModalBackButton {
+        border: 1px solid black;
+        border-radius: 25px;
+        margin-left: 5%;
+        background-color: white;
+    }
+
+    #LogInSelect {
+        width: 50%;
+        text-align: center;
+        margin-top: 1%;
+    }
+
+    #SignUpSelect {
+        width: 45%;
+        text-align: center;
+        margin-top: 1%;
     }
 
 }
