@@ -444,7 +444,14 @@ const App = () => {
         openModal: () => { setIsModalVisible([2, 'block']) },
         closeModal: () => { setIsModalVisible([-1, 'none']) },
         searchFoods: () => { setWhatIsSelected('food') },
-        searchDrinks: () => { setWhatIsSelected('drinks') }
+        searchDrinks: () => { setWhatIsSelected('drinks') },
+        previousResults: () => {
+            if (whatIsSelected === 'food') {
+                setFoods(previousFoods);
+            } else {
+                setDrinks(previousDrinks);
+            }
+        }
     }
 
     const manageLogIn = {

@@ -11,6 +11,7 @@ const SearchByName = (props) => {
                 onChange={(e) => setSearchText(e.target.value)}
             />
             <div id='SearchByNameSubmitButton' onClick={() => props.manageAPICalls.searchByName(searchText)}>Submit</div>
+            <div id='SearchByNameSubmitButton' onClick={() => props.manageModal.previousResults()}>Previous results</div>
         </div>
     )
 }

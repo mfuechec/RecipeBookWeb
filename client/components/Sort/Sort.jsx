@@ -19,7 +19,7 @@ const Sort = (props) => {
                 <SortNav manageAPICalls={props.manageAPICalls} manageModal={props.manageModal} />
             </div>
             <div id='SearchByName'>
-                <SearchByName manageAPICalls={props.manageAPICalls} whatIsSelected={props.whatIsSelected} />
+                <SearchByName manageModal={props.manageModal} manageAPICalls={props.manageAPICalls} whatIsSelected={props.whatIsSelected} />
             </div>
             <div id='SearchByCategory'>
                 <SearchByCategory whatIsSelected={props.whatIsSelected} manageAPICalls={props.manageAPICalls} />
