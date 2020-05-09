@@ -254,7 +254,7 @@ const App = () => {
         editFavorites: (data, method) => {
             if (user !== '') {
                 data.username = user;
-                let url = 'http://localhost:3000/';
+                let url = 'http://recipebookserver-env.eba-peu3pu5p.us-east-2.elasticbeanstalk.com/';
                 if (whatIsSelected === 'food') {
                     url += `editFavoriteMeals`;
                 } else {
@@ -285,7 +285,7 @@ const App = () => {
                 name: name
             }
 
-            return fetch('http://localhost:3000/findFavoriteMeals', {
+            return fetch('http://recipebookserver-env.eba-peu3pu5p.us-east-2.elasticbeanstalk.com/findFavoriteMeals', {
                 method: 'POST',
                 headers: {
                     Accept: 'application/json',
@@ -294,7 +294,7 @@ const App = () => {
                 body: JSON.stringify(user)
             })
                 .then(response => {
-                    sortFavMeals(JSON.parse(response.statusText));
+                    sortAPIResponse.sortFavMeals(JSON.parse(response.statusText));
                 })
                 .catch((error) => {
                     console.error(error);
@@ -306,7 +306,7 @@ const App = () => {
                 name: name
             }
 
-            return fetch('http://localhost:3000/findFavoriteDrinks', {
+            return fetch('http://recipebookserver-env.eba-peu3pu5p.us-east-2.elasticbeanstalk.com/findFavoriteDrinks', {
                 method: 'POST',
                 headers: {
                     Accept: 'application/json',
@@ -315,7 +315,7 @@ const App = () => {
                 body: JSON.stringify(user)
             })
                 .then(response => {
-                    sortFavDrinks(JSON.parse(response.statusText));
+                    sortAPIResponse.sortFavDrinks(JSON.parse(response.statusText));
                 })
                 .catch((error) => {
                     console.error(error);
@@ -334,9 +334,9 @@ const App = () => {
     // This object holds functions that format the data received from API calls.
     const sortAPIResponse = {
         sortFoodRecipes: (datum) => {
-            var recipes = [];
-            for (var i = 0; i < datum.length; i++) {
-                var recipe = {
+            let recipes = [];
+            for (let i = 0; i < datum.length; i++) {
+                let recipe = {
                     name: '',
                     type: '',
                     instructions: '',
@@ -344,7 +344,7 @@ const App = () => {
                     ingredients: [],
                     measurements: []
                 };
-                var data = datum[i]
+                let data = datum[i]
                 recipe.name = data.strMeal;
                 recipe.type = data.strCategory;
                 recipe.instructions = data.strInstructions;
@@ -398,9 +398,9 @@ const App = () => {
             setFoods(recipes);
         },
         sortDrinkRecipes: (datum) => {
-            var recipes = [];
-            for (var i = 0; i < datum.length; i++) {
-                var recipe = {
+            let recipes = [];
+            for (let i = 0; i < datum.length; i++) {
+                let recipe = {
                     name: '',
                     type: '',
                     instructions: '',
@@ -408,7 +408,7 @@ const App = () => {
                     ingredients: [],
                     measurements: []
                 };
-                var data = datum[i]
+                let data = datum[i]
                 recipe.name = data.strDrink;
                 recipe.type = data.strCategory;
                 recipe.instructions = data.strInstructions;
@@ -530,6 +530,134 @@ const App = () => {
                 .catch((error) => {
                     console.log(error);
                 })
+        },
+        sortFavMeals: (datum) => {
+            let recipes = [];
+            for (let i = 0; i < datum.length; i++) {
+                let recipe = {
+                    name: '',
+                    type: '',
+                    instructions: '',
+                    image: '',
+                    ingredients: [],
+                    measurements: []
+                };
+                let data = datum[i]
+                recipe.name = data.name;
+                // recipe.type = data.strCategory;
+                recipe.instructions = data.instructions;
+                recipe.image = data.image;
+                recipe.ingredients = [
+                    data.ingredient1,
+                    data.ingredient2,
+                    data.ingredient3,
+                    data.ingredient4,
+                    data.ingredient5,
+                    data.ingredient6,
+                    data.ingredient7,
+                    data.ingredient8,
+                    data.ingredient9,
+                    data.ingredient10,
+                    data.ingredient11,
+                    data.ingredient12,
+                    data.ingredient13,
+                    data.ingredient14,
+                    data.ingredient15,
+                    data.ingredient16,
+                    data.ingredient17,
+                    data.ingredient18,
+                    data.ingredient19,
+                    data.ingredient20,
+                ]
+                recipe.measurements = [
+                    data.measurement1,
+                    data.measurement2,
+                    data.measurement3,
+                    data.measurement4,
+                    data.measurement5,
+                    data.measurement6,
+                    data.measurement7,
+                    data.measurement8,
+                    data.measurement9,
+                    data.measurement10,
+                    data.measurement11,
+                    data.measurement12,
+                    data.measurement13,
+                    data.measurement14,
+                    data.measurement15,
+                    data.measurement16,
+                    data.measurement17,
+                    data.measurement18,
+                    data.measurement19,
+                    data.measurement20,
+                ]
+                recipes.push(recipe)
+            }
+            setFavFoods(recipes);
+        },
+        sortFavDrinks: (datum) => {
+            let recipes = [];
+            for (let i = 0; i < datum.length; i++) {
+                let recipe = {
+                    name: '',
+                    type: '',
+                    instructions: '',
+                    image: '',
+                    ingredients: [],
+                    measurements: []
+                };
+                let data = datum[i]
+                recipe.name = data.name;
+                // recipe.type = data.strCategory;
+                recipe.instructions = data.instructions;
+                recipe.image = data.image;
+                recipe.ingredients = [
+                    data.ingredient1,
+                    data.ingredient2,
+                    data.ingredient3,
+                    data.ingredient4,
+                    data.ingredient5,
+                    data.ingredient6,
+                    data.ingredient7,
+                    data.ingredient8,
+                    data.ingredient9,
+                    data.ingredient10,
+                    data.ingredient11,
+                    data.ingredient12,
+                    data.ingredient13,
+                    data.ingredient14,
+                    data.ingredient15,
+                    data.ingredient16,
+                    data.ingredient17,
+                    data.ingredient18,
+                    data.ingredient19,
+                    data.ingredient20,
+                ]
+                recipe.measurements = [
+                    data.measurement1,
+                    data.measurement2,
+                    data.measurement3,
+                    data.measurement4,
+                    data.measurement5,
+                    data.measurement6,
+                    data.measurement7,
+                    data.measurement8,
+                    data.measurement9,
+                    data.measurement10,
+                    data.measurement11,
+                    data.measurement12,
+                    data.measurement13,
+                    data.measurement14,
+                    data.measurement15,
+                    data.measurement16,
+                    data.measurement17,
+                    data.measurement18,
+                    data.measurement19,
+                    data.measurement20,
+                ]
+                recipes.push(recipe)
+            }
+            setFavDrinks(recipes);
         }
     }
 
