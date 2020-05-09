@@ -182,29 +182,37 @@ const App = () => {
             }
         },
         signUp: () => {
-            let credentials = {
-                username: signUpUsername,
-                password: signUpPassword
+            if (signUpUsername.length > 4 && signUpPassword.length > 7) {
+                let credentials = {
+                    username: signUpUsername,
+                    password: signUpPassword
+                }
+                return fetch('http://recipebookserver-env.eba-peu3pu5p.us-east-2.elasticbeanstalk.com/signUp', {
+                    method: 'POST',
+                    headers: {
+                        Accept: 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(credentials)
+                })
+                    .then(response => {
+                        let status = response.statusText;
+                        if (status === 'Sign up successful') {
+                            setLoggedIn(true);
+                            setUser(signUpUsername);
+                        }
+                        alert(response.statusText);
+                    })
+                    .catch((error) => {
+                        console.log(error);
+                    })
+            } else {
+                if (signUpUsername.length < 5) {
+                    alert('Username must be greater than 4 characters.');
+                } else if (signUpPassword.length < 8) {
+                    alert('Password must be greater than 7 characters.');
+                }
             }
-            return fetch('http://recipebookserver-env.eba-peu3pu5p.us-east-2.elasticbeanstalk.com/signUp', {
-                method: 'POST',
-                headers: {
-                    Accept: 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(credentials)
-            })
-                .then(response => {
-                    let status = response.statusText;
-                    if (status === 'Sign up successful') {
-                        setLoggedIn(true);
-                        setUser(signUpUsername);
-                    }
-                    alert(response.statusText);
-                })
-                .catch((error) => {
-                    console.log(error);
-                })
         },
         logIn: () => {
             let credentials = {
