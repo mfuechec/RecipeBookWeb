@@ -2,6 +2,7 @@
 
     body {
         align-items: center;
+        font-family: cursive;
     }
 
     #LandingPageOptionsContainer {
@@ -64,10 +65,12 @@
         background-color: black;
         border: none 1px solid;
         border-radius: 25px;
+        text-decoration: none;
+        color: white;
     }
 
     #NavBarHomeButtonText {
-        color: white;
+        
     }
 
     #NavBarNewRecipesButton {
@@ -81,13 +84,15 @@
         background-color: black;
         border: none 1px solid;
         border-radius: 25px;
+        color: white;
+        text-decoration: none;
     }
 
     #NavBarNewRecipesButton :hover {
         cursor: pointer;
     }
 
-    #NavBarSortButton {
+    #NavBarSwitchRecipesButton {
         margin-left: 8.5vw;
         margin-right: 8.5vw;
         margin-top: auto;
@@ -98,9 +103,11 @@
         background-color: black;
         border: none 1px solid;
         border-radius: 25px;
+        color: white;
+        text-decoration: none;
     }
 
-    #NavBarSortButton :hover {
+    #NavBarSwitchRecipesButton :hover {
         cursor: pointer;
     }
 
@@ -113,6 +120,11 @@
     #NewDrinkRecipesContainer {
         background-color: #EEEEEE;
         margin-right: auto;
+    }
+
+    #NewRecipesHeader {
+        text-align: center;
+        font-size: xx-large;
     }
 
     #ListingContainer {
@@ -423,13 +435,11 @@
     #LogInSelect {
         width: 50%;
         text-align: center;
-        margin-top: 1%;
     }
 
     #SignUpSelect {
         width: 45%;
         text-align: center;
-        margin-top: 1%;
     }
 
 }
