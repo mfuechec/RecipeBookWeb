@@ -199,7 +199,7 @@ const App = () => {
                     username: signUpUsername,
                     password: signUpPassword
                 }
-                return fetch('http://recipebookserver-env.eba-peu3pu5p.us-east-2.elasticbeanstalk.com/signUp', {
+                return fetch('http://localhost:3000/signUp', {
                     method: 'POST',
                     headers: {
                         Accept: 'application/json',
@@ -208,14 +208,14 @@ const App = () => {
                     body: JSON.stringify(credentials)
                 })
                     .then(response => {
-                        let status = response.statusText;
-                        if (status === 'Sign up successful') {
+                        if (response.status === 200) {
                             setLoggedIn(true);
                             setUser(signUpUsername);
                             manageAPICalls.getUserFavoriteFoods(signUpUsername);
                             manageAPICalls.getUserFavoriteDrinks(signUpUsername);
+                        } else {
+                            alert('Username already taken')
                         }
-                        alert(response.statusText);
                     })
                     .catch((error) => {
                         console.log(error);
@@ -227,7 +227,7 @@ const App = () => {
                 username: logInUsername,
                 password: logInPassword
             }
-            return fetch('http://recipebookserver-env.eba-peu3pu5p.us-east-2.elasticbeanstalk.com/login', {
+            return fetch('http://localhost:3000/login', {
                 method: 'POST',
                 headers: {
                     Accept: 'application/json',
@@ -236,16 +236,15 @@ const App = () => {
                 body: JSON.stringify(credentials)
             })
                 .then(response => {
-                    let status = response.statusText;
-                    if (status === 'Login successful') {
+                    if (response.status === 200) {
                         setLoggedIn(true);
                         setUser(logInUsername);
                         manageAPICalls.getUserFavoriteFoods(logInUsername);
                         manageAPICalls.getUserFavoriteDrinks(logInUsername);
                     } else {
                         // Empty both inputs
+                        alert('Login failed')
                     }
-                    alert(status);
                 })
                 .catch((error) => {
                     console.log(error);
@@ -285,7 +284,7 @@ const App = () => {
                 name: name
             }
 
-            return fetch('http://recipebookserver-env.eba-peu3pu5p.us-east-2.elasticbeanstalk.com/findFavoriteMeals', {
+            return fetch('http://localhost:3000/findFavoriteMeals', {
                 method: 'POST',
                 headers: {
                     Accept: 'application/json',
@@ -294,7 +293,10 @@ const App = () => {
                 body: JSON.stringify(user)
             })
                 .then(response => {
-                    sortAPIResponse.sortFavMeals(JSON.parse(response.statusText));
+                    response.json()
+                        .then(
+                            body => sortAPIResponse.sortFavMeals(body)
+                        )
                 })
                 .catch((error) => {
                     console.error(error);
@@ -306,7 +308,7 @@ const App = () => {
                 name: name
             }
 
-            return fetch('http://recipebookserver-env.eba-peu3pu5p.us-east-2.elasticbeanstalk.com/findFavoriteDrinks', {
+            return fetch('http://localhost:3000/findFavoriteDrinks', {
                 method: 'POST',
                 headers: {
                     Accept: 'application/json',
@@ -315,7 +317,10 @@ const App = () => {
                 body: JSON.stringify(user)
             })
                 .then(response => {
-                    sortAPIResponse.sortFavDrinks(JSON.parse(response.statusText));
+                    response.json()
+                        .then(
+                            body => sortAPIResponse.sortFavDrinks(body)
+                        )
                 })
                 .catch((error) => {
                     console.error(error);
