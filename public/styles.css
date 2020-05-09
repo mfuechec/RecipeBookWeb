@@ -516,6 +516,23 @@
         cursor: pointer;
     }
 
+    #NavBarSwitchRecipesButton {
+        margin-left: 8.5vw;
+        margin-right: 8.5vw;
+        margin-top: auto;
+        margin-bottom: auto;
+        width: 15vw;
+        text-align: center;
+        opacity: 40%;
+        background-color: black;
+        border: none 1px solid;
+        border-radius: 25px;
+    }
+
+    #NavBarSwitchRecipesButton :hover {
+        cursor: pointer;
+    }
+
     #NewFoodRecipesContainer {
         width: 98.75%;
         background-color: #EEEEEE;

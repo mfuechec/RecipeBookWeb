@@ -13,9 +13,9 @@ function NavBar(props) {
             <div id='NavBarSwitchRecipesButton' onClick={() => { props.manageModal.switchToFavorites() }}>
                 <p id='NavBarText'>Favorites</p>
             </div>
-            <div id='NavBarSortButton' onClick={() => { props.manageModal.openModal() }}>
+            {/* <div id='NavBarSortButton' onClick={() => { props.manageModal.openModal() }}>
                 <p id='NavBarText'>Search</p>
-            </div>
+            </div> */}
         </div>
     )
 };
