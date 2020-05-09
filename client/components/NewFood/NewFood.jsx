@@ -2,8 +2,8 @@ import React from 'react';
 import FoodsList from './FoodsList.jsx';
 
 let NewFood = (props) => {
-    let foods = [];
-    if (lookingAtFavorites = false) {
+    let foods;
+    if (props.lookingAtFavorites === false) {
         foods = props.foods;
     } else {
         foods = props.favFoods

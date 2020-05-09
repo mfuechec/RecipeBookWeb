@@ -212,6 +212,7 @@ const App = () => {
                         if (status === 'Sign up successful') {
                             setLoggedIn(true);
                             setUser(signUpUsername);
+                            getUserFavorites(signUpUsername);
                         }
                         alert(response.statusText);
                     })
@@ -238,6 +239,7 @@ const App = () => {
                     if (status === 'Login successful') {
                         setLoggedIn(true);
                         setUser(logInUsername);
+                        getUserFavorites(logInUsername);
                     } else {
                         // Empty both inputs
                     }
@@ -275,6 +277,10 @@ const App = () => {
             } else {
                 alert('Please log in before adding recipes to favorites')
             }
+        },
+        getUserFavorites: (name) => {
+            console.log(name)
+            // Will populate favFoods after database calls
         }
     }
 
