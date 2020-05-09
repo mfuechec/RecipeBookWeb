@@ -182,7 +182,16 @@ const App = () => {
             }
         },
         signUp: () => {
-            if (signUpUsername.length > 4 && signUpPassword.length > 7) {
+            let format = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+            if (signUpUsername.length < 5) {
+                alert('Username must be greater than 4 characters.');
+            } else if (signUpPassword.length < 8) {
+                alert('Password must be greater than 7 characters.');
+            } else if (format.test(signUpUsername)) {
+                alert('Username may not contain special characters.');
+            } else if (format.test(signUpPassword)) {
+                alert('Password may not contain special characters');
+            } else {
                 let credentials = {
                     username: signUpUsername,
                     password: signUpPassword
@@ -206,12 +215,6 @@ const App = () => {
                     .catch((error) => {
                         console.log(error);
                     })
-            } else {
-                if (signUpUsername.length < 5) {
-                    alert('Username must be greater than 4 characters.');
-                } else if (signUpPassword.length < 8) {
-                    alert('Password must be greater than 7 characters.');
-                }
             }
         },
         logIn: () => {
