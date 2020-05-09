@@ -85,7 +85,6 @@ const App = () => {
                         } else {
                             setPreviousFoods(foods);
                             sortAPIResponse.sortFoodRecipes(response.data.meals);
-                            manageModal.closeModal();
                         }
                     })
                     .catch((error) => {
