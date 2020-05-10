@@ -5,7 +5,7 @@ import IngredientsList from './IngredientsList.jsx';
 let DrinkListing = (props) => {
     let drink = props.drink;
     let color = '';
-    if (props.favFoodNames.includes(food.name)) {
+    if (props.favDrinkNames.includes(food.name)) {
         color = 'lightgoldenrodyellow';
     } else {
         color = 'lightblue';

@@ -14,7 +14,7 @@ let NewDrink = (props) => {
     return (
         <div id='NewDrinkRecipesContainer'>
             <div id='NewRecipesHeader'>{text}</div>
-            <DrinksList manageAPICalls={props.manageAPICalls} setDrink={props.setDrink} drinks={drinks} />
+            <DrinksList favDrinkNames={props.favDrinkNames} manageAPICalls={props.manageAPICalls} setDrink={props.setDrink} drinks={drinks} />
         </div>
     )
 };

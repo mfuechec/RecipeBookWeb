@@ -742,7 +742,7 @@ const App = () => {
                         render={() =>
                             <div>
                                 <NavBar findNewRecipes={manageAPICalls.findNewRecipes} manageModal={manageModal} />
-                                <NewDrinks manageAPICalls={manageAPICalls} drinks={drinks} favDrinks={favDrinks} lookingAtFavorites={lookingAtFavorites} setDrink={setDrink} />
+                                <NewDrinks favDrinkNames={favDrinkNames} manageAPICalls={manageAPICalls} drinks={drinks} favDrinks={favDrinks} lookingAtFavorites={lookingAtFavorites} setDrink={setDrink} />
                             </div>} />
 
                     <Route
