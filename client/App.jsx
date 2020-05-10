@@ -230,7 +230,6 @@ const App = () => {
                 username: logInUsername,
                 password: sha256(logInPassword)
             }
-            console.log(credentials.password)
             return fetch('http://recipebookserver-env.eba-peu3pu5p.us-east-2.elasticbeanstalk.com/login', {
                 method: 'POST',
                 headers: {
@@ -673,7 +672,7 @@ const App = () => {
                 recipes.push(recipe)
             }
             setFavDrinks(recipes);
-            setFavDrinkNames(favRecipe);
+            setFavDrinkNames(favRecipes);
         },
         appendFavorite: (data) => {
             if (whatIsSelected === 'food') {
@@ -735,7 +734,7 @@ const App = () => {
                         render={() =>
                             <div>
                                 <NavBar findNewRecipes={manageAPICalls.findNewRecipes} manageModal={manageModal} />
-                                <NewFood manageAPICalls={manageAPICalls} foods={foods} favFoods={favFoods} lookingAtFavorites={lookingAtFavorites} setFood={setFood} />
+                                <NewFood favFoodNames={favFoodNames} manageAPICalls={manageAPICalls} foods={foods} favFoods={favFoods} lookingAtFavorites={lookingAtFavorites} setFood={setFood} />
                             </div>} />
 
                     <Route

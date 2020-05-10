@@ -667,11 +667,11 @@
     }
 
     #ListingFavContainer {
-        color: lightblue;
+        
     }
 
     #ListingFavContainer:hover {
-        color: lightgoldenrodyellow;
+        color: lightgoldenrodyellow !important
     }
 
     #ListingFavText {

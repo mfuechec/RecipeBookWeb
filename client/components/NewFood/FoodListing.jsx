@@ -4,6 +4,12 @@ import IngredientsList from './IngredientsList.jsx';
 
 let FoodListing = (props) => {
     let food = props.food;
+    let color = '';
+    if (props.favFoodNames.includes(food.name)) {
+        color = 'lightgoldenrodyellow';
+    } else {
+        color = 'lightblue';
+    }
     return (
         <div id='ListingContainer'>
             <Link id='ListingContainerView' to='/Food' onClick={() => props.setFood(food)}>
@@ -16,7 +22,7 @@ let FoodListing = (props) => {
                     </div>
                     <div id='ListingIngredientsAndFavContainer'>
                         <div id='ListingFavLinkContainer'>
-                            <Link id='ListingFavContainer' to='/NewFood' onClick={(e) => { props.manageAPICalls.editFavorites(food, 'POST'); e.stopPropagation() }}>
+                            <Link id='ListingFavContainer' style={{ color: color }} to='/NewFood' onClick={(e) => { props.manageAPICalls.editFavorites(food, 'POST'); e.stopPropagation() }}>
                                 <i id='ListingFavStar' className="fas fa-star"></i>
                             </Link>
                         </div>
