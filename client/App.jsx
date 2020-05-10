@@ -16,6 +16,7 @@ import {
     Route,
     Switch
 } from 'react-router-dom';
+let sha256 = require('js-sha256');
 
 const App = () => {
 
@@ -39,6 +40,8 @@ const App = () => {
     const [lookingAtFavorites, setLookingAtFavorites] = useState(false);
     const [favFoods, setFavFoods] = useState([]);
     const [favDrinks, setFavDrinks] = useState([]);
+    const [favFoodNames, setFavFoodNames] = useState('');
+    const [favDrinkNames, setFavDrinkNames] = useState('');
 
     // Call the function that will find 10 random recipes from both APIs
     // This function runs only once on component mount
@@ -197,7 +200,7 @@ const App = () => {
             } else {
                 let credentials = {
                     username: signUpUsername,
-                    password: signUpPassword
+                    password: sha256(signUpPassword)
                 }
                 return fetch('http://recipebookserver-env.eba-peu3pu5p.us-east-2.elasticbeanstalk.com/signup', {
                     method: 'POST',
@@ -225,8 +228,9 @@ const App = () => {
         logIn: () => {
             let credentials = {
                 username: logInUsername,
-                password: logInPassword
+                password: sha256(logInPassword)
             }
+            console.log(credentials.password)
             return fetch('http://recipebookserver-env.eba-peu3pu5p.us-east-2.elasticbeanstalk.com/login', {
                 method: 'POST',
                 headers: {
@@ -539,6 +543,7 @@ const App = () => {
         },
         sortFavMeals: (datum) => {
             let recipes = [];
+            let favRecipes = '';
             for (let i = 0; i < datum.length; i++) {
                 let recipe = {
                     name: '',
@@ -550,6 +555,7 @@ const App = () => {
                 };
                 let data = datum[i]
                 recipe.name = data.name;
+                favRecipes += data.name;
                 // recipe.type = data.strCategory;
                 recipe.instructions = data.instructions;
                 recipe.image = data.image;
@@ -600,9 +606,11 @@ const App = () => {
                 recipes.push(recipe)
             }
             setFavFoods(recipes);
+            setFavFoodNames(favRecipes);
         },
         sortFavDrinks: (datum) => {
             let recipes = [];
+            let favRecipes = '';
             for (let i = 0; i < datum.length; i++) {
                 let recipe = {
                     name: '',
@@ -614,6 +622,7 @@ const App = () => {
                 };
                 let data = datum[i]
                 recipe.name = data.name;
+                favRecipes += data.name;
                 // recipe.type = data.strCategory;
                 recipe.instructions = data.instructions;
                 recipe.image = data.image;
@@ -664,6 +673,7 @@ const App = () => {
                 recipes.push(recipe)
             }
             setFavDrinks(recipes);
+            setFavDrinkNames(favRecipe);
         },
         appendFavorite: (data) => {
             if (whatIsSelected === 'food') {
