@@ -199,7 +199,7 @@ const App = () => {
                     username: signUpUsername,
                     password: signUpPassword
                 }
-                return fetch('http://localhost:3000/signUp', {
+                return fetch('http://recipebookserver-env.eba-peu3pu5p.us-east-2.elasticbeanstalk.com/signup', {
                     method: 'POST',
                     headers: {
                         Accept: 'application/json',
@@ -227,7 +227,7 @@ const App = () => {
                 username: logInUsername,
                 password: logInPassword
             }
-            return fetch('http://localhost:3000/login', {
+            return fetch('http://recipebookserver-env.eba-peu3pu5p.us-east-2.elasticbeanstalk.com/login', {
                 method: 'POST',
                 headers: {
                     Accept: 'application/json',
@@ -270,6 +270,7 @@ const App = () => {
                 })
                     .then(response => {
                         let status = response.statusText;
+                        sortAPIResponse.appendFavorite(data);
                         alert(status);
                     })
                     .catch((error) => {
@@ -284,7 +285,7 @@ const App = () => {
                 name: name
             }
 
-            return fetch('http://localhost:3000/findFavoriteMeals', {
+            return fetch('http://recipebookserver-env.eba-peu3pu5p.us-east-2.elasticbeanstalk.com/findFavoriteMeals', {
                 method: 'POST',
                 headers: {
                     Accept: 'application/json',
@@ -308,7 +309,7 @@ const App = () => {
                 name: name
             }
 
-            return fetch('http://localhost:3000/findFavoriteDrinks', {
+            return fetch('http://recipebookserver-env.eba-peu3pu5p.us-east-2.elasticbeanstalk.com/findFavoriteDrinks', {
                 method: 'POST',
                 headers: {
                     Accept: 'application/json',
@@ -663,6 +664,14 @@ const App = () => {
                 recipes.push(recipe)
             }
             setFavDrinks(recipes);
+        },
+        appendFavorite: (data) => {
+            if (whatIsSelected === 'food') {
+                setFavFoods(favFoods.concat(data))
+            } else {
+                setFavDrinks(favDrinks.concat(data))
+            }
+
         }
     }
 
