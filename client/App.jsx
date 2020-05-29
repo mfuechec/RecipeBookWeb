@@ -253,7 +253,7 @@ const App = () => {
                     console.log(error);
                 })
         },
-        editFavorites: (data, method) => {
+        addToFavorites: (data) => {
             if (user !== '') {
                 data.username = user;
                 let url = 'http://recipebookserver-env.eba-peu3pu5p.us-east-2.elasticbeanstalk.com/';
@@ -264,7 +264,7 @@ const App = () => {
                 }
 
                 return fetch(url, {
-                    method: method,
+                    method: 'POST',
                     headers: {
                         Accept: 'application/json',
                         'Content-Type': 'application/json',
@@ -281,6 +281,35 @@ const App = () => {
                     })
             } else {
                 alert('Please log in before adding recipes to favorites')
+            }
+        },
+        deleteFromFavorites: (data) => {
+            if (user !== '') {
+                data.username = user;
+                let url = 'http://recipebookserver-env.eba-peu3pu5p.us-east-2.elasticbeanstalk.com/';
+                if (whatIsSelected === 'food') {
+                    url += `editFavoriteMeals`;
+                } else {
+                    url += `editFavoriteDrinks`;
+                }
+
+                return fetch(url, {
+                    method: 'DELETE',
+                    headers: {
+                        Accept: 'application/json',
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                })
+                    .then(response => {
+                        let status = response.statusText;
+                        alert(status);
+                    })
+                    .catch((error) => {
+                        console.error(error);
+                    })
+            } else {
+                alert('Please log in before deleting recipes from favorites')
             }
         },
         getUserFavoriteFoods: (name) => {
