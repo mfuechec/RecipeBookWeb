@@ -3,6 +3,9 @@
     body {
         align-items: center;
         font-family: cursive;
+        margin: 2%;
+        height: 100%;
+        overflow: hidden;
     }
 
     #LandingPageOptionsContainer {
@@ -389,7 +392,26 @@
         opacity: 100%;
     }
 
-    #LogInModal {
+    .logInModal {
+        position: fixed;
+        bottom: -20%;
+        right: 2.75%;
+        border: 2px solid lightblue;
+        color: lightblue;
+        z-index: 5;
+        height: 6%;
+        font-size: xx-large;
+        background-color: white;
+        display: flex;
+        width: 94%;
+        -webkit-transition: all 2s ease;  
+        -moz-transition: all 2s ease;  
+        -o-transition: all 2s ease;  
+        -ms-transition: all 2s ease;  
+        transition: all 2s ease;
+    }
+
+    .logInModal-in {
         position: fixed;
         bottom: 1%;
         right: 2.75%;
@@ -401,6 +423,49 @@
         background-color: white;
         display: flex;
         width: 94%;
+        -webkit-transition: all 2s ease;  
+        -moz-transition: all 2s ease;  
+        -o-transition: all 2s ease;  
+        -ms-transition: all 2s ease;  
+        transition: all 2s ease;
+    }
+
+    .signUpModal {
+        position: fixed;
+        bottom: -20%;
+        right: 2.75%;
+        border: 2px solid lightblue;
+        color: lightblue;
+        z-index: 5;
+        height: 6%;
+        font-size: xx-large;
+        background-color: white;
+        display: flex;
+        width: 94%;
+        -webkit-transition: all 2s ease;  
+        -moz-transition: all 2s ease;  
+        -o-transition: all 2s ease;  
+        -ms-transition: all 2s ease;  
+        transition: all 2s ease;
+    }
+
+    .signUpModal-in {
+        position: fixed;
+        bottom: 1%;
+        right: 2.75%;
+        border: 2px solid lightblue;
+        color: lightblue;
+        z-index: 5;
+        height: 6%;
+        font-size: xx-large;
+        background-color: white;
+        display: flex;
+        width: 94%;
+        -webkit-transition: all 2s ease;  
+        -moz-transition: all 2s ease;  
+        -o-transition: all 2s ease;  
+        -ms-transition: all 2s ease;  
+        transition: all 2s ease;
     }
 
     #LogInModalUserName {
@@ -434,6 +499,37 @@
         background-color: white;
     }
 
+    #SignUpModalUserName {
+        width: 30%;
+        border: 1px solid black;
+        height: 85%;
+        margin-top: .5%;
+        margin-right: 1%;
+    }
+
+    #SignUpModalPassword {
+        width: 30%;
+        border: 1px solid black;
+        height: 85%;
+        margin-top: .5%;
+    }
+
+    #SignUpModalSubmitButton {
+        position: absolute;
+        right: 6px;
+        height: 100%;
+        border: 1px solid black;
+        border-radius: 25px;
+        background-color: white;
+    }
+
+    #SignUpModalBackButton {
+        border: 1px solid black;
+        border-radius: 25px;
+        margin-left: 2%;
+        background-color: white;
+    }
+
     #LogInSelect {
         width: 50%;
         text-align: center;
@@ -443,6 +539,44 @@
         width: 45%;
         text-align: center;
     }
+
+    .selection {
+        position: fixed;
+        bottom: 1%;
+        right: 2.75%;
+        border: 2px solid lightblue;
+        color: lightblue;
+        z-index: 5;
+        height: 6%;
+        font-size: xx-large;
+        background-color: white;
+        display: flex;
+        width: 94%;
+        -webkit-transition: all 1s ease;  
+        -moz-transition: all 1s ease;  
+        -o-transition: all 1s ease;  
+        -ms-transition: all 1s ease;  
+        transition: all 1s ease;
+      }
+      
+      .selection-out {
+        position: fixed;
+        bottom: -20%;
+        right: 2.75%;
+        border: 2px solid lightblue;
+        color: lightblue;
+        z-index: 5;
+        height: 6%;
+        font-size: xx-large;
+        background-color: white;
+        display: flex;
+        width: 94%;
+        -webkit-transition: all 1s ease;  
+        -moz-transition: all 1s ease;  
+        -o-transition: all 1s ease;  
+        -ms-transition: all 1s ease;  
+        transition: all 1s ease;
+      }
 
 }
 
