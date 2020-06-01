@@ -742,10 +742,30 @@ const App = () => {
     }
 
     const manageLogIn = {
-        logInSelect: () => { setLogInSelected(true) },
-        signUpSelect: () => { setSignUpSelected(true) },
-        closeLogInSelect: () => { setLogInSelected(false) },
-        closeSignUpSelect: () => { setSignUpSelected(false) },
+        logInSelect: () => {
+            let logInModal = document.getElementsByClassName('selection');
+            logInModal[0].className = 'selection-out'
+            let logInSelected = document.getElementsByClassName('logInModal');
+            logInSelected[0].className = 'logInModal-in';
+        },
+        signUpSelect: () => {
+            let logInModal = document.getElementsByClassName('selection');
+            logInModal[0].className = 'selection-out';
+            let signUpSelected = document.getElementsByClassName('signUpModal');
+            signUpSelected[0].className = 'signUpModal-in';
+        },
+        closeLogInSelect: () => {
+            let logInModal = document.getElementsByClassName('selection-out');
+            logInModal[0].className = 'selection'
+            let logInSelected = document.getElementsByClassName('logInModal-in');
+            logInSelected[0].className = 'logInModal';
+        },
+        closeSignUpSelect: () => {
+            let logInModal = document.getElementsByClassName('selection-out');
+            logInModal[0].className = 'selection';
+            let signUpSelected = document.getElementsByClassName('signUpModal-in');
+            signUpSelected[0].className = 'signUpModal';
+        },
         logInUsername: (e) => { setLogInUsername(e.target.value) },
         logInPassword: (e) => { setLogInPassword(e.target.value) },
         signUpUsername: (e) => { setSignUpUsername(e.target.value) },
