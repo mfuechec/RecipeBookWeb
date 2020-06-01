@@ -1082,7 +1082,6 @@
         top: 15%;
         width: 50%;
         height: 10%;
-        border-radius: 5%;
     }
 
     #LogInModalPassword {
@@ -1092,7 +1091,6 @@
         top: 30%;
         width: 50%;
         height: 10%;
-        border-radius: 5%;
     }
 
     #LogInModalSubmitButton {
@@ -1101,7 +1099,7 @@
         left: 23%;
         width: 25%;
         height: 25%;
-        border-radius: 10%;
+        border-radius: 25px;
         font-size: x-large;
     }
 
@@ -1111,7 +1109,7 @@
         right: 20%;
         height: 25%;
         width: 25%;
-        border-radius: 10%;
+        border-radius: 25px;
         font-size: x-large;
     }
 
@@ -1122,7 +1120,6 @@
         top: 15%;
         width: 50%;
         height: 10%;
-        border-radius: 5%;
     }
 
     #SignUpModalPassword {
@@ -1132,7 +1129,6 @@
         top: 30%;
         width: 50%;
         height: 10%;
-        border-radius: 5%;
     }
 
     #SignUpModalSubmitButton {
@@ -1141,7 +1137,7 @@
         left: 23%;
         width: 25%;
         height: 25%;
-        border-radius: 10%;
+        border-radius: 25px;
         font-size: x-large;
     }
 
@@ -1151,7 +1147,7 @@
         right: 20%;
         height: 25%;
         width: 25%;
-        border-radius: 10%;
+        border-radius: 25px;
         font-size: x-large;
     }
 
