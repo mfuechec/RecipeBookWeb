@@ -210,8 +210,11 @@ const App = () => {
                     },
                     body: JSON.stringify(credentials)
                 })
+                    .then(stream => {
+                        return stream.text();
+                    })
                     .then(response => {
-                        if (response.status === 200) {
+                        if (response === 'Signup successful') {
                             setLoggedIn(true);
                             setUser(signUpUsername);
                             manageAPICalls.getUserFavoriteFoods(signUpUsername);
