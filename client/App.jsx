@@ -238,8 +238,11 @@ const App = () => {
                 },
                 body: JSON.stringify(credentials)
             })
+                .then(stream => {
+                    return stream.text();
+                })
                 .then(response => {
-                    if (response.status === 200) {
+                    if (response === 'Login successful') {
                         setLoggedIn(true);
                         setUser(logInUsername);
                         manageAPICalls.getUserFavoriteFoods(logInUsername);
