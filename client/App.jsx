@@ -744,26 +744,50 @@ const App = () => {
     const manageLogIn = {
         logInSelect: () => {
             let logInModal = document.getElementsByClassName('selection');
-            logInModal[0].className = 'selection-out'
+            logInModal[0].children[0].tabIndex = '-1';
+            logInModal[0].children[0].tabIndex = '-1';
+            logInModal[0].className = 'selection-out';
             let logInSelected = document.getElementsByClassName('logInModal');
+            logInSelected[0].children[0].tabIndex = '3';
+            logInSelected[0].children[2].tabIndex = '4';
+            logInSelected[0].children[1].tabIndex = '5';
+            logInSelected[0].children[3].tabIndex = '6';
             logInSelected[0].className = 'logInModal-in';
         },
         signUpSelect: () => {
             let logInModal = document.getElementsByClassName('selection');
+            logInModal[0].children[0].tabIndex = '-1';
+            logInModal[0].children[0].tabIndex = '-1';
             logInModal[0].className = 'selection-out';
             let signUpSelected = document.getElementsByClassName('signUpModal');
+            signUpSelected[0].children[0].tabIndex = '3';
+            signUpSelected[0].children[2].tabIndex = '4';
+            signUpSelected[0].children[1].tabIndex = '5';
+            signUpSelected[0].children[3].tabIndex = '6';
             signUpSelected[0].className = 'signUpModal-in';
         },
         closeLogInSelect: () => {
             let logInModal = document.getElementsByClassName('selection-out');
+            logInModal[0].children[0].tabIndex = '3';
+            logInModal[0].children[0].tabIndex = '4';
             logInModal[0].className = 'selection'
             let logInSelected = document.getElementsByClassName('logInModal-in');
+            logInSelected[0].children[0].tabIndex = '-1';
+            logInSelected[0].children[2].tabIndex = '-1';
+            logInSelected[0].children[1].tabIndex = '-1';
+            logInSelected[0].children[3].tabIndex = '-1';
             logInSelected[0].className = 'logInModal';
         },
         closeSignUpSelect: () => {
             let logInModal = document.getElementsByClassName('selection-out');
+            logInModal[0].children[0].tabIndex = '3';
+            logInModal[0].children[0].tabIndex = '4';
             logInModal[0].className = 'selection';
             let signUpSelected = document.getElementsByClassName('signUpModal-in');
+            signUpSelected[0].children[0].tabIndex = '-1';
+            signUpSelected[0].children[2].tabIndex = '-1';
+            signUpSelected[0].children[1].tabIndex = '-1';
+            signUpSelected[0].children[3].tabIndex = '-1';
             signUpSelected[0].className = 'signUpModal';
         },
         logInUsername: (e) => { setLogInUsername(e.target.value) },
