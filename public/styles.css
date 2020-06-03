@@ -1060,7 +1060,8 @@
     }
 
     #LogInSelect {
-        margin-right: auto;
+        height: 50%;
+        margin-bottom: 10%;
     }
 
     #LogInSelect:hover {
@@ -1155,13 +1156,12 @@
         position: fixed;
         bottom: 7.5%;
         right: 50%;
-        left: 42.5%;
-        width: 15%;
+        left: 46.5%;
+        width: 100px;
         color: #333333;
         z-index: 5;
         height: 5%;
         font-size: x-large;
-        display: flex;
         -webkit-transition: all 1s ease;  
         -moz-transition: all 1s ease;  
         -o-transition: all 1s ease;  
@@ -1173,13 +1173,12 @@
         position: fixed;
         bottom: -50%;
         right: 50%;
-        left: 42.5%;
-        width: 15%;
+        left: 46.5%;
+        width: 100px;
         color: #333333;
         z-index: 5;
         height: 5%;
         font-size: x-large;
-        display: flex;
         -webkit-transition: all 1s ease;  
         -moz-transition: all 1s ease;  
         -o-transition: all 1s ease;  

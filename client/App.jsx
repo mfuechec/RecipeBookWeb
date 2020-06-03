@@ -10,7 +10,6 @@ import NavBar from './components/NavBar/NavBar.jsx';
 import NewDrinks from './components/NewDrinks/NewDrinks.jsx';
 import NewFood from './components/NewFood/NewFood.jsx';
 import Sort from './components/Sort/Sort.jsx';
-import LogIn from './components/LogIn/LogIn.jsx';
 import {
     BrowserRouter as Router,
     Route,
@@ -202,7 +201,7 @@ const App = () => {
                     username: signUpUsername,
                     password: sha256(signUpPassword)
                 }
-                return fetch('http://recipebookserver-env.eba-peu3pu5p.us-east-2.elasticbeanstalk.com/signup', {
+                return fetch('https://mark-recipe-book.herokuapp.com/signup', {
                     method: 'POST',
                     headers: {
                         Accept: 'application/json',
@@ -233,7 +232,7 @@ const App = () => {
                 username: logInUsername,
                 password: sha256(logInPassword)
             }
-            return fetch('http://recipebookserver-env.eba-peu3pu5p.us-east-2.elasticbeanstalk.com/login', {
+            return fetch('https://mark-recipe-book.herokuapp.com/login', {
                 method: 'POST',
                 headers: {
                     Accept: 'application/json',
@@ -262,7 +261,7 @@ const App = () => {
         addToFavorites: (data) => {
             if (user !== '') {
                 data.username = user;
-                let url = 'http://recipebookserver-env.eba-peu3pu5p.us-east-2.elasticbeanstalk.com/';
+                let url = 'https://mark-recipe-book.herokuapp.com/';
                 if (whatIsSelected === 'food') {
                     url += `editFavoriteMeals`;
                 } else {
@@ -292,7 +291,7 @@ const App = () => {
         deleteFromFavorites: (data) => {
             if (user !== '') {
                 data.username = user;
-                let url = 'http://recipebookserver-env.eba-peu3pu5p.us-east-2.elasticbeanstalk.com/';
+                let url = 'https://mark-recipe-book.herokuapp.com/';
                 if (whatIsSelected === 'food') {
                     url += `editFavoriteMeals`;
                 } else {
@@ -323,7 +322,7 @@ const App = () => {
                 name: name
             }
 
-            return fetch('http://recipebookserver-env.eba-peu3pu5p.us-east-2.elasticbeanstalk.com/findFavoriteMeals', {
+            return fetch('https://mark-recipe-book.herokuapp.com/findFavoriteMeals', {
                 method: 'POST',
                 headers: {
                     Accept: 'application/json',
@@ -347,7 +346,7 @@ const App = () => {
                 name: name
             }
 
-            return fetch('http://recipebookserver-env.eba-peu3pu5p.us-east-2.elasticbeanstalk.com/findFavoriteDrinks', {
+            return fetch('https://mark-recipe-book.herokuapp.com/findFavoriteDrinks', {
                 method: 'POST',
                 headers: {
                     Accept: 'application/json',
@@ -722,7 +721,10 @@ const App = () => {
     // This object contains functions for interacting with the sort form modal
     const manageModal = {
         openModal: () => { setIsModalVisible([2, 'block']) },
-        closeModal: () => { setIsModalVisible([-1, 'none']) },
+        closeModal: () => {
+            setIsModalVisible([-1, 'none']);
+            document.body.style.overflow = 'hidden';
+        },
         searchFoods: () => { setWhatIsSelected('food') },
         searchDrinks: () => { setWhatIsSelected('drinks') },
         previousResults: () => {
@@ -742,6 +744,9 @@ const App = () => {
     }
 
     const manageLogIn = {
+        pageChange: () => {
+            document.body.style.overflow = 'auto';
+        },
         logInSelect: () => {
             let logInModal = document.getElementsByClassName('selection');
             logInModal[0].children[0].tabIndex = '-1';
@@ -801,12 +806,11 @@ const App = () => {
 
             <div id='MainContainer'>
                 <Sort whatIsSelected={whatIsSelected} isModalVisible={isModalVisible} manageAPICalls={manageAPICalls} manageModal={manageModal} />
-                <LogIn signUpUsername={signUpUsername} signUpPassword={signUpPassword} logInUsername={logInUsername} logInPassword={logInPassword} manageAPICalls={manageAPICalls} signUpSelected={signUpSelected} logInSelected={logInSelected} loggedIn={loggedIn} manageLogIn={manageLogIn} />
 
                 <Switch>
                     <Route
                         exact path='/'
-                        render={() => <LandingPage setWhatIsSelected={setWhatIsSelected} manageModal={manageModal} />} />
+                        render={() => <LandingPage whatIsSelected={whatIsSelected} signUpUsername={signUpUsername} signUpPassword={signUpPassword} logInUsername={logInUsername} logInPassword={logInPassword} manageAPICalls={manageAPICalls} signUpSelected={signUpSelected} logInSelected={logInSelected} loggedIn={loggedIn} manageLogIn={manageLogIn} setWhatIsSelected={setWhatIsSelected} manageModal={manageModal} />} />
 
                     <Route
                         path='/NewFood'

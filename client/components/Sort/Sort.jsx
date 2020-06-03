@@ -11,6 +11,7 @@ const Sort = (props) => {
         <div
             id='SortModal'
             style={{ zIndex: props.isModalVisible[0], display: props.isModalVisible[1] }}
+            tabIndex='-1'
         // onBackdropPress={props.manageModal.closeModal}
         // animationIn='slideInRight'
         // animationOut='slideOutRight'
