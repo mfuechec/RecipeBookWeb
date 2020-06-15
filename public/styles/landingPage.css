@@ -68,6 +68,19 @@
     transition: all 2.5s ease-in;
     transition-timing-function: cubic-bezier(0.5, 1, 1, 1);
   }
+
+  #food6 {
+    display: none;
+  }
+  #food7 {
+    display: none;
+  }
+  #drink6 {
+    display: none;
+  }
+  #drink7 {
+    display: none;
+  }
 }
 
 @media (orientation: landscape) {
@@ -130,18 +143,13 @@
     width: 100%;
     overflow: hidden;
   }
-  .row {
-    display: flex;
-    height: 50%;
-    width: 100%;
-    justify-content: space-evenly;
-  }
   .image {
     height: 10vw;
     width: 10vw;
-    margin-top: 2.5%;
     opacity: 0;
     transition: all 2.5s ease-in;
     transition-timing-function: cubic-bezier(0.5, 1, 1, 1);
+    border: 3px solid #333333;
+    border-radius: 25%;
   }
 }
