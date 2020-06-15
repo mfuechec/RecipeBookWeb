@@ -36,6 +36,7 @@ const App = () => {
   const [favDrinks, setFavDrinks] = useState([]);
   const [favFoodNames, setFavFoodNames] = useState("");
   const [favDrinkNames, setFavDrinkNames] = useState("");
+  const [restartLanding, setRestartLanding] = useState(true);
 
   // Call the function that will find 10 random recipes from both APIs
   // This function runs only once on component mount
@@ -854,6 +855,8 @@ const App = () => {
                 manageModal={manageModal}
                 foods={foods}
                 drinks={drinks}
+                restartLanding={restartLanding}
+                setRestartLanding={setRestartLanding}
               />
             )}
           />
@@ -865,6 +868,7 @@ const App = () => {
                 <NavBar
                   findNewRecipes={manageAPICalls.findNewRecipes}
                   manageModal={manageModal}
+                  setRestartLanding={setRestartLanding}
                 />
                 <NewFood
                   favFoodNames={favFoodNames}

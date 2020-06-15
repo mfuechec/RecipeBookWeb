@@ -5,6 +5,20 @@ import FoodGallery from "./FoodGallery.jsx";
 import DrinkGallery from "./DrinkGallery.jsx";
 
 let LandingPage = (props) => {
+  function clearAll(windowObject) {
+    var id = Math.max(
+      windowObject.setInterval(noop, 1000),
+      windowObject.setTimeout(noop, 1000)
+    );
+
+    while (id--) {
+      windowObject.clearTimeout(id);
+      windowObject.clearInterval(id);
+    }
+
+    function noop() {}
+  }
+
   return (
     <div id="landingPageContainer">
       <Link
@@ -14,11 +28,16 @@ let LandingPage = (props) => {
         onClick={() => {
           props.setWhatIsSelected("food");
           props.manageLogIn.pageChange();
+          clearAll(window);
         }}
       >
         <div id="landingPageFoodText">Food</div>
         <div id="landingPageFoodGallery">
-          <FoodGallery foods={props.foods} />
+          <FoodGallery
+            restartLanding={props.restartLanding}
+            setRestartLanding={props.setRestartLanding}
+            foods={props.foods}
+          />
         </div>
       </Link>
       <Link
@@ -28,11 +47,16 @@ let LandingPage = (props) => {
         onClick={() => {
           props.setWhatIsSelected("drinks");
           props.manageLogIn.pageChange();
+          clearAll(window);
         }}
       >
         <div id="landingPageDrinkText">Drinks</div>
         <div id="landingPageDrinkGallery">
-          <DrinkGallery drinks={props.drinks} />
+          <DrinkGallery
+            restartLanding={props.restartLanding}
+            setRestartLanding={props.setRestartLanding}
+            drinks={props.drinks}
+          />
         </div>
       </Link>
       <LogIn
@@ -48,54 +72,6 @@ let LandingPage = (props) => {
         manageLogIn={props.manageLogIn}
       />
     </div>
-    // <div id="LandingPageOptionsContainer">
-    //   <Link
-    //     tabIndex="1"
-    //     id="LandingPageNewFoodLinkContainer"
-    //     to="NewFood"
-    //     onClick={() => {
-    //       props.setWhatIsSelected("food");
-    //       props.manageLogIn.pageChange();
-    //     }}
-    //   >
-    //     <img
-    //       id="LandingPageNewFoodOption"
-    //       src={
-    //         "https://recipe-book-images.s3.us-east-2.amazonaws.com/images/foodBackground.jpg"
-    //       }
-    //     />
-    //     <div id="LandingPageFoodText">Food</div>
-    //   </Link>
-    //   <Link
-    //     tabIndex="2"
-    //     id="LandingPageNewDrinksLinkContainer"
-    //     to="NewDrinks"
-    //     onClick={() => {
-    //       props.setWhatIsSelected("drinks");
-    //       props.manageLogIn.pageChange();
-    //     }}
-    //   >
-    //     <img
-    //       id="LandingPageNewDrinksOption"
-    //       src={
-    //         "https://recipe-book-images.s3.us-east-2.amazonaws.com/images/drinksBackground.jpg"
-    //       }
-    //     />
-    //     <div id="LandingPageDrinkText">Cocktails</div>
-    //   </Link>
-    //   <LogIn
-    //     whatIsSelected={props.whatIsSelected}
-    //     signUpUsername={props.signUpUsername}
-    //     signUpPassword={props.signUpPassword}
-    //     logInUsername={props.logInUsername}
-    //     logInPassword={props.logInPassword}
-    //     manageAPICalls={props.manageAPICalls}
-    //     signUpSelected={props.signUpSelected}
-    //     logInSelected={props.logInSelected}
-    //     loggedIn={props.loggedIn}
-    //     manageLogIn={props.manageLogIn}
-    //   />
-    // </div>
   );
 };
 

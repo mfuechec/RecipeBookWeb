@@ -1,33 +1,41 @@
 import React from "react";
 
 let FoodGallery = (props) => {
+  let start = 0;
   let endingIndex = 35;
   let visibleImages = 6;
   if (props.foods[endingIndex] !== undefined) {
-    for (let i = 0; i <= endingIndex; i++) {
+    for (let i = start; i <= endingIndex; i++) {
       if (i < visibleImages - 2) {
         let element = document.getElementById(`food${i}`);
-        element.src = props.foods[i].image;
-        setTimeout(() => {
-          element.style.opacity = 1;
-        }, i * 1500);
+        if (element !== null) {
+          element.src = props.foods[i].image;
+          setTimeout(() => {
+            element.style.opacity = 1;
+          }, i * 1500);
+        }
       } else if (i < endingIndex - 1) {
         let element = document.getElementById(`food${i % 6}`);
-        setTimeout(() => {
-          element.src = props.foods[i].image;
-          element.style.opacity = 1;
-          let nextElement = document.getElementById(`food${(i + 2) % 6}`);
-          nextElement.style.opacity = 0;
-          nextElement.style.transition = `all 2.5s ease-in`;
-        }, i * 1500);
+        if (element !== null) {
+          setTimeout(() => {
+            element.src = props.foods[i].image;
+            element.style.opacity = 1;
+            let nextElement = document.getElementById(`food${(i + 2) % 6}`);
+            nextElement.style.opacity = 0;
+            nextElement.style.transition = `all 2.5s ease-in`;
+          }, i * 1500);
+        }
       } else {
         let element = document.getElementById(`food${i % 6}`);
-        setTimeout(() => {
-          element.src = props.foods[i].image;
-          element.style.opacity = 1;
-        }, i * 1500);
+        if (element !== null) {
+          setTimeout(() => {
+            element.src = props.foods[i].image;
+            element.style.opacity = 1;
+          }, i * 1500);
+        }
       }
     }
+    props.setRestartLanding(false);
   }
 
   return (
