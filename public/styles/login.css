@@ -1,0 +1,375 @@
+@media (orientation: portrait) {
+  .logInModal {
+    position: fixed;
+    bottom: -20%;
+    right: 2.75%;
+    border: 2px solid lightblue;
+    color: lightblue;
+    z-index: 5;
+    height: 6%;
+    font-size: xx-large;
+    background-color: white;
+    display: flex;
+    width: 94%;
+    -webkit-transition: all 2s ease;
+    -moz-transition: all 2s ease;
+    -o-transition: all 2s ease;
+    -ms-transition: all 2s ease;
+    transition: all 2s ease;
+  }
+
+  .logInModal-in {
+    position: fixed;
+    bottom: 1%;
+    right: 2.75%;
+    border: 2px solid lightblue;
+    color: lightblue;
+    z-index: 5;
+    height: 6%;
+    font-size: xx-large;
+    background-color: white;
+    display: flex;
+    width: 94%;
+    -webkit-transition: all 2s ease;
+    -moz-transition: all 2s ease;
+    -o-transition: all 2s ease;
+    -ms-transition: all 2s ease;
+    transition: all 2s ease;
+  }
+
+  .signUpModal {
+    position: fixed;
+    bottom: -20%;
+    right: 2.75%;
+    border: 2px solid lightblue;
+    color: lightblue;
+    z-index: 5;
+    height: 6%;
+    font-size: xx-large;
+    background-color: white;
+    display: flex;
+    width: 94%;
+    -webkit-transition: all 2s ease;
+    -moz-transition: all 2s ease;
+    -o-transition: all 2s ease;
+    -ms-transition: all 2s ease;
+    transition: all 2s ease;
+  }
+
+  .signUpModal-in {
+    position: fixed;
+    bottom: 1%;
+    right: 2.75%;
+    border: 2px solid lightblue;
+    color: lightblue;
+    z-index: 5;
+    height: 6%;
+    font-size: xx-large;
+    background-color: white;
+    display: flex;
+    width: 94%;
+    -webkit-transition: all 2s ease;
+    -moz-transition: all 2s ease;
+    -o-transition: all 2s ease;
+    -ms-transition: all 2s ease;
+    transition: all 2s ease;
+  }
+
+  #LogInModalUserName {
+    width: 30%;
+    border: 1px solid black;
+    height: 85%;
+    margin-top: 0.5%;
+    margin-right: 1%;
+  }
+
+  #LogInModalPassword {
+    width: 30%;
+    border: 1px solid black;
+    height: 85%;
+    margin-top: 0.5%;
+  }
+
+  #LogInModalSubmitButton {
+    position: absolute;
+    right: 6px;
+    height: 100%;
+    border: 1px solid black;
+    border-radius: 25px;
+    background-color: white;
+  }
+
+  #LogInModalBackButton {
+    border: 1px solid black;
+    border-radius: 25px;
+    margin-left: 5%;
+    background-color: white;
+  }
+
+  #SignUpModalUserName {
+    width: 30%;
+    border: 1px solid black;
+    height: 85%;
+    margin-top: 0.5%;
+    margin-right: 1%;
+  }
+
+  #SignUpModalPassword {
+    width: 30%;
+    border: 1px solid black;
+    height: 85%;
+    margin-top: 0.5%;
+  }
+
+  #SignUpModalSubmitButton {
+    position: absolute;
+    right: 6px;
+    height: 100%;
+    border: 1px solid black;
+    border-radius: 25px;
+    background-color: white;
+  }
+
+  #SignUpModalBackButton {
+    border: 1px solid black;
+    border-radius: 25px;
+    margin-left: 2%;
+    background-color: white;
+  }
+
+  #LogInSelect {
+    width: 50%;
+    text-align: center;
+  }
+
+  #SignUpSelect {
+    width: 45%;
+    text-align: center;
+  }
+
+  .selection {
+    position: fixed;
+    bottom: 1%;
+    right: 2.75%;
+    border: 2px solid lightblue;
+    color: lightblue;
+    z-index: 5;
+    height: 6%;
+    font-size: xx-large;
+    background-color: white;
+    display: flex;
+    width: 94%;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+  }
+
+  .selection-out {
+    position: fixed;
+    bottom: -20%;
+    right: 2.75%;
+    border: 2px solid lightblue;
+    color: lightblue;
+    z-index: 5;
+    height: 6%;
+    font-size: xx-large;
+    background-color: white;
+    display: flex;
+    width: 94%;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+  }
+}
+
+@media (orientation: landscape) {
+  .logInModal {
+    height: 20%;
+    width: 30%;
+    position: absolute;
+    left: 34.5%;
+    bottom: -50%;
+    z-index: 1;
+    border-radius: 10%;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+  }
+
+  .logInModal-in {
+    height: 20%;
+    width: 30%;
+    position: absolute;
+    left: 34.5%;
+    bottom: 0;
+    z-index: 1;
+    border-radius: 10%;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+  }
+
+  .signUpModal {
+    height: 20%;
+    width: 30%;
+    position: absolute;
+    left: 34.5%;
+    bottom: -50%;
+    z-index: 1;
+    border-radius: 10%;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+  }
+
+  .signUpModal-in {
+    height: 20%;
+    width: 30%;
+    position: absolute;
+    left: 34.5%;
+    bottom: 0;
+    z-index: 1;
+    border-radius: 10%;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+  }
+
+  #LogInSelect {
+    height: 50%;
+    margin-bottom: 10%;
+  }
+
+  #LogInSelect:hover {
+    font-size: larger;
+  }
+
+  #SignUpSelect {
+  }
+
+  #SignUpSelect:hover {
+    font-size: larger;
+  }
+
+  #LogInModalUserName {
+    font-size: large;
+    position: absolute;
+    left: 25%;
+    top: 15%;
+    width: 50%;
+    height: 10%;
+  }
+
+  #LogInModalPassword {
+    font-size: large;
+    position: absolute;
+    left: 25%;
+    top: 30%;
+    width: 50%;
+    height: 10%;
+  }
+
+  #LogInModalSubmitButton {
+    position: absolute;
+    bottom: 10%;
+    left: 23%;
+    width: 25%;
+    height: 25%;
+    border-radius: 25px;
+    font-size: x-large;
+  }
+
+  #LogInModalBackButton {
+    position: absolute;
+    bottom: 10%;
+    right: 20%;
+    height: 25%;
+    width: 25%;
+    border-radius: 25px;
+    font-size: x-large;
+  }
+
+  #SignUpModalUserName {
+    font-size: large;
+    position: absolute;
+    left: 25%;
+    top: 15%;
+    width: 50%;
+    height: 10%;
+  }
+
+  #SignUpModalPassword {
+    font-size: large;
+    position: absolute;
+    left: 25%;
+    top: 30%;
+    width: 50%;
+    height: 10%;
+  }
+
+  #SignUpModalSubmitButton {
+    position: absolute;
+    bottom: 10%;
+    left: 23%;
+    width: 25%;
+    height: 25%;
+    border-radius: 25px;
+    font-size: x-large;
+  }
+
+  #SignUpModalBackButton {
+    position: absolute;
+    bottom: 10%;
+    right: 20%;
+    height: 25%;
+    width: 25%;
+    border-radius: 25px;
+    font-size: x-large;
+  }
+
+  .selection {
+    position: fixed;
+    bottom: 7.5%;
+    right: 50%;
+    left: 46.5%;
+    width: 100px;
+    color: #333333;
+    z-index: 5;
+    height: 5%;
+    font-size: x-large;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+  }
+
+  .selection-out {
+    position: fixed;
+    bottom: -50%;
+    right: 50%;
+    left: 46.5%;
+    width: 100px;
+    color: #333333;
+    z-index: 5;
+    height: 5%;
+    font-size: x-large;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+  }
+}
