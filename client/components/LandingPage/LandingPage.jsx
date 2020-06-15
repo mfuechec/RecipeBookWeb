@@ -5,6 +5,65 @@ import FoodGallery from "./FoodGallery.jsx";
 import DrinkGallery from "./DrinkGallery.jsx";
 
 let LandingPage = (props) => {
+  let endingIndex = 39;
+  let visibleImages = 8;
+  let animate = () => {
+    if (
+      props.foods[endingIndex] !== undefined &&
+      props.drinks[endingIndex] !== undefined
+    ) {
+      let foodImages = [];
+      let drinkImages = [];
+      let selectedFoods = {};
+      let selectedDrinks = {};
+
+      for (let i = 0; i < visibleImages; i++) {
+        let num = Math.floor(Math.random() * endingIndex);
+        if (selectedFoods[num] !== 1) {
+          foodImages.push(props.foods[num].image);
+          selectedFoods[num] = 1;
+        } else {
+          i--;
+        }
+      }
+      for (let i = 0; i < visibleImages; i++) {
+        let num = Math.floor(Math.random() * endingIndex);
+        if (selectedDrinks[num] !== 1) {
+          drinkImages.push(props.drinks[num].image);
+          selectedDrinks[num] = 1;
+        } else {
+          i--;
+        }
+      }
+
+      for (let i = 0; i < visibleImages; i++) {
+        let foodElement = document.getElementById(`food${i}`);
+        foodElement.src = foodImages[i];
+        foodElement.style.opacity = 1;
+        let drinkElement = document.getElementById(`drink${i}`);
+        drinkElement.src = drinkImages[i];
+        drinkElement.style.opacity = 1;
+      }
+
+      setTimeout(() => {
+        for (let i = 0; i < visibleImages; i++) {
+          let foodElement = document.getElementById(`food${i}`);
+          foodElement.style.opacity = 0;
+          foodElement.style.transition = `all 2s ease-in-out`;
+          let drinkElement = document.getElementById(`drink${i}`);
+          drinkElement.style.opacity = 0;
+          drinkElement.style.transition = `all 2s ease-in-out`;
+        }
+      }, 2000);
+
+      setTimeout(() => {
+        animate();
+      }, 4000);
+    }
+  };
+
+  animate();
+
   function clearAll(windowObject) {
     var id = Math.max(
       windowObject.setInterval(noop, 1000),
