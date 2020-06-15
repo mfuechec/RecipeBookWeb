@@ -1,0 +1,142 @@
+@media (orientation: portrait) {
+  #NavBarContainer {
+    height: 11vh;
+    width: 100%;
+    background-color: #2a2b2a;
+    display: flex;
+    flex-direction: row;
+  }
+
+  #NavBarHomeButton {
+    margin-left: 8.5vw;
+    margin-right: 8.5vw;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 15vw;
+    text-align: center;
+    opacity: 40%;
+    background-color: black;
+    border: none 1px solid;
+    border-radius: 25px;
+    text-decoration: none;
+    color: white;
+  }
+
+  #NavBarHomeButtonText {
+  }
+
+  #NavBarNewRecipesButton {
+    margin-left: 8.5vw;
+    margin-right: 8.5vw;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 15vw;
+    text-align: center;
+    opacity: 40%;
+    background-color: black;
+    border: none 1px solid;
+    border-radius: 25px;
+    color: white;
+    text-decoration: none;
+  }
+
+  #NavBarNewRecipesButton :hover {
+    cursor: pointer;
+  }
+
+  #NavBarSwitchRecipesButton {
+    margin-left: 8.5vw;
+    margin-right: 8.5vw;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 15vw;
+    text-align: center;
+    opacity: 40%;
+    background-color: black;
+    border: none 1px solid;
+    border-radius: 25px;
+    color: white;
+    text-decoration: none;
+  }
+
+  #NavBarSwitchRecipesButton :hover {
+    cursor: pointer;
+  }
+}
+
+@media (orientation: landscape) {
+  #NavBarContainer {
+    height: 10vh;
+    background-color: #2a2b2a;
+    display: flex;
+  }
+
+  #NavBarHomeButton {
+    margin-left: 8.5vw;
+    margin-right: 8.5vw;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 15vw;
+    text-align: center;
+    opacity: 40%;
+    background-color: black;
+    border: none 1px solid;
+    border-radius: 25px;
+    text-decoration: none;
+  }
+
+  #NavBarText {
+    color: white;
+  }
+
+  #NavBarNewRecipesButton {
+    margin-left: 8.5vw;
+    margin-right: 8.5vw;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 15vw;
+    text-align: center;
+    opacity: 40%;
+    background-color: black;
+    border: none 1px solid;
+    border-radius: 25px;
+  }
+
+  #NavBarNewRecipesButton :hover {
+    cursor: pointer;
+  }
+
+  #NavBarSortButton {
+    margin-left: 8.5vw;
+    margin-right: 8.5vw;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 15vw;
+    text-align: center;
+    opacity: 40%;
+    background-color: black;
+    border: none 1px solid;
+    border-radius: 25px;
+  }
+
+  #NavBarSortButton :hover {
+    cursor: pointer;
+  }
+
+  #NavBarSwitchRecipesButton {
+    margin-left: 8.5vw;
+    margin-right: 8.5vw;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 15vw;
+    text-align: center;
+    opacity: 40%;
+    background-color: black;
+    border: none 1px solid;
+    border-radius: 25px;
+  }
+
+  #NavBarSwitchRecipesButton :hover {
+    cursor: pointer;
+  }
+}
