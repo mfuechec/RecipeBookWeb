@@ -1,4 +1,73 @@
 @media (orientation: portrait) {
+  #landingPageContainer {
+    height: 100vh;
+    width: 100vw;
+    background-color: #eeeeee;
+    justify-content: center;
+    display: flex;
+  }
+  #landingPageFoodOption {
+    height: 75%;
+    width: 45%;
+    margin-top: 5%;
+    margin-left: 5%;
+    text-decoration: none;
+    color: black;
+  }
+  #landingPageFoodOption:hover {
+    /* something */
+  }
+  #landingPageDrinkOption {
+    height: 75%;
+    width: 45%;
+    margin-top: 5%;
+    margin-right: 5%;
+    text-decoration: none;
+    color: black;
+  }
+  #landingPageDrinkOption {
+    /* something */
+  }
+  #landingPageFoodText {
+    text-align: center;
+    color: "black";
+    font-size: xx-large;
+  }
+  #landingPageDrinkText {
+    text-align: center;
+    color: "black";
+    font-size: xx-large;
+  }
+  #landingPageFoodGallery {
+    overflow: hidden;
+    width: 100%;
+    margin-top: 10%;
+    margin-right: 2.5%;
+  }
+  #landingPageDrinkGallery {
+    overflow: hidden;
+    width: 100%;
+    margin-top: 10%;
+    margin-left: 2.5%;
+  }
+
+  .gallery {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .image {
+    height: 10vh;
+    width: 10vh;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2.5vh;
+    opacity: 0;
+    transition: all 2.5s ease-in;
+    transition-timing-function: cubic-bezier(0.5, 1, 1, 1);
+  }
 }
 
 @media (orientation: landscape) {
@@ -34,10 +103,12 @@
   #landingPageFoodText {
     text-align: center;
     color: "black";
+    font-size: xx-large;
   }
   #landingPageDrinkText {
     text-align: center;
     color: "black";
+    font-size: xx-large;
   }
   #landingPageFoodGallery {
     overflow: hidden;

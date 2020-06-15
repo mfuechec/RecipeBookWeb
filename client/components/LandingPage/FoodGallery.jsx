@@ -38,30 +38,47 @@ let FoodGallery = (props) => {
     props.setRestartLanding(false);
   }
 
-  return (
-    <div className="gallery">
-      <div className="row">
+  if (
+    document.documentElement.clientWidth < document.documentElement.clientHeight
+  ) {
+    return (
+      <div className="gallery">
         <img className="image" id="food0"></img>
         <img className="image" id="food1"></img>
+
         <img className="image" id="food2"></img>
-      </div>
-      <div className="row">
         <img className="image" id="food3"></img>
+
         <img className="image" id="food4"></img>
         <img className="image" id="food5"></img>
       </div>
-      <div className="row">
-        <img className="image" id="food6"></img>
-        <img className="image" id="food7"></img>
-        <img className="image" id="food8"></img>
+    );
+  } else {
+    return (
+      <div className="gallery">
+        <div className="row">
+          <img className="image" id="food0"></img>
+          <img className="image" id="food1"></img>
+          <img className="image" id="food2"></img>
+        </div>
+        <div className="row">
+          <img className="image" id="food3"></img>
+          <img className="image" id="food4"></img>
+          <img className="image" id="food5"></img>
+        </div>
+        <div className="row">
+          <img className="image" id="food6"></img>
+          <img className="image" id="food7"></img>
+          <img className="image" id="food8"></img>
+        </div>
+        <div className="row">
+          <img className="image" id="food9"></img>
+          <img className="image" id="food10"></img>
+          <img className="image" id="food11"></img>
+        </div>
       </div>
-      <div className="row">
-        <img className="image" id="food9"></img>
-        <img className="image" id="food10"></img>
-        <img className="image" id="food11"></img>
-      </div>
-    </div>
-  );
+    );
+  }
 };
 
 export default FoodGallery;
