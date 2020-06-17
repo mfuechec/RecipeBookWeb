@@ -7,6 +7,7 @@ import DrinkGallery from "./DrinkGallery.jsx";
 let LandingPage = (props) => {
   let endingIndex = 39;
   let visibleImages = 8;
+
   let animate = () => {
     if (
       props.foods[endingIndex] !== undefined &&
@@ -17,44 +18,71 @@ let LandingPage = (props) => {
       let selectedFoods = {};
       let selectedDrinks = {};
 
-      for (let i = 0; i < visibleImages; i++) {
-        let num = Math.floor(Math.random() * endingIndex);
-        if (selectedFoods[num] !== 1) {
-          foodImages.push(props.foods[num].image);
-          selectedFoods[num] = 1;
-        } else {
-          i--;
+      // Create a list of unique food and drink images to populate the gallery with
+
+      function makeList() {
+        for (let i = 0; i < visibleImages; i++) {
+          let num = Math.floor(Math.random() * endingIndex);
+          if (selectedFoods[num] !== 1) {
+            foodImages.push(props.foods[num].image);
+            selectedFoods[num] = 1;
+          } else {
+            i--;
+          }
         }
-      }
-      for (let i = 0; i < visibleImages; i++) {
-        let num = Math.floor(Math.random() * endingIndex);
-        if (selectedDrinks[num] !== 1) {
-          drinkImages.push(props.drinks[num].image);
-          selectedDrinks[num] = 1;
-        } else {
-          i--;
+  
+        for (let i = 0; i < visibleImages; i++) {
+          let num = Math.floor(Math.random() * endingIndex);
+          if (selectedDrinks[num] !== 1) {
+            drinkImages.push(props.drinks[num].image);
+            selectedDrinks[num] = 1;
+          } else {
+            i--;
+          }
         }
       }
 
-      for (let i = 0; i < visibleImages; i++) {
-        let foodElement = document.getElementById(`food${i}`);
-        foodElement.src = foodImages[i];
-        foodElement.style.opacity = 1;
-        let drinkElement = document.getElementById(`drink${i}`);
-        drinkElement.src = drinkImages[i];
-        drinkElement.style.opacity = 1;
+      // Place those images
+
+      function placeImages(){
+        for (let i = 0; i < visibleImages; i++) {
+          let foodElement = document.getElementById(`food${i}`);
+          foodElement.src = foodImages[i];
+          let drinkElement = document.getElementById(`drink${i}`);
+          drinkElement.src = drinkImages[i];
+        }
       }
 
-      setTimeout(() => {
+      function fadeIn(){
+        for (let i = 0; i < visibleImages; i++) {
+          let foodElement = document.getElementById(`food${i}`);
+          foodElement.style.opacity = 1;
+          let drinkElement = document.getElementById(`drink${i}`);
+          drinkElement.style.opacity = 1;
+        }
+      }
+
+      function fadeOut(){
         for (let i = 0; i < visibleImages; i++) {
           let foodElement = document.getElementById(`food${i}`);
           foodElement.style.opacity = 0;
-          foodElement.style.transition = `all 2s ease-in-out`;
+          foodElement.style.transition = `all 1.5s ease-in-out`;
           let drinkElement = document.getElementById(`drink${i}`);
           drinkElement.style.opacity = 0;
-          drinkElement.style.transition = `all 2s ease-in-out`;
+          drinkElement.style.transition = `all 1.5s ease-in-out`;
         }
-      }, 2000);
+      }
+
+      makeList();
+      placeImages();
+      setTimeout(()=>{
+        fadeIn();
+        setTimeout(()=>{
+          fadeOut();
+        }, 2000);
+      }, 500);
+
+
 
       setTimeout(() => {
         animate();
@@ -64,7 +92,7 @@ let LandingPage = (props) => {
 
   setTimeout(()=> {
     animate()
-  }, 1000)
+  }, 500)
 
   function clearAll(windowObject) {
     var id = Math.max(
