@@ -889,6 +889,7 @@ const App = () => {
                 <NavBar
                   findNewRecipes={manageAPICalls.findNewRecipes}
                   manageModal={manageModal}
+                  setRestartLanding={setRestartLanding}
                 />
                 <NewDrinks
                   favDrinkNames={favDrinkNames}
@@ -909,6 +910,7 @@ const App = () => {
                 <NavBar
                   findNewRecipes={manageAPICalls.findNewRecipes}
                   manageModal={manageModal}
+                  setRestartLanding={setRestartLanding}
                 />
                 <Food food={food} />
               </div>
@@ -922,6 +924,7 @@ const App = () => {
                 <NavBar
                   findNewRecipes={manageAPICalls.findNewRecipes}
                   manageModal={manageModal}
+                  setRestartLanding={setRestartLanding}
                 />
                 <Drink drink={drink} />
               </div>
@@ -935,6 +938,7 @@ const App = () => {
                 <NavBar
                   findNewRecipes={manageAPICalls.findNewRecipes}
                   manageModal={manageModal}
+                  setRestartLanding={setRestartLanding}
                 />
                 <DrinkDirections drink={drink} />
               </div>
@@ -948,6 +952,7 @@ const App = () => {
                 <NavBar
                   findNewRecipes={manageAPICalls.findNewRecipes}
                   manageModal={manageModal}
+                  setRestartLanding={setRestartLanding}
                 />
                 <FoodDirections food={food} />
               </div>
