@@ -1,7 +1,6 @@
 import React from "react";
 
 let DrinkGallery = () => {
-  
   return (
     <div className="gallery">
       <img className="image" id="drink0"></img>

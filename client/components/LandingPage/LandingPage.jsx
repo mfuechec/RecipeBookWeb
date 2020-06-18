@@ -7,89 +7,82 @@ import DrinkGallery from "./DrinkGallery.jsx";
 let LandingPage = (props) => {
   let endingIndex = 39;
   let visibleImages = 8;
+  let foodImages = [];
+  let drinkImages = [];
+  let selectedFoods = {};
+  let selectedDrinks = {};
+  let counter = 0;
 
-  let animate = () => {
-    if (
-      props.foods[endingIndex] !== undefined &&
-      props.drinks[endingIndex] !== undefined
-    ) {
-      let foodImages = [];
-      let drinkImages = [];
-      let selectedFoods = {};
-      let selectedDrinks = {};
+  if (props.foods[endingIndex] && props.drinks[endingIndex]) {
+    makeList();
+  }
 
-      // Create a list of unique food and drink images to populate the gallery with
-
-      function makeList() {
-        for (let i = 0; i < visibleImages; i++) {
-          let num = Math.floor(Math.random() * endingIndex);
-          if (selectedFoods[num] !== 1) {
-            foodImages.push(props.foods[num].image);
-            selectedFoods[num] = 1;
-          } else {
-            i--;
-          }
-        }
-  
-        for (let i = 0; i < visibleImages; i++) {
-          let num = Math.floor(Math.random() * endingIndex);
-          if (selectedDrinks[num] !== 1) {
-            drinkImages.push(props.drinks[num].image);
-            selectedDrinks[num] = 1;
-          } else {
-            i--;
-          }
-        }
+  function makeList() {
+    foodImages = [];
+    drinkImages = [];
+    selectedFoods = {};
+    selectedDrinks = {};
+    for (let i = 0; i < visibleImages; i++) {
+      let num = Math.floor(Math.random() * endingIndex);
+      if (selectedFoods[num] !== 1) {
+        foodImages.push(props.foods[num].image);
+        selectedFoods[num] = 1;
+      } else {
+        i--;
       }
-
-      // Place those images
-
-      function placeImages(){
-        setTimeout(() => {
-          
-          for (let i = 0; i < visibleImages; i++) {
-            let foodElement = document.getElementById(`food${i}`);
-            foodElement.src = foodImages[i];
-            let drinkElement = document.getElementById(`drink${i}`);
-            drinkElement.src = drinkImages[i];
-          }
-        }, 500)
-      }
-
-      function fadeIn(){
-        let elements = document.getElementsByClassName('image');
-          for (let i = 0; i < elements.length; i++) {
-            elements[i].style.opacity = 1;
-            elements[i].style.transition = 'all 1.5s ease-in-out';
-          }
-      }
-
-      function fadeOut(){
-        let elements = document.getElementsByClassName('image');
-          for (let i = 0; i < elements.length; i++) {
-            elements[i].style.opacity = 0;
-            elements[i].style.transition = 'all 1.5s ease-in-out';
-          }
-      }
-
-      makeList();
-      placeImages();
-      setTimeout(()=>{
-        fadeIn();
-        setTimeout(()=>{
-          fadeOut();
-        }, 2000);
-      }, 500);
-
-
-
-      setTimeout(() => {
-        animate();
-      }, 4000);
     }
-  };
 
-  animate();
+    for (let i = 0; i < visibleImages; i++) {
+      let num = Math.floor(Math.random() * endingIndex);
+      if (selectedDrinks[num] !== 1) {
+        drinkImages.push(props.drinks[num].image);
+        selectedDrinks[num] = 1;
+      } else {
+        i--;
+      }
+    }
+
+    placeImages();
+  }
+
+  function placeImages() {
+    for (let i = 0; i < visibleImages; i++) {
+      let foodElement = document.getElementById(`food${i}`);
+      foodElement.src = foodImages[i];
+      foodElement.onload = () => counter++;
+      let drinkElement = document.getElementById(`drink${i}`);
+      drinkElement.src = drinkImages[i];
+      drinkElement.onload = () => counter++;
+    }
+    fadeIn();
+  }
+
+  function fadeIn() {
+    if (counter < 16) {
+      setTimeout(() => {
+        fadeIn();
+      }, 100);
+    } else {
+      let elements = document.getElementsByClassName("gallery");
+      for (let i = 0; i < elements.length; i++) {
+        elements[i].style.opacity = 1;
+      }
+      setTimeout(() => {
+        fadeOut();
+        counter = 0;
+      }, 1500);
+    }
+  }
+
+  function fadeOut() {
+    let elements = document.getElementsByClassName("gallery");
+    for (let i = 0; i < elements.length; i++) {
+      elements[i].style.opacity = 0;
+    }
+    setTimeout(() => {
+      makeList();
+    }, 1500);
+  }
 
   function clearAll(windowObject) {
     var id = Math.max(

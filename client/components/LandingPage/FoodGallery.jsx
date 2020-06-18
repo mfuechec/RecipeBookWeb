@@ -1,7 +1,6 @@
 import React from "react";
 
 let FoodGallery = () => {
-
   return (
     <div className="gallery">
       <img className="image" id="food0"></img>
