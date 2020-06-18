@@ -11,6 +11,12 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.(jpg|png)$/,
+                use: {
+                    loader: 'url-loader',
+                },
+            },
+            {
                 test: /\.(js|jsx)$/, //find all .js and .jsx files
                 exclude: /node_modules/, //exclude node modules
                 use: {

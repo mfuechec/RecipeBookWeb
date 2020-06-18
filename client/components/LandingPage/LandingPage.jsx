@@ -90,9 +90,7 @@ let LandingPage = (props) => {
     }
   };
 
-  setTimeout(()=> {
-    animate()
-  }, 500)
+  animate();
 
   function clearAll(windowObject) {
     var id = Math.max(

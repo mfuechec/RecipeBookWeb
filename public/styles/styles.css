@@ -289,7 +289,7 @@
 @media (orientation: landscape) {
   body {
     align-items: center;
-    font-family: cursive;
+    /* font-family: cursive; */
     margin: 0;
     height: 100%;
     overflow: hidden;

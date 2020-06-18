@@ -5,6 +5,7 @@ import Drink from "./components/Drink/Drink.jsx";
 import DrinkDirections from "./components/DrinkDirections/DrinkDirections.jsx";
 import Food from "./components/Food/Food.jsx";
 import FoodDirections from "./components/FoodDirections/FoodDirections.jsx";
+import SplashScreen from './components/SplashScreen/SplashScreen.jsx';
 import LandingPage from "./components/LandingPage/LandingPage.jsx";
 import NavBar from "./components/NavBar/NavBar.jsx";
 import NewDrinks from "./components/NewDrinks/NewDrinks.jsx";
@@ -840,24 +841,27 @@ const App = () => {
             exact
             path="/"
             render={() => (
-              <LandingPage
-                whatIsSelected={whatIsSelected}
-                signUpUsername={signUpUsername}
-                signUpPassword={signUpPassword}
-                logInUsername={logInUsername}
-                logInPassword={logInPassword}
-                manageAPICalls={manageAPICalls}
-                signUpSelected={signUpSelected}
-                logInSelected={logInSelected}
-                loggedIn={loggedIn}
-                manageLogIn={manageLogIn}
-                setWhatIsSelected={setWhatIsSelected}
-                manageModal={manageModal}
-                foods={foods}
-                drinks={drinks}
-                restartLanding={restartLanding}
-                setRestartLanding={setRestartLanding}
-              />
+              <div>
+                <LandingPage
+                  whatIsSelected={whatIsSelected}
+                  signUpUsername={signUpUsername}
+                  signUpPassword={signUpPassword}
+                  logInUsername={logInUsername}
+                  logInPassword={logInPassword}
+                  manageAPICalls={manageAPICalls}
+                  signUpSelected={signUpSelected}
+                  logInSelected={logInSelected}
+                  loggedIn={loggedIn}
+                  manageLogIn={manageLogIn}
+                  setWhatIsSelected={setWhatIsSelected}
+                  manageModal={manageModal}
+                  foods={foods}
+                  drinks={drinks}
+                  restartLanding={restartLanding}
+                  setRestartLanding={setRestartLanding}
+                />
+                <SplashScreen />
+              </div>
             )}
           />
 
