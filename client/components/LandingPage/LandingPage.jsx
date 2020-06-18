@@ -45,32 +45,31 @@ let LandingPage = (props) => {
       // Place those images
 
       function placeImages(){
-        for (let i = 0; i < visibleImages; i++) {
-          let foodElement = document.getElementById(`food${i}`);
-          foodElement.src = foodImages[i];
-          let drinkElement = document.getElementById(`drink${i}`);
-          drinkElement.src = drinkImages[i];
-        }
+        setTimeout(() => {
+          
+          for (let i = 0; i < visibleImages; i++) {
+            let foodElement = document.getElementById(`food${i}`);
+            foodElement.src = foodImages[i];
+            let drinkElement = document.getElementById(`drink${i}`);
+            drinkElement.src = drinkImages[i];
+          }
+        }, 500)
       }
 
       function fadeIn(){
-        for (let i = 0; i < visibleImages; i++) {
-          let foodElement = document.getElementById(`food${i}`);
-          foodElement.style.opacity = 1;
-          let drinkElement = document.getElementById(`drink${i}`);
-          drinkElement.style.opacity = 1;
-        }
+        let elements = document.getElementsByClassName('image');
+          for (let i = 0; i < elements.length; i++) {
+            elements[i].style.opacity = 1;
+            elements[i].style.transition = 'all 1.5s ease-in-out';
+          }
       }
 
       function fadeOut(){
-        for (let i = 0; i < visibleImages; i++) {
-          let foodElement = document.getElementById(`food${i}`);
-          foodElement.style.opacity = 0;
-          foodElement.style.transition = `all 1.5s ease-in-out`;
-          let drinkElement = document.getElementById(`drink${i}`);
-          drinkElement.style.opacity = 0;
-          drinkElement.style.transition = `all 1.5s ease-in-out`;
-        }
+        let elements = document.getElementsByClassName('image');
+          for (let i = 0; i < elements.length; i++) {
+            elements[i].style.opacity = 0;
+            elements[i].style.transition = 'all 1.5s ease-in-out';
+          }
       }
 
       makeList();
@@ -115,6 +114,7 @@ let LandingPage = (props) => {
         onClick={() => {
           props.setWhatIsSelected("food");
           props.manageLogIn.pageChange();
+          props.setSecondLoad(true);
           clearAll(window);
         }}
       >
@@ -134,6 +134,7 @@ let LandingPage = (props) => {
         onClick={() => {
           props.setWhatIsSelected("drinks");
           props.manageLogIn.pageChange();
+          props.setSecondLoad(true);
           clearAll(window);
         }}
       >
