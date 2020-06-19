@@ -13,7 +13,10 @@ let LandingPage = (props) => {
   let selectedDrinks = {};
   let counter = 0;
 
+  console.log("rendered");
+
   if (props.foods[endingIndex] && props.drinks[endingIndex]) {
+    props.clearAll(window);
     setTimeout(() => {
       makeList();
     }, 0);
@@ -89,20 +92,6 @@ let LandingPage = (props) => {
     }, 1500);
   }
 
-  function clearAll(windowObject) {
-    var id = Math.max(
-      windowObject.setInterval(noop, 1000),
-      windowObject.setTimeout(noop, 1000)
-    );
-
-    while (id--) {
-      windowObject.clearTimeout(id);
-      windowObject.clearInterval(id);
-    }
-
-    function noop() {}
-  }
-
   return (
     <div id="landingPageContainer">
       <Link
@@ -112,7 +101,7 @@ let LandingPage = (props) => {
         onClick={() => {
           props.setWhatIsSelected("food");
           props.setSecondLoad(true);
-          clearAll(window);
+          props.clearAll(window);
         }}
       >
         <div id="landingPageFoodText">Food</div>
@@ -131,7 +120,7 @@ let LandingPage = (props) => {
         onClick={() => {
           props.setWhatIsSelected("drinks");
           props.setSecondLoad(true);
-          clearAll(window);
+          props.clearAll(window);
         }}
       >
         <div id="landingPageDrinkText">Drinks</div>

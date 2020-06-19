@@ -225,6 +225,7 @@ const App = () => {
               setUser(signUpUsername);
               manageAPICalls.getUserFavoriteFoods(signUpUsername);
               manageAPICalls.getUserFavoriteDrinks(signUpUsername);
+              clearAll();
             } else {
               alert("Username already taken");
             }
@@ -257,6 +258,7 @@ const App = () => {
             setUser(logInUsername);
             manageAPICalls.getUserFavoriteFoods(logInUsername);
             manageAPICalls.getUserFavoriteDrinks(logInUsername);
+            clearAll();
           } else {
             // Empty both inputs
             alert("Login failed");
@@ -759,6 +761,20 @@ const App = () => {
     },
   };
 
+  function clearAll(windowObject) {
+    var id = Math.max(
+      windowObject.setInterval(noop, 1000),
+      windowObject.setTimeout(noop, 1000)
+    );
+
+    while (id--) {
+      windowObject.clearTimeout(id);
+      windowObject.clearInterval(id);
+    }
+
+    function noop() {}
+  }
+
   return (
     <Router>
       <div id="MainContainer">
@@ -788,6 +804,7 @@ const App = () => {
                   setSecondLoad={setSecondLoad}
                   firstImagesLoaded={firstImagesLoaded}
                   setFirstImagesLoaded={setFirstImagesLoaded}
+                  clearAll={clearAll}
                 />
                 <SplashScreen
                   firstImagesLoaded={firstImagesLoaded}
