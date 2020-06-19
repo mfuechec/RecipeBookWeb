@@ -39,6 +39,7 @@ const App = () => {
   const [favDrinkNames, setFavDrinkNames] = useState("");
   const [restartLanding, setRestartLanding] = useState(true);
   const [secondLoad, setSecondLoad] = useState(false);
+  const [firstImagesLoaded, setFirstImagesLoaded] = useState(false);
 
   // Call the function that will find 10 random recipes from both APIs
   // This function runs only once on component mount
@@ -861,8 +862,10 @@ const App = () => {
                   restartLanding={restartLanding}
                   setRestartLanding={setRestartLanding}
                   setSecondLoad={setSecondLoad}
+                  firstImagesLoaded={firstImagesLoaded}
+                  setFirstImagesLoaded={setFirstImagesLoaded}
                 />
-                <SplashScreen secondLoad={secondLoad} />
+                <SplashScreen firstImagesLoaded={firstImagesLoaded} secondLoad={secondLoad} />
               </div>
             )}
           />

@@ -59,6 +59,9 @@ let LandingPage = (props) => {
 
   function fadeIn() {
     if (counter < 16) {
+      if (!props.firstImagesLoaded) {
+        props.setFirstImagesLoaded(true);
+      }
       setTimeout(() => {
         fadeIn();
       }, 100);

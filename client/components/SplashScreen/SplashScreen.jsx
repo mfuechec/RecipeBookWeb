@@ -8,9 +8,9 @@ let SplashScreen = (props) => {
             fadeOut();
         }, 0)
     } else {
-        setTimeout(() => {
+        if (props.firstImagesLoaded) {
             fadeOut();
-        }, 750)
+        }
     }
 
     function fadeOut() {
