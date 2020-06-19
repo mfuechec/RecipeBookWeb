@@ -2,7 +2,6 @@
   #splashContainer {
     overflow: hidden;
     opacity: 100%;
-    height: 102vh;
     transition: all ease-in-out 0.75s;
     width: 102vw;
     position: absolute;

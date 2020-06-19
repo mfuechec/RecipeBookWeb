@@ -4,7 +4,6 @@
     font-family: cursive;
     margin: 2%;
     height: 100%;
-    overflow: hidden;
   }
 
   #NewFoodRecipesContainer {
@@ -289,21 +288,17 @@
 @media (orientation: landscape) {
   body {
     align-items: center;
-    /* font-family: cursive; */
     margin: 0;
     height: 100%;
-    overflow: hidden;
   }
 
   #NewFoodRecipesContainer {
-    width: 98.75%;
     background-color: #eeeeee;
     position: absolute;
     min-height: 88.5vh;
   }
 
   #NewDrinkRecipesContainer {
-    width: 98.75%;
     background-color: #eeeeee;
     position: absolute;
     min-height: 88.5vh;
