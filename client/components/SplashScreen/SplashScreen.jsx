@@ -5,19 +5,16 @@ let SplashScreen = (props) => {
 
     if (props.secondLoad) {
         setTimeout(() => {
-            let element = document.getElementById(`splashContainer`);
-            element.style.opacity = 0;
-            setTimeout(() => {
-                let element2 = document.getElementById(`splashImage`);
-                let element3 = document.getElementById(`splashText`);
-                element.style.zIndex = -1;
-                element2.style.zIndex = -1;
-                element3.style.zIndex = -1;
-            }, 750)
+            fadeOut();
         }, 0)
     } else {
         setTimeout(() => {
-            let element = document.getElementById(`splashContainer`);
+            fadeOut();
+        }, 750)
+    }
+
+    function fadeOut() {
+        let element = document.getElementById(`splashContainer`);
             element.style.opacity = 0;
             setTimeout(() => {
                 let element2 = document.getElementById(`splashImage`);
@@ -26,7 +23,6 @@ let SplashScreen = (props) => {
                 element2.style.zIndex = -1;
                 element3.style.zIndex = -1;
             }, 750)
-        }, 750)
     }
 
     return (
