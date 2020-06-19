@@ -57,6 +57,8 @@
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    transition: all 1.5s ease-in;
+    transition-timing-function: cubic-bezier(0.5, 1, 1, 1);
   }
   .image {
     height: 10vh;
@@ -64,9 +66,6 @@
     margin-left: auto;
     margin-right: auto;
     margin-top: 2.5vh;
-    opacity: 0;
-    transition: all 1.5s ease-in;
-    transition-timing-function: cubic-bezier(0.5, 1, 1, 1);
   }
 
   #food6 {
