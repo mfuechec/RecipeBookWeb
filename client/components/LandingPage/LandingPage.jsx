@@ -132,7 +132,11 @@ let LandingPage = (props) => {
           />
         </div>
       </Link>
-      <LogIn manageAPICalls={props.manageAPICalls} loggedIn={props.loggedIn} />
+      <LogIn
+        clearAll={props.clearAll}
+        manageAPICalls={props.manageAPICalls}
+        loggedIn={props.loggedIn}
+      />
     </div>
   );
 };

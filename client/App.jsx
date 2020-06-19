@@ -225,7 +225,7 @@ const App = () => {
               setUser(signUpUsername);
               manageAPICalls.getUserFavoriteFoods(signUpUsername);
               manageAPICalls.getUserFavoriteDrinks(signUpUsername);
-              clearAll();
+              clearAll(window);
             } else {
               alert("Username already taken");
             }
@@ -258,7 +258,7 @@ const App = () => {
             setUser(logInUsername);
             manageAPICalls.getUserFavoriteFoods(logInUsername);
             manageAPICalls.getUserFavoriteDrinks(logInUsername);
-            clearAll();
+            clearAll(window);
           } else {
             // Empty both inputs
             alert("Login failed");
