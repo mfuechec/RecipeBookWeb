@@ -1,25 +1,29 @@
-const mysql = require('mysql');
-const mysqlConfig = require('./config.js');
+const mysql = require("mysql");
+const mysqlConfig = require("./config.js");
 
 var connection = mysql.createConnection(mysqlConfig);
 
 showFavoritedMeals = function (username, callback) {
-    console.log(username)
-    connection.query(`SELECT * from MealRecipes WHERE username = '${username}';`, (error, results) => {
-        if (error) {
-            callback(error, null);
-        } else {
-            for (let i = 0; i < results.length; i++) {
-                results[i].name = results[i].name.split('---')[1];
-            }
-            callback(null, results);
+  console.log(username);
+  connection.query(
+    `SELECT * from MealRecipes WHERE username = '${username}';`,
+    (error, results) => {
+      if (error) {
+        callback(error, null);
+      } else {
+        for (let i = 0; i < results.length; i++) {
+          results[i].name = results[i].name.split("---")[1];
         }
-    })
-}
+        callback(null, results);
+      }
+    }
+  );
+};
 
 addFavoritedMeal = function (meal, callback) {
-    let mealName = `${meal.username}---${meal.name}`;
-    connection.query(`INSERT INTO MealRecipes (
+  let mealName = `${meal.username}---${meal.name}`;
+  connection.query(
+    `INSERT INTO MealRecipes (
         name,
         instructions,
         image,
@@ -110,24 +114,28 @@ addFavoritedMeal = function (meal, callback) {
         '${meal.measurements[19]}', 
         '${meal.username}'
         );`,
-        function (error, results) {
-            if (error) {
-                callback(error, null);
-            } else {
-                callback(null, 'New recipe added to favorites');
-            }
-        })
-}
+    function (error, results) {
+      if (error) {
+        callback(error, null);
+      } else {
+        callback(null, "New recipe added to favorites");
+      }
+    }
+  );
+};
 
 deleteFavoritedMeal = function (meal, callback) {
-    connection.query(`DELETE from MealRecipes where name = "${meal.username}---${meal.name}"`, function (error, results) {
-        if (error) {
-            callback(error, null);
-        } else {
-            callback(null, results);
-        }
-    })
-}
+  connection.query(
+    `DELETE from MealRecipes where name = "${meal.username}---${meal.name}"`,
+    function (error, results) {
+      if (error) {
+        callback(error, null);
+      } else {
+        callback(null, results);
+      }
+    }
+  );
+};
 
 // updateFavoritedMeal = function (meal, callback) {
 //     connection.query(`UPDATE MealRecipes SET name="mfuechec---Chicken Teriyaki Bake" where id = "6"`, function (error, results) {
@@ -140,21 +148,25 @@ deleteFavoritedMeal = function (meal, callback) {
 // }
 
 showFavoritedDrinks = function (username, callback) {
-    connection.query(`SELECT * from DrinkRecipes WHERE username = '${username}';`, (error, results) => {
-        if (error) {
-            callback(error, null);
-        } else {
-            for (let i = 0; i < results.length; i++) {
-                results[i].name = results[i].name.split('---')[1];
-            }
-            callback(null, results);
+  connection.query(
+    `SELECT * from DrinkRecipes WHERE username = '${username}';`,
+    (error, results) => {
+      if (error) {
+        callback(error, null);
+      } else {
+        for (let i = 0; i < results.length; i++) {
+          results[i].name = results[i].name.split("---")[1];
         }
-    })
-}
+        callback(null, results);
+      }
+    }
+  );
+};
 
 addFavoritedDrink = function (drink, callback) {
-    let drinkName = `${drink.username}---${drink.name}`
-    connection.query(`INSERT INTO DrinkRecipes (
+  let drinkName = `${drink.username}---${drink.name}`;
+  connection.query(
+    `INSERT INTO DrinkRecipes (
         name, 
         instructions, 
         image, 
@@ -245,24 +257,28 @@ addFavoritedDrink = function (drink, callback) {
         '${drink.measurements[19]}', 
         '${drink.username}'
         )`,
-        function (error, results) {
-            if (error) {
-                callback(error, null);
-            } else {
-                callback(null, 'New recipe added to favorites');
-            }
-        })
-}
+    function (error, results) {
+      if (error) {
+        callback(error, null);
+      } else {
+        callback(null, "New recipe added to favorites");
+      }
+    }
+  );
+};
 
 deleteFavoritedDrink = function (drink, callback) {
-    connection.query(`DELETE from DrinkRecipes where name = "${drink.username}---${drink.name}"`, function (error, results) {
-        if (error) {
-            callback(error, null);
-        } else {
-            callback(null, results);
-        }
-    })
-}
+  connection.query(
+    `DELETE from DrinkRecipes where name = "${drink.username}---${drink.name}"`,
+    function (error, results) {
+      if (error) {
+        callback(error, null);
+      } else {
+        callback(null, results);
+      }
+    }
+  );
+};
 
 // updateFavoritedDrink = function (drink, callback) {
 //     connection.query(`UPDATE DrinkRecipes SET name="mfuechec---Chicken Teriyaki Bake" where id = "2"`, function (error, results) {
@@ -275,40 +291,48 @@ deleteFavoritedDrink = function (drink, callback) {
 // }
 
 signUpAttempt = function (credentials, callback) {
-    connection.query(`SELECT id from Users WHERE username = '${credentials.username}'`, function (error, results) {
-        if (error) {
-            callback(error, null);
-        } else {
-            if (results.length === 0) {
-                connection.query(`INSERT INTO Users (username, password) VALUES ('${credentials.username}', '${credentials.password}')`, function (error, results) {
-                    if (error) {
-                        callback(error, null);
-                    } else {
-                        callback(null, 'Sign up successful');
-                    }
-                })
-            } else {
-                callback(null, 'Username already exists');
+  connection.query(
+    `SELECT id from Users WHERE username = '${credentials.username}'`,
+    function (error, results) {
+      if (error) {
+        callback(error, null);
+      } else {
+        if (results.length === 0) {
+          connection.query(
+            `INSERT INTO Users (username, password) VALUES ('${credentials.username}', '${credentials.password}')`,
+            function (error, results) {
+              if (error) {
+                callback(error, null);
+              } else {
+                callback(null, "Sign up successful");
+              }
             }
+          );
+        } else {
+          callback(null, "Username already exists");
         }
-    })
-}
+      }
+    }
+  );
+};
 
 loginAttempt = function (credentials, callback) {
-    connection.query(`SELECT COUNT(*) from Users WHERE username='${credentials.username}' AND password='${credentials.password}'`, function (error, results) {
-        if (error) {
-            callback(error, null);
+  connection.query(
+    `SELECT COUNT(*) from Users WHERE username='${credentials.username}' AND password='${credentials.password}'`,
+    function (error, results) {
+      if (error) {
+        callback(error, null);
+      } else {
+        let keys = Object.keys(results[0]);
+        if (results[0][keys[0]] === 0) {
+          callback(null, "Login attempt failed");
         } else {
-            let keys = Object.keys(results[0]);
-            if (results[0][keys[0]] === 0) {
-                callback(null, 'Login attempt failed')
-            } else {
-                callback(null, 'Login successful')
-            }
+          callback(null, "Login successful");
         }
-    })
-}
-
+      }
+    }
+  );
+};
 
 module.exports.showFavoritedMeals = showFavoritedMeals;
 module.exports.addFavoritedMeal = addFavoritedMeal;

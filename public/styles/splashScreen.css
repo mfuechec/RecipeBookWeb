@@ -1,52 +1,52 @@
 @media (orientation: portrait) {
-    #splashContainer {
-        overflow: hidden;
-        opacity: 100%;
-        height: 102vh;
-        transition: all ease-in-out .75s;
-        width: 102vw;
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
+  #splashContainer {
+    overflow: hidden;
+    opacity: 100%;
+    height: 102vh;
+    transition: all ease-in-out 0.75s;
+    width: 102vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
 
-    #splashImage {
-        position: absolute;
-    }
+  #splashImage {
+    position: absolute;
+  }
 
-    #splashText {
-        position: absolute;
-        top: 50%;
-        width: 100%;
-        text-align: center;
-        font-size: xx-large;
-        color: antiquewhite;
-    }
+  #splashText {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    font-size: xx-large;
+    color: antiquewhite;
+  }
 }
 
 @media (orientation: landscape) {
-    #splashContainer {
-        overflow: hidden;
-        opacity: 100%;
-        height: 100vh;
-        transition: all ease-in-out .75s;
-        width: 100vw;
-        position: absolute;
-        top: 0;
-    }
+  #splashContainer {
+    overflow: hidden;
+    opacity: 100%;
+    height: 100vh;
+    transition: all ease-in-out 0.75s;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+  }
 
-    #splashImage {
-        position: absolute;
-        height: 100%;
-        width: 100%;
-    }
+  #splashImage {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+  }
 
-    #splashText {
-        position: absolute;
-        top: 50%;
-        width: 100%;
-        text-align: center;
-        font-size: 5vw;
-        color: antiquewhite;
-    }
+  #splashText {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    font-size: 5vw;
+    color: antiquewhite;
+  }
 }

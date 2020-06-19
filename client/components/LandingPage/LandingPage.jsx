@@ -14,9 +14,9 @@ let LandingPage = (props) => {
   let counter = 0;
 
   if (props.foods[endingIndex] && props.drinks[endingIndex]) {
-    setTimeout(()=>{
+    setTimeout(() => {
       makeList();
-    }, 0)
+    }, 0);
   }
 
   function makeList() {
@@ -143,10 +143,7 @@ let LandingPage = (props) => {
           />
         </div>
       </Link>
-      <LogIn
-        manageAPICalls={props.manageAPICalls}
-        loggedIn={props.loggedIn}
-      />
+      <LogIn manageAPICalls={props.manageAPICalls} loggedIn={props.loggedIn} />
     </div>
   );
 };

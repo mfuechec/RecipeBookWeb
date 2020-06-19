@@ -5,7 +5,7 @@ import Drink from "./components/Drink/Drink.jsx";
 import DrinkDirections from "./components/DrinkDirections/DrinkDirections.jsx";
 import Food from "./components/Food/Food.jsx";
 import FoodDirections from "./components/FoodDirections/FoodDirections.jsx";
-import SplashScreen from './components/SplashScreen/SplashScreen.jsx';
+import SplashScreen from "./components/SplashScreen/SplashScreen.jsx";
 import LandingPage from "./components/LandingPage/LandingPage.jsx";
 import NavBar from "./components/NavBar/NavBar.jsx";
 import NewDrinks from "./components/NewDrinks/NewDrinks.jsx";
@@ -789,7 +789,10 @@ const App = () => {
                   firstImagesLoaded={firstImagesLoaded}
                   setFirstImagesLoaded={setFirstImagesLoaded}
                 />
-                <SplashScreen firstImagesLoaded={firstImagesLoaded} secondLoad={secondLoad} />
+                <SplashScreen
+                  firstImagesLoaded={firstImagesLoaded}
+                  secondLoad={secondLoad}
+                />
               </div>
             )}
           />

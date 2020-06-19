@@ -1,42 +1,64 @@
-import React from 'react';
-import SortNav from './SortNav.jsx';
-import SearchByName from './SearchByName.jsx';
-import SearchByCategory from './SearchByCategory.jsx';
-import SearchByArea from './SearchByArea.jsx';
-import SearchByIngredients from './SearchByIngredients.jsx';
-import LatestMeals from './LatestMeals.jsx';
+import React from "react";
+import SortNav from "./SortNav.jsx";
+import SearchByName from "./SearchByName.jsx";
+import SearchByCategory from "./SearchByCategory.jsx";
+import SearchByArea from "./SearchByArea.jsx";
+import SearchByIngredients from "./SearchByIngredients.jsx";
+import LatestMeals from "./LatestMeals.jsx";
 
 const Sort = (props) => {
-    return (
-        <div
-            id='SortModal'
-            style={{ zIndex: props.isModalVisible[0], display: props.isModalVisible[1] }}
-            tabIndex='-1'
-        // onBackdropPress={props.manageModal.closeModal}
-        // animationIn='slideInRight'
-        // animationOut='slideOutRight'
-        >
-            <div id='SortNav'>
-                <SortNav manageAPICalls={props.manageAPICalls} manageModal={props.manageModal} />
-            </div>
-            <div id='SearchByName'>
-                <SearchByName manageModal={props.manageModal} manageAPICalls={props.manageAPICalls} whatIsSelected={props.whatIsSelected} />
-            </div>
-            <div id='SearchByCategory'>
-                <SearchByCategory whatIsSelected={props.whatIsSelected} manageAPICalls={props.manageAPICalls} />
-            </div>
-            <div id='SearchByArea'>
-                <SearchByArea whatIsSelected={props.whatIsSelected} manageAPICalls={props.manageAPICalls} />
-            </div>
-            <div id='SearchByIngredients'>
-                <SearchByIngredients manageAPICalls={props.manageAPICalls} whatIsSelected={props.whatIsSelected} />
-            </div>
-            <div id='LatestMeals'>
-                <LatestMeals manageAPICalls={props.manageAPICalls} whatIsSelected={props.whatIsSelected} />
-            </div>
-        </div>
-    )
-}
+  return (
+    <div
+      id="SortModal"
+      style={{
+        zIndex: props.isModalVisible[0],
+        display: props.isModalVisible[1],
+      }}
+      tabIndex="-1"
+      // onBackdropPress={props.manageModal.closeModal}
+      // animationIn='slideInRight'
+      // animationOut='slideOutRight'
+    >
+      <div id="SortNav">
+        <SortNav
+          manageAPICalls={props.manageAPICalls}
+          manageModal={props.manageModal}
+        />
+      </div>
+      <div id="SearchByName">
+        <SearchByName
+          manageModal={props.manageModal}
+          manageAPICalls={props.manageAPICalls}
+          whatIsSelected={props.whatIsSelected}
+        />
+      </div>
+      <div id="SearchByCategory">
+        <SearchByCategory
+          whatIsSelected={props.whatIsSelected}
+          manageAPICalls={props.manageAPICalls}
+        />
+      </div>
+      <div id="SearchByArea">
+        <SearchByArea
+          whatIsSelected={props.whatIsSelected}
+          manageAPICalls={props.manageAPICalls}
+        />
+      </div>
+      <div id="SearchByIngredients">
+        <SearchByIngredients
+          manageAPICalls={props.manageAPICalls}
+          whatIsSelected={props.whatIsSelected}
+        />
+      </div>
+      <div id="LatestMeals">
+        <LatestMeals
+          manageAPICalls={props.manageAPICalls}
+          whatIsSelected={props.whatIsSelected}
+        />
+      </div>
+    </div>
+  );
+};
 
 // const styles = StyleSheet.create({
 //     modal: {

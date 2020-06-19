@@ -8,7 +8,7 @@
     position: absolute;
     top: 0;
     left: 0;
-}
+  }
   #landingPageFoodOption {
     height: 75%;
     width: 45%;
@@ -17,9 +17,6 @@
     text-decoration: none;
     color: black;
   }
-  #landingPageFoodOption:hover {
-    /* something */
-  }
   #landingPageDrinkOption {
     height: 75%;
     width: 45%;
@@ -27,9 +24,6 @@
     margin-right: 5%;
     text-decoration: none;
     color: black;
-  }
-  #landingPageDrinkOption {
-    /* something */
   }
   #landingPageFoodText {
     text-align: center;
@@ -53,7 +47,6 @@
     margin-top: 10%;
     margin-left: 2.5%;
   }
-
   .gallery {
     height: 100%;
     width: 100%;
@@ -70,7 +63,6 @@
     margin-right: auto;
     margin-top: 2.5vh;
   }
-
   #food6 {
     display: none;
   }
