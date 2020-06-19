@@ -32,23 +32,90 @@
     border-top-right-radius: 25px;
     display: flex;
     flex-direction: column;
+    transition: all ease-in-out .75s;
 }
   
   #loginUsername {
-    display: none;
+    height: 0;
+    opacity: 0;
+    transition: all ease-in-out .75s;
+    margin: auto;
+    margin-bottom: 0;
+    border: 0;
+    border-radius: 25px;
+    text-align: center;
   }
+
+  #loginUsernameExpanded {
+    transition: all ease-in-out .75s;
+    margin: auto;
+    margin-bottom: 0;
+    border: 0;
+    border-radius: 25px;
+    text-align: center;
+    height: 10%;
+}
   
   #loginPassword {
-    display: none;
+    height: 0;
+    opacity: 0;
+    transition: all ease-in-out .75s;
+    margin: auto;
+    margin-bottom: 0;
+    margin-top: 5%;
+    border: 0;
+    border-radius: 25px;
+    text-align: center;
+  }
+
+  #loginPasswordExpanded {
+    transition: all ease-in-out .75s;
+    margin: auto;
+    margin-bottom: 0;
+    margin-top: 5%;
+    border: 0;
+    border-radius: 25px;
+    text-align: center;
+    height: 10%;
   }
   
   #loginButton {
     width: 30%;
     margin: auto;
+    margin-bottom: 1.25%;
 }
   
   #signUpButton {
     width: 30%;
     margin: auto;
+    margin-top: 1.25%;
+    margin-bottom: 5%;
+}
+
+#loginClose {
+  height: 0;
+  opacity: 0;
+}
+
+#loginCloseExpanded {
+  transition: all ease-in-out .75s;
+  position: absolute;
+  right: 5%;
+  top: 2%;
+  font-size: xx-large;
+  color: white;
+}
+
+#loginContainerExpanded {
+  position: absolute;
+  bottom: 0%;
+  height: 30%;
+  background-color: #2a2b2a;
+  width: 100%;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  transition: all ease-in-out .75s;
 }
 }

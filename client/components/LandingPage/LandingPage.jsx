@@ -111,7 +111,6 @@ let LandingPage = (props) => {
         tabIndex="1"
         onClick={() => {
           props.setWhatIsSelected("food");
-          // props.manageLogIn.pageChange();
           props.setSecondLoad(true);
           clearAll(window);
         }}
@@ -131,7 +130,6 @@ let LandingPage = (props) => {
         tabIndex="2"
         onClick={() => {
           props.setWhatIsSelected("drinks");
-          // props.manageLogIn.pageChange();
           props.setSecondLoad(true);
           clearAll(window);
         }}
