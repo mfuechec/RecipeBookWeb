@@ -14,7 +14,9 @@ let LandingPage = (props) => {
   let counter = 0;
 
   if (props.foods[endingIndex] && props.drinks[endingIndex]) {
-    makeList();
+    setTimeout(()=>{
+      makeList();
+    }, 0)
   }
 
   function makeList() {
