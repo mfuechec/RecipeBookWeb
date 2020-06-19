@@ -111,7 +111,7 @@ let LandingPage = (props) => {
         tabIndex="1"
         onClick={() => {
           props.setWhatIsSelected("food");
-          props.manageLogIn.pageChange();
+          // props.manageLogIn.pageChange();
           props.setSecondLoad(true);
           clearAll(window);
         }}
@@ -131,7 +131,7 @@ let LandingPage = (props) => {
         tabIndex="2"
         onClick={() => {
           props.setWhatIsSelected("drinks");
-          props.manageLogIn.pageChange();
+          // props.manageLogIn.pageChange();
           props.setSecondLoad(true);
           clearAll(window);
         }}
@@ -146,16 +146,8 @@ let LandingPage = (props) => {
         </div>
       </Link>
       <LogIn
-        whatIsSelected={props.whatIsSelected}
-        signUpUsername={props.signUpUsername}
-        signUpPassword={props.signUpPassword}
-        logInUsername={props.logInUsername}
-        logInPassword={props.logInPassword}
         manageAPICalls={props.manageAPICalls}
-        signUpSelected={props.signUpSelected}
-        logInSelected={props.logInSelected}
         loggedIn={props.loggedIn}
-        manageLogIn={props.manageLogIn}
       />
     </div>
   );

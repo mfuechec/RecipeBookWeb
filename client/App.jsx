@@ -25,12 +25,6 @@ const App = () => {
   const [isModalVisible, setIsModalVisible] = useState([-1, "none"]);
   const [whatIsSelected, setWhatIsSelected] = useState("");
   const [loggedIn, setLoggedIn] = useState(false);
-  const [logInSelected, setLogInSelected] = useState(false);
-  const [signUpSelected, setSignUpSelected] = useState(false);
-  const [signUpUsername, setSignUpUsername] = useState("");
-  const [signUpPassword, setSignUpPassword] = useState("");
-  const [logInUsername, setLogInUsername] = useState("");
-  const [logInPassword, setLogInPassword] = useState("");
   const [user, setUser] = useState("");
   const [lookingAtFavorites, setLookingAtFavorites] = useState(false);
   const [favFoods, setFavFoods] = useState([]);
@@ -197,7 +191,9 @@ const App = () => {
           });
       }
     },
-    signUp: () => {
+    signUp: (data) => {
+      let signUpUsername = data.username;
+      let signUpPassword = data.password;
       let format = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
       if (signUpUsername.length < 5) {
         alert("Username must be greater than 4 characters.");
@@ -238,10 +234,11 @@ const App = () => {
           });
       }
     },
-    logIn: () => {
+    logIn: (data) => {
+      let logInUsername = data.username;
       let credentials = {
         username: logInUsername,
-        password: sha256(logInPassword),
+        password: sha256(data.password),
       };
       return fetch("https://mark-recipe-book.herokuapp.com/login", {
         method: "POST",
@@ -762,72 +759,6 @@ const App = () => {
     },
   };
 
-  const manageLogIn = {
-    pageChange: () => {
-      document.body.style.overflow = "auto";
-    },
-    logInSelect: () => {
-      let logInModal = document.getElementsByClassName("selection");
-      logInModal[0].children[0].tabIndex = "-1";
-      logInModal[0].children[0].tabIndex = "-1";
-      logInModal[0].className = "selection-out";
-      let logInSelected = document.getElementsByClassName("logInModal");
-      logInSelected[0].children[0].tabIndex = "3";
-      logInSelected[0].children[2].tabIndex = "4";
-      logInSelected[0].children[1].tabIndex = "5";
-      logInSelected[0].children[3].tabIndex = "6";
-      logInSelected[0].className = "logInModal-in";
-    },
-    signUpSelect: () => {
-      let logInModal = document.getElementsByClassName("selection");
-      logInModal[0].children[0].tabIndex = "-1";
-      logInModal[0].children[0].tabIndex = "-1";
-      logInModal[0].className = "selection-out";
-      let signUpSelected = document.getElementsByClassName("signUpModal");
-      signUpSelected[0].children[0].tabIndex = "3";
-      signUpSelected[0].children[2].tabIndex = "4";
-      signUpSelected[0].children[1].tabIndex = "5";
-      signUpSelected[0].children[3].tabIndex = "6";
-      signUpSelected[0].className = "signUpModal-in";
-    },
-    closeLogInSelect: () => {
-      let logInModal = document.getElementsByClassName("selection-out");
-      logInModal[0].children[0].tabIndex = "3";
-      logInModal[0].children[0].tabIndex = "4";
-      logInModal[0].className = "selection";
-      let logInSelected = document.getElementsByClassName("logInModal-in");
-      logInSelected[0].children[0].tabIndex = "-1";
-      logInSelected[0].children[2].tabIndex = "-1";
-      logInSelected[0].children[1].tabIndex = "-1";
-      logInSelected[0].children[3].tabIndex = "-1";
-      logInSelected[0].className = "logInModal";
-    },
-    closeSignUpSelect: () => {
-      let logInModal = document.getElementsByClassName("selection-out");
-      logInModal[0].children[0].tabIndex = "3";
-      logInModal[0].children[0].tabIndex = "4";
-      logInModal[0].className = "selection";
-      let signUpSelected = document.getElementsByClassName("signUpModal-in");
-      signUpSelected[0].children[0].tabIndex = "-1";
-      signUpSelected[0].children[2].tabIndex = "-1";
-      signUpSelected[0].children[1].tabIndex = "-1";
-      signUpSelected[0].children[3].tabIndex = "-1";
-      signUpSelected[0].className = "signUpModal";
-    },
-    logInUsername: (e) => {
-      setLogInUsername(e.target.value);
-    },
-    logInPassword: (e) => {
-      setLogInPassword(e.target.value);
-    },
-    signUpUsername: (e) => {
-      setSignUpUsername(e.target.value);
-    },
-    signUpPassword: (e) => {
-      setSignUpPassword(e.target.value);
-    },
-  };
-
   return (
     <Router>
       <div id="MainContainer">
@@ -846,16 +777,9 @@ const App = () => {
               <div>
                 <LandingPage
                   whatIsSelected={whatIsSelected}
-                  signUpUsername={signUpUsername}
-                  signUpPassword={signUpPassword}
-                  logInUsername={logInUsername}
-                  logInPassword={logInPassword}
-                  manageAPICalls={manageAPICalls}
-                  signUpSelected={signUpSelected}
-                  logInSelected={logInSelected}
-                  loggedIn={loggedIn}
-                  manageLogIn={manageLogIn}
                   setWhatIsSelected={setWhatIsSelected}
+                  manageAPICalls={manageAPICalls}
+                  loggedIn={loggedIn}
                   manageModal={manageModal}
                   foods={foods}
                   drinks={drinks}

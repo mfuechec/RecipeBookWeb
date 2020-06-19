@@ -1,7 +1,7 @@
 @media (orientation: portrait) {
   #landingPageContainer {
-    height: 102vh;
-    width: 102vw;
+    height: 100vh;
+    width: 100vw;
     background-color: #eeeeee;
     justify-content: center;
     display: flex;
