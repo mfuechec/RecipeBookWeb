@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import web1 from "../../../assets/SplashBackgrounds/Web-Image-1.jpg";
 import web2 from "../../../assets/SplashBackgrounds/Web-Image-2.jpg";
 import web3 from "../../../assets/SplashBackgrounds/Web-Image-3.jpg";
@@ -14,32 +14,31 @@ import mobile5 from "../../../assets/SplashBackgrounds/Mobile-Image-5.jpg";
 import mobile6 from "../../../assets/SplashBackgrounds/Mobile-Image-6.jpg";
 
 let SplashScreen = (props) => {
-  const [imageSet, setImageSet] = useState(false);
   const [image, setImage] = useState(web1);
 
-  let numImages = 6;
-  let web = [web1, web2, web3, web4, web5, web6];
-  let mobile = [mobile1, mobile2, mobile3, mobile4, mobile5, mobile6];
+  useEffect(() => {
+    let numImages = 6;
+    let web = [web1, web2, web3, web4, web5, web6];
+    let mobile = [mobile1, mobile2, mobile3, mobile4, mobile5, mobile6];
 
-  if (!imageSet) {
     let index = Math.floor(Math.random() * numImages);
-    console.log(index);
     if (window.innerWidth > window.innerHeight) {
       setImage(web[index]);
     } else {
       setImage(mobile[index]);
     }
-    setImageSet(true);
-  }
+  }, []);
+
+  useEffect(() => {
+    if (props.firstImagesLoaded) {
+      fadeOut();
+    }
+  }, [props.firstImagesLoaded]);
 
   if (props.secondLoad) {
     setTimeout(() => {
       fadeOut();
     }, 0);
-  } else {
-    if (props.firstImagesLoaded) {
-      fadeOut();
-    }
   }
 
   function fadeOut() {
