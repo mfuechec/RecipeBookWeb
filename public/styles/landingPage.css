@@ -12,14 +12,14 @@
   }
   #landingPageFoodOption {
     height: 75%;
-    width: 45%;
+    width: 50%;
     margin-top: 5%;
     margin-left: 5%;
     text-decoration: none;
   }
   #landingPageDrinkOption {
     height: 75%;
-    width: 45%;
+    width: 50%;
     margin-top: 5%;
     margin-right: 5%;
     text-decoration: none;
@@ -27,12 +27,14 @@
   #landingPageFoodText {
     text-align: center;
     color: var(--main-bg-color);
-    font-size: xx-large;
+    font-size: 2em;
+    height: 2em;
   }
   #landingPageDrinkText {
     text-align: center;
     color: var(--main-bg-color);
-    font-size: xx-large;
+    font-size: 2em;
+    height: 2em;
   }
   #landingPageFoodGallery {
     overflow: hidden;
