@@ -175,7 +175,6 @@
     width: 10vw;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 3%;
     border: none;
     background-color: white;
     color: var(--main-txt-color);
@@ -195,7 +194,6 @@
     width: 10vw;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 5%;
     border: none;
     border-radius: 25px;
     background-color: white;
