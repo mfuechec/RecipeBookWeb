@@ -30,16 +30,10 @@ let SplashScreen = (props) => {
   }, []);
 
   useEffect(() => {
-    if (props.firstImagesLoaded) {
+    if (props.firstImagesLoaded && props.secondLoad === false) {
       fadeOut();
     }
   }, [props.firstImagesLoaded]);
-
-  if (props.secondLoad) {
-    setTimeout(() => {
-      fadeOut();
-    }, 0);
-  }
 
   function fadeOut() {
     let element = document.getElementById(`splashContainer`);
@@ -51,11 +45,15 @@ let SplashScreen = (props) => {
     }, 750);
   }
 
-  return (
-    <div id="splashContainer">
-      <img id="splashImage" src={image} />
-    </div>
-  );
+  if (props.secondLoad) {
+    return <div></div>;
+  } else {
+    return (
+      <div id="splashContainer">
+        <img id="splashImage" src={image} />
+      </div>
+    );
+  }
 };
 
 export default SplashScreen;
