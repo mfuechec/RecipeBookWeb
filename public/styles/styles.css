@@ -295,13 +295,15 @@
   #NewFoodRecipesContainer {
     background-color: #eeeeee;
     position: absolute;
-    min-height: 88.5vh;
+    min-height: 90vh;
+    min-width: 100%;
   }
 
   #NewDrinkRecipesContainer {
     background-color: #eeeeee;
     position: absolute;
-    min-height: 88.5vh;
+    min-height: 90vh;
+    min-width: 100%;
   }
 
   #NewRecipesHeader {
