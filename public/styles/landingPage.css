@@ -16,7 +16,6 @@
     margin-top: 5%;
     margin-left: 5%;
     text-decoration: none;
-    color: var(--main-bg-color);
   }
   #landingPageDrinkOption {
     height: 75%;
@@ -24,16 +23,15 @@
     margin-top: 5%;
     margin-right: 5%;
     text-decoration: none;
-    color: var(--main-bg-color);
   }
   #landingPageFoodText {
     text-align: center;
-    color: #f1e8b8;
+    color: var(--main-bg-color);
     font-size: xx-large;
   }
   #landingPageDrinkText {
     text-align: center;
-    color: #f1e8b8;
+    color: var(--main-bg-color);
     font-size: xx-large;
   }
   #landingPageFoodGallery {

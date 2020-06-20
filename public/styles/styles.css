@@ -7,14 +7,15 @@
   }
 
   #NewFoodRecipesContainer {
-    width: 95.75vw;
-    background-color: #eeeeee;
+    background-color: var(--main-txt-color);
     margin-right: auto;
+    min-height: 100vh;
   }
 
   #NewDrinkRecipesContainer {
-    background-color: #eeeeee;
+    background-color: var(--main-txt-color);
     margin-right: auto;
+    min-height: 100vh;
   }
 
   #NewRecipesHeader {
