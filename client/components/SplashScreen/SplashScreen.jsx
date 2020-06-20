@@ -1,7 +1,37 @@
-import React from "react";
-import background from "../../../assets/foodBackground.jpg";
+import React, { useState } from "react";
+import web1 from "../../../assets/SplashBackgrounds/Web-Image-1.jpg";
+import web2 from "../../../assets/SplashBackgrounds/Web-Image-2.jpg";
+import web3 from "../../../assets/SplashBackgrounds/Web-Image-3.jpg";
+import web4 from "../../../assets/SplashBackgrounds/Web-Image-4.jpg";
+import web5 from "../../../assets/SplashBackgrounds/Web-Image-5.jpg";
+import web6 from "../../../assets/SplashBackgrounds/Web-Image-6.jpg";
+
+import mobile1 from "../../../assets/SplashBackgrounds/Mobile-Image-1.jpg";
+import mobile2 from "../../../assets/SplashBackgrounds/Mobile-Image-2.jpg";
+import mobile3 from "../../../assets/SplashBackgrounds/Mobile-Image-3.jpg";
+import mobile4 from "../../../assets/SplashBackgrounds/Mobile-Image-4.jpg";
+import mobile5 from "../../../assets/SplashBackgrounds/Mobile-Image-5.jpg";
+import mobile6 from "../../../assets/SplashBackgrounds/Mobile-Image-6.jpg";
 
 let SplashScreen = (props) => {
+  const [imageSet, setImageSet] = useState(false);
+  const [image, setImage] = useState(web1);
+
+  let numImages = 6;
+  let web = [web1, web2, web3, web4, web5, web6];
+  let mobile = [mobile1, mobile2, mobile3, mobile4, mobile5, mobile6];
+
+  if (!imageSet) {
+    let index = Math.floor(Math.random() * numImages);
+    console.log(index);
+    if (window.innerWidth > window.innerHeight) {
+      setImage(web[index]);
+    } else {
+      setImage(mobile[index]);
+    }
+    setImageSet(true);
+  }
+
   if (props.secondLoad) {
     setTimeout(() => {
       fadeOut();
@@ -17,17 +47,14 @@ let SplashScreen = (props) => {
     element.style.opacity = 0;
     setTimeout(() => {
       let element2 = document.getElementById(`splashImage`);
-      let element3 = document.getElementById(`splashText`);
       element.style.zIndex = -1;
       element2.style.zIndex = -1;
-      element3.style.zIndex = -1;
     }, 750);
   }
 
   return (
     <div id="splashContainer">
-      <img id="splashImage" src={background} />
-      <div id="splashText">Recipe Book</div>
+      <img id="splashImage" src={image} />
     </div>
   );
 };

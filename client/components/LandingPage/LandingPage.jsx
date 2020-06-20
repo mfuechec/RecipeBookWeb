@@ -13,8 +13,6 @@ let LandingPage = (props) => {
   let selectedDrinks = {};
   let counter = 0;
 
-  console.log("rendered");
-
   if (props.foods[endingIndex] && props.drinks[endingIndex]) {
     props.clearAll(window);
     setTimeout(() => {
