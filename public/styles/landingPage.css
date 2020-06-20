@@ -86,29 +86,27 @@
     display: flex;
   }
   #landingPageFoodOption {
-    height: 75%;
+    position: absolute;
     width: 45%;
-    margin-top: 5%;
     margin-left: 5%;
     text-decoration: none;
-    color: var(--main-txt-color);
-    text-align: center;
-    align-self: center;
+    bottom: 40%;
+    left: 0%;
   }
   #landingPageFoodOption:hover {
-    /* something */
+    color: white;
   }
   #landingPageDrinkOption {
-    height: 75%;
+    position: absolute;
     width: 45%;
-    margin-top: 5%;
-    margin-right: 5%;
+    margin-right: 2.5%;
     text-decoration: none;
-    color: var(--main-txt-color);
     align-self: center;
+    bottom: 40%;
+    right: 0;
   }
-  #landingPageDrinkOption {
-    /* something */
+  #landingPageDrinkOption:hover {
+    color: white;
   }
   #landingPageFoodText {
     text-align: center;
