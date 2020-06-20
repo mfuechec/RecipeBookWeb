@@ -8,11 +8,17 @@
     position: absolute;
     top: 0;
     left: 0;
+    text-align: center;
+    background-color: white;
   }
 
   #splashImage {
-    height: 100%;
-    width: 100%;
+    height: 20%;
+    position: absolute;
+    margin: auto;
+    margin-left: -80px;
+    top: 50%;
+    margin-top: -40px;
   }
 }
 
@@ -30,7 +36,6 @@
   }
 
   #splashImage {
-    height: 100px;
     width: 100px;
     position: absolute;
     left: 50%;

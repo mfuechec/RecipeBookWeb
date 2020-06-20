@@ -1,7 +1,7 @@
 @media (orientation: portrait) {
   body {
     align-items: center;
-    font-family: cursive;
+    font-family: inherit;
     margin: 2%;
     height: 100%;
   }

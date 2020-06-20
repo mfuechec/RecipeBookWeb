@@ -2,7 +2,7 @@
   #landingPageContainer {
     height: 100vh;
     width: 100vw;
-    background-color: var(--main-bg-color);
+    background-color: var(--main-txt-color);
     justify-content: center;
     display: flex;
     position: absolute;
@@ -16,7 +16,7 @@
     margin-top: 5%;
     margin-left: 5%;
     text-decoration: none;
-    color: var(--main-txt-color);
+    color: var(--main-bg-color);
   }
   #landingPageDrinkOption {
     height: 75%;
@@ -24,16 +24,16 @@
     margin-top: 5%;
     margin-right: 5%;
     text-decoration: none;
-    color: var(--main-txt-color);
+    color: var(--main-bg-color);
   }
   #landingPageFoodText {
     text-align: center;
-    color: var(--main-txt-color);
+    color: #f1e8b8;
     font-size: xx-large;
   }
   #landingPageDrinkText {
     text-align: center;
-    color: var(--main-txt-color);
+    color: #f1e8b8;
     font-size: xx-large;
   }
   #landingPageFoodGallery {
@@ -87,26 +87,19 @@
     display: flex;
   }
   #landingPageFoodOption {
-    position: absolute;
     width: 45%;
-    margin-left: 5%;
     text-decoration: none;
-    bottom: 40%;
-    left: 0%;
     transition: ease-in-out all 1.5s;
+    margin-top: 10vh;
   }
   #landingPageFoodOption:hover {
     color: white;
   }
   #landingPageDrinkOption {
-    position: absolute;
     width: 45%;
-    margin-right: 2.5%;
     text-decoration: none;
-    align-self: center;
-    bottom: 40%;
-    right: 0;
     transition: ease-in-out all 1.5s;
+    margin-top: 10vh;
   }
   #landingPageDrinkOption:hover {
     color: white;
