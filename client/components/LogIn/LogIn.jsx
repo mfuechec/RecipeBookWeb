@@ -5,6 +5,13 @@ let LogIn = (props) => {
   const [password, setPassword] = useState("");
   const [firstPress, setFirstPress] = useState(true);
 
+  function openUp() {
+    if (firstPress) {
+      openLogin();
+      setFirstPress(false);
+    }
+  }
+
   function logIn() {
     if (firstPress) {
       openLogin();
@@ -36,7 +43,7 @@ let LogIn = (props) => {
     return <div></div>;
   } else {
     return (
-      <div id="loginContainer">
+      <div id="loginContainer" onClick={openUp}>
         <input
           id="loginUsername"
           placeholder="Username"
