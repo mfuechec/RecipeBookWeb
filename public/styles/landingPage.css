@@ -91,6 +91,7 @@
     text-decoration: none;
     transition: ease-in-out all 1.5s;
     margin-top: 10vh;
+    outline: none;
   }
   #landingPageFoodOption:hover {
     color: white;
@@ -100,6 +101,7 @@
     text-decoration: none;
     transition: ease-in-out all 1.5s;
     margin-top: 10vh;
+    outline: none;
   }
   #landingPageDrinkOption:hover {
     color: white;
