@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import LogIn from "../LogIn/LogIn.jsx";
 import FoodGallery from "./FoodGallery.jsx";
@@ -12,6 +12,15 @@ let LandingPage = (props) => {
   let selectedFoods = {};
   let selectedDrinks = {};
   let counter = 0;
+
+  useEffect(() => {
+    if (props.loggedIn) {
+      let foodElement = document.getElementById("landingPageFoodOption");
+      let drinkElement = document.getElementById("landingPageDrinkOption");
+      foodElement.style.bottom = "30%";
+      drinkElement.style.bottom = "30%";
+    }
+  }, [props.loggedIn]);
 
   if (props.foods[endingIndex] && props.drinks[endingIndex]) {
     props.clearAll(window);

@@ -112,8 +112,7 @@
   #loginContainerExpanded {
     position: absolute;
     bottom: 5%;
-    height: 25%;
-    background-color: #2a2b2a;
+    height: 27.5%;
     width: 18%;
     border-radius: 25px;
     display: flex;
@@ -212,8 +211,7 @@
   }
 
   #loginClose {
-    height: 0;
-    opacity: 0;
+    font-size: 0em;
   }
 
   #loginCloseExpanded {
@@ -222,6 +220,10 @@
     right: 5%;
     top: 2%;
     font-size: xx-large;
-    color: white;
+    color: var(--main-txt-color);
+    border: 1px solid var(--main-txt-color);
+    border-radius: 25px;
+    width: 20%;
+    text-align: center;
   }
 }

@@ -92,6 +92,7 @@
     text-decoration: none;
     bottom: 40%;
     left: 0%;
+    transition: ease-in-out all 1.5s;
   }
   #landingPageFoodOption:hover {
     color: white;
@@ -104,6 +105,7 @@
     align-self: center;
     bottom: 40%;
     right: 0;
+    transition: ease-in-out all 1.5s;
   }
   #landingPageDrinkOption:hover {
     color: white;
