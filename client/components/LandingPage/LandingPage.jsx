@@ -102,7 +102,7 @@ let LandingPage = (props) => {
           props.clearAll(window);
         }}
       >
-        <div id="landingPageFoodText">Food</div>
+        <div id="landingPageFoodText">Food Recipes</div>
         <div id="landingPageFoodGallery">
           <FoodGallery
             restartLanding={props.restartLanding}
@@ -121,7 +121,7 @@ let LandingPage = (props) => {
           props.clearAll(window);
         }}
       >
-        <div id="landingPageDrinkText">Drinks</div>
+        <div id="landingPageDrinkText">Cocktail Recipes</div>
         <div id="landingPageDrinkGallery">
           <DrinkGallery
             restartLanding={props.restartLanding}

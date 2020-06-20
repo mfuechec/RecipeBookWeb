@@ -2,7 +2,7 @@
   #landingPageContainer {
     height: 100vh;
     width: 100vw;
-    background-color: #eeeeee;
+    background-color: var(--main-bg-color);
     justify-content: center;
     display: flex;
     position: absolute;
@@ -15,7 +15,7 @@
     margin-top: 5%;
     margin-left: 5%;
     text-decoration: none;
-    color: black;
+    color: var(--main-txt-color);
   }
   #landingPageDrinkOption {
     height: 75%;
@@ -23,16 +23,16 @@
     margin-top: 5%;
     margin-right: 5%;
     text-decoration: none;
-    color: black;
+    color: var(--main-txt-color);
   }
   #landingPageFoodText {
     text-align: center;
-    color: "black";
+    color: var(--main-txt-color);
     font-size: xx-large;
   }
   #landingPageDrinkText {
     text-align: center;
-    color: "black";
+    color: var(--main-txt-color);
     font-size: xx-large;
   }
   #landingPageFoodGallery {
@@ -81,7 +81,7 @@
   #landingPageContainer {
     height: 100vh;
     width: 100vw;
-    background-color: #eeeeee;
+    background-color: var(--main-bg-color);
     justify-content: center;
     display: flex;
   }
@@ -91,7 +91,9 @@
     margin-top: 5%;
     margin-left: 5%;
     text-decoration: none;
-    color: black;
+    color: var(--main-txt-color);
+    text-align: center;
+    align-self: center;
   }
   #landingPageFoodOption:hover {
     /* something */
@@ -102,19 +104,20 @@
     margin-top: 5%;
     margin-right: 5%;
     text-decoration: none;
-    color: black;
+    color: var(--main-txt-color);
+    align-self: center;
   }
   #landingPageDrinkOption {
     /* something */
   }
   #landingPageFoodText {
     text-align: center;
-    color: "black";
+    color: var(--main-txt-color);
     font-size: xx-large;
   }
   #landingPageDrinkText {
     text-align: center;
-    color: "black";
+    color: var(--main-txt-color);
     font-size: xx-large;
   }
   #landingPageFoodGallery {
@@ -133,9 +136,6 @@
   }
 
   .gallery {
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
     opacity: 0;
     transition: all 1.5s ease-in-out;
     transition-timing-function: cubic-bezier(0.5, 1, 1, 1);

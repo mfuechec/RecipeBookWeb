@@ -174,15 +174,16 @@
     margin-right: auto;
     margin-bottom: 3%;
     border: none;
-    background-color: #20639b;
-    color: white;
+    background-color: white;
+    color: var(--main-txt-color);
     font-size: x-large;
     border-radius: 25px;
     transition: all ease-in-out 0.75s;
   }
 
   #loginButton:hover {
-    opacity: 0.75;
+    background-color: var(--main-txt-color);
+    color: white;
   }
 
   #signUpButton {
@@ -193,14 +194,15 @@
     margin-bottom: 5%;
     border: none;
     border-radius: 25px;
-    background-color: #20639b;
-    color: white;
+    background-color: white;
+    color: var(--main-txt-color);
     font-size: x-large;
     transition: all ease-in-out 0.75s;
   }
 
   #signUpButton:hover {
-    opacity: 0.75;
+    background-color: var(--main-txt-color);
+    color: white;
   }
 
   #loginClose {
