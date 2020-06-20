@@ -12,6 +12,19 @@
     transition: all ease-in-out 0.75s;
   }
 
+  #loginContainerExpanded {
+    position: absolute;
+    bottom: 0%;
+    height: 30%;
+    background-color: #2a2b2a;
+    width: 100%;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    transition: all ease-in-out 0.75s;
+  }
+
   #loginUsername {
     height: 0;
     opacity: 0;
@@ -67,33 +80,6 @@
     margin: auto;
     margin-top: 1.25%;
     margin-bottom: 5%;
-  }
-
-  #loginClose {
-    height: 0;
-    opacity: 0;
-  }
-
-  #loginCloseExpanded {
-    transition: all ease-in-out 0.75s;
-    position: absolute;
-    right: 5%;
-    top: 2%;
-    font-size: xx-large;
-    color: white;
-  }
-
-  #loginContainerExpanded {
-    position: absolute;
-    bottom: 0%;
-    height: 30%;
-    background-color: #2a2b2a;
-    width: 100%;
-    border-top-left-radius: 25px;
-    border-top-right-radius: 25px;
-    display: flex;
-    flex-direction: column;
-    transition: all ease-in-out 0.75s;
   }
 }
 
@@ -184,6 +170,10 @@
     cursor: pointer;
   }
 
+  #loginButton:focus {
+    outline: none;
+  }
+
   #loginButton:hover {
     background-color: var(--main-txt-color);
     color: white;
@@ -203,25 +193,12 @@
     cursor: pointer;
   }
 
+  #signUpButton:focus {
+    outline: none;
+  }
+
   #signUpButton:hover {
     background-color: var(--main-txt-color);
     color: white;
-  }
-
-  #loginClose {
-    font-size: 0em;
-  }
-
-  #loginCloseExpanded {
-    transition: all ease-in-out 0.75s;
-    position: absolute;
-    right: 5%;
-    top: 2%;
-    font-size: xx-large;
-    color: var(--main-txt-color);
-    border: 1px solid var(--main-txt-color);
-    border-radius: 25px;
-    width: 20%;
-    text-align: center;
   }
 }
