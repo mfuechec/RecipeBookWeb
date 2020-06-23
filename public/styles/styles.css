@@ -23,77 +23,6 @@
     font-size: xx-large;
   }
 
-  #ListingContainer {
-    height: 20vh;
-  }
-
-  #ListingContainerView {
-    display: flex;
-    flex-direction: row;
-    overflow: hidden;
-    text-decoration: none;
-  }
-
-  #ListingImageContainer {
-    width: 30%;
-    margin-right: 5%;
-    margin-top: 1%;
-  }
-
-  #ListingImage {
-    width: 33vw;
-  }
-
-  #ListingDetailsContainer {
-    width: 70%;
-    display: flex;
-    flex-direction: column;
-  }
-
-  #ListingNameContainer {
-    margin-bottom: 5%;
-    text-decoration: none;
-  }
-
-  #ListingNameText {
-    text-align: center;
-    overflow: hidden;
-    color: black;
-  }
-
-  #ListingIngredientsAndFavContainer {
-    display: flex;
-    padding-left: 10%;
-    flex-direction: row-reverse;
-  }
-
-  #ListingIngredientsList {
-    overflow: hidden;
-    width: 75%;
-    text-decoration: none;
-  }
-
-  #ListingFavLinkContainer {
-    margin-top: 15%;
-  }
-
-  #ListingFavContainer {
-    width: 25%;
-    padding-top: 10%;
-    color: lightblue;
-  }
-
-  #ListingFavText {
-    font-size: 50;
-    color: white;
-    align-self: center;
-  }
-
-  #ListingFavStar {
-    font-size: xx-large;
-    pointer-events: none;
-  }
-
   #Ingredient {
     color: black;
     font-size: 10px;
@@ -293,107 +222,12 @@
     height: 100%;
   }
 
-  #NewFoodRecipesContainer {
-    background-color: #eeeeee;
-    position: absolute;
-    min-height: 90vh;
-    min-width: 100%;
-  }
-
-  #NewDrinkRecipesContainer {
-    background-color: #eeeeee;
-    position: absolute;
-    min-height: 90vh;
-    min-width: 100%;
-  }
-
-  #NewRecipesHeader {
-    text-align: center;
-    font-size: xxx-large;
-  }
-
-  #ListingContainer {
-    height: 40vh;
-    width: 25%;
-    float: left;
-  }
-
-  #ListingContainerView {
-    height: 100%;
-    display: flex;
-    flex-direction: column-reverse;
-    overflow: hidden;
-    text-decoration: none;
-  }
-
-  #ListingImageContainer {
-    align-self: center;
-    z-index: 0;
-  }
-
-  #ListingImage {
-    width: 18vw;
-  }
-
-  #ListingDetailsContainer {
-    width: 18vw;
-    position: relative;
-    top: 100%;
-    min-height: 100%;
-    left: 13.35%;
-    background: rgba(100, 100, 100, 0.5);
-    opacity: 0%;
-  }
-
-  #ListingDetailsContainer:hover {
-    opacity: 100%;
-  }
-
-  #ListingNameContainer {
-    height: 40%;
-  }
-
-  #ListingNameText {
-    font-size: x-large;
-    text-align: center;
-    color: white;
-    margin-top: 25%;
-  }
-
-  #ListingIngredientsList {
-    overflow: hidden;
-    width: 100%;
-    text-decoration: none;
-    display: none;
-  }
-
-  #ListingFavLinkContainer {
-    text-align: center;
-  }
-
-  #ListingFavContainer {
-  }
-
-  #ListingFavContainer:hover {
-    color: lightgoldenrodyellow !important;
-  }
-
-  #ListingFavText {
-    font-size: 50;
-    color: white;
-    align-self: center;
-  }
-
-  #ListingFavStar {
-    font-size: xxx-large;
-    cursor: pointer;
-  }
-
   #Ingredient {
     color: black;
     font-size: x-small;
     text-align: center;
     padding-right: 5%;
+    display: none;
   }
 
   #RecipeDetailsContainer {

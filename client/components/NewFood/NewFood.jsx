@@ -12,14 +12,16 @@ let NewFood = (props) => {
     text = "Favorites";
   }
   return (
-    <div id="NewFoodRecipesContainer">
-      <div id="NewRecipesHeader">{text}</div>
-      <FoodsList
-        favFoodNames={props.favFoodNames}
-        manageAPICalls={props.manageAPICalls}
-        setFood={props.setFood}
-        foods={foods}
-      />
+    <div className="RecipesContainer">
+      <div className="NewRecipesHeader">{text}</div>
+      <div className="ListContainer">
+        <FoodsList
+          favFoodNames={props.favFoodNames}
+          manageAPICalls={props.manageAPICalls}
+          setFood={props.setFood}
+          foods={foods}
+        />
+      </div>
     </div>
   );
 };

@@ -22,35 +22,22 @@ let FoodListing = (props) => {
     };
   }
   return (
-    <div id="ListingContainer">
+    <div className="ListingContainer">
       <Link
-        id="ListingContainerView"
+        className="ListingContainerView"
         to="/Food"
         onClick={() => props.setFood(food)}
       >
-        <div id="ListingImageContainer">
-          <img id="ListingImage" src={food.image} />
-        </div>
-        <div id="ListingDetailsContainer">
-          <div id="ListingNameContainer">
-            <div id="ListingNameText">{food.name}</div>
-          </div>
-          <div id="ListingIngredientsAndFavContainer">
-            <div id="ListingFavLinkContainer">
-              <Link
-                id="ListingFavContainer"
-                style={{ color: color }}
-                to="/NewFood"
-                onClick={editFavorites}
-              >
-                <i id="ListingFavStar" className="fas fa-star"></i>
-              </Link>
-            </div>
-            <div id="ListingIngredientsList">
-              <IngredientsList ingredients={food.ingredients} />
-            </div>
-          </div>
-        </div>
+        <img className="ListingImage" src={food.image} />
+        <div className="ListingNameText">{food.name}</div>
+
+        <i
+          style={{ color: color }}
+          onClick={editFavorites}
+          className="fas fa-star"
+        ></i>
+
+        <IngredientsList ingredients={food.ingredients} />
       </Link>
     </div>
   );
