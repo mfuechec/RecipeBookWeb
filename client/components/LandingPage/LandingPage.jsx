@@ -106,7 +106,7 @@ let LandingPage = (props) => {
         to="NewFood"
         tabIndex="1"
         onClick={() => {
-          props.setWhatIsSelected("food");
+          props.manageModal.searchFoods();
           props.setSecondLoad(true);
           props.clearAll(window);
         }}
@@ -125,7 +125,7 @@ let LandingPage = (props) => {
         to="NewDrinks"
         tabIndex="2"
         onClick={() => {
-          props.setWhatIsSelected("drinks");
+          props.manageModal.searchDrinks();
           props.setSecondLoad(true);
           props.clearAll(window);
         }}

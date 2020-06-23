@@ -741,9 +741,11 @@ const App = () => {
     },
     searchFoods: () => {
       setWhatIsSelected("food");
+      document.body.style.overflow = "scroll";
     },
     searchDrinks: () => {
       setWhatIsSelected("drinks");
+      document.body.style.overflow = "scroll";
     },
     previousResults: () => {
       if (whatIsSelected === "food") {
@@ -793,7 +795,6 @@ const App = () => {
               <div>
                 <LandingPage
                   whatIsSelected={whatIsSelected}
-                  setWhatIsSelected={setWhatIsSelected}
                   manageAPICalls={manageAPICalls}
                   loggedIn={loggedIn}
                   manageModal={manageModal}
