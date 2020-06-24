@@ -1,90 +1,107 @@
 @media (orientation: portrait) {
-  #ListingContainer {
+  .RecipesContainer {
+  }
+
+  .NewRecipesHeader {
+    text-align: center;
+    margin-top: 10%;
+  }
+
+  .ListContainer {
+    margin-top: 5%;
+  }
+
+  .ListingContainer {
     height: 20vh;
   }
 
-  #ListingContainerView {
+  .ListingContainerView {
     display: flex;
     flex-direction: row;
     overflow: hidden;
     text-decoration: none;
+    position: relative;
   }
 
-  #ListingImageContainer {
+  .ListingImageContainer {
     width: 30%;
     margin-right: 5%;
     margin-top: 1%;
   }
 
-  #ListingImage {
+  .ListingImage {
     width: 33vw;
   }
 
-  #ListingDetailsContainer {
+  .ListingDetailsContainer {
     width: 70%;
     display: flex;
     flex-direction: column;
   }
 
-  #ListingNameContainer {
+  .ListingNameContainer {
     margin-bottom: 5%;
     text-decoration: none;
   }
 
-  #ListingNameText {
+  .ListingNameText {
     text-align: center;
     overflow: hidden;
     color: black;
+    width: 100%;
   }
 
-  #ListingIngredientsAndFavContainer {
+  .ListingIngredientsAndFavContainer {
     display: flex;
     padding-left: 10%;
     flex-direction: row-reverse;
   }
 
-  #ListingIngredientsList {
+  .ListingIngredientsList {
     overflow: hidden;
     width: 75%;
     text-decoration: none;
   }
 
-  #ListingFavLinkContainer {
+  .ListingFavLinkContainer {
     margin-top: 15%;
   }
 
-  #ListingFavContainer {
+  .ListingFavContainer {
     width: 25%;
     padding-top: 10%;
     color: lightblue;
   }
 
-  #ListingFavText {
-    font-size: 50;
-    color: white;
-    align-self: center;
+  .fa-star {
+    position: absolute;
+    font-size: 4vw;
+    top: 50%;
+    left: 42%;
   }
 
-  #ListingFavStar {
-    font-size: xx-large;
-    pointer-events: none;
+  #IngredientsList {
+    position: absolute;
+    top: 25%;
+    left: 55%;
   }
 
   #Ingredient {
     color: black;
     font-size: 10px;
+    margin-left: 5%;
   }
 }
 
 @media (orientation: landscape) {
   .RecipesContainer {
-    background-color: #eeeeee;
     min-width: 100vw;
   }
 
   .NewRecipesHeader {
     text-align: center;
     font-size: xxx-large;
+    margin-top: 2.5%;
   }
 
   .ListContainer {

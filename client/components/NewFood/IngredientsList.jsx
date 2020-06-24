@@ -8,9 +8,13 @@ let IngredientsList = (props) => {
       ingredients.push(props.ingredients[i]);
     }
   }
-  return ingredients.map((ingredient, i) => (
-    <Ingredient key={i} ingredient={ingredient} />
-  ));
+  return (
+    <div id="IngredientsList">
+      {ingredients.map((ingredient, i) => (
+        <Ingredient key={i} ingredient={ingredient} />
+      ))}
+    </div>
+  );
 };
 
 export default IngredientsList;

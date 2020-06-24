@@ -171,7 +171,7 @@
     margin-right: auto;
     border: none;
     background-color: white;
-    color: var(--main-txt-color);
+    color: var(--main-bg-color);
     font-size: x-large;
     border-radius: 25px;
     transition: all ease-in-out 0.75s;
@@ -183,7 +183,7 @@
   }
 
   #loginButton:hover {
-    background-color: var(--main-txt-color);
+    background-color: var(--main-bg-color);
     color: white;
   }
 
@@ -195,7 +195,7 @@
     border: none;
     border-radius: 25px;
     background-color: white;
-    color: var(--main-txt-color);
+    color: var(--main-bg-color);
     font-size: x-large;
     transition: all ease-in-out 0.75s;
     cursor: pointer;
@@ -206,7 +206,7 @@
   }
 
   #signUpButton:hover {
-    background-color: var(--main-txt-color);
+    background-color: var(--main-bg-color);
     color: white;
   }
 }
