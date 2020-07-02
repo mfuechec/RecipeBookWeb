@@ -117,6 +117,9 @@
     border: 1px solid var(--main-bg-color);
     margin: 2.25%;
     position: relative;
+    -webkit-transition: all ease-in-out 1000ms;
+    -moz-transition: all ease-in-out 1000ms;
+    -o-transition: all ease-in-out 1000ms;
     transition: all ease-in-out 1000ms;
     border-radius: 25px;
   }
@@ -148,6 +151,9 @@
     position: absolute;
     top: 0;
     width: 100%;
+    -webkit-transition: all ease-in-out 1000ms;
+    -moz-transition: all ease-in-out 1000ms;
+    -o-transition: all ease-in-out 1000ms;
     transition: all ease-in-out 1000ms;
     margin-top: 1vh;
   }
