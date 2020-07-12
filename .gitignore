@@ -2,7 +2,5 @@
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
 node_modules
-.config.js
 .DS_store
 .env
-db/config.js
